@@ -13,10 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Interactible">
+      <UniqueIdentifier>{5808838d-b362-41d8-bdb7-e7a2c95c22d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interactible\Type 80">
+      <UniqueIdentifier>{3115a0de-faa2-40ab-9fe3-92658a42cfa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interactible\Type 20">
+      <UniqueIdentifier>{3041dce3-c7da-4bde-b466-2a6f599948b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interactible">
+      <UniqueIdentifier>{db08a470-b28b-4f4b-8531-544caefc818e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interactible\Type 20">
+      <UniqueIdentifier>{8f113d84-eac3-4e77-9bb7-bb88b7fd0408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interactible\Type 80">
+      <UniqueIdentifier>{3ebea5a1-f573-4d6f-8a5e-829c37b57bed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\User Interface">
+      <UniqueIdentifier>{e70b77b6-f8ac-4842-b02e-617cbea8cf19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\User Interface">
+      <UniqueIdentifier>{5b999517-63f0-4ead-9e7b-04861f736aa1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameLogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
