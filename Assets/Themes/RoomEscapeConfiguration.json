@@ -1,0 +1,154 @@
+{
+  "CyberpunkItems":[
+    {
+      "name": "attire_head",
+      "title": "AR Ocular Implant",
+      "quality": "Damaged",
+      "body": "Possibly a mandatory implant for low-value citizens, for their safety."
+    },
+    {
+      "name": "attire_torso",
+      "title": "IR Reflector Jacket",
+      "quality": "Good",
+      "body": "Seems to reflect the colour red, possibly more colours."
+    },
+    {
+      "name": "equipment",
+      "title": "Cybertronic Bracelet",
+      "quality": "Good",
+      "body": "Might be helpful if it indeed works, has a large display"
+    }
+  ],
+
+  "NuclearWinterItems": [
+    {
+      "name": "attire_head",
+      "title": "Filtered Face Mask",
+      "quality": "Good",
+      "body": "Covers the eyes and mouth of the wearer, might filter out radiation."
+    },
+    {
+      "name": "attire_torso",
+      "title": "Heavily Padded Jacket",
+      "quality": "Damaged",
+      "body": "Might have once been a winter jacket, but now it is riddled with holes."
+    },
+    {
+      "name": "equipment",
+      "title": "Multipurpose Kukri Machete",
+      "quality": "Good",
+      "body": "Solidly built long knife, seems to have many functions."
+    }
+  ],
+
+  "PassiveInvasionItems": [
+    {
+      "name": "attire_head",
+      "title": "Filtered Glasses",
+      "quality": "Good",
+      "body": "Moss and possibly other plant material is highlighted when wearing them."
+    },
+    {
+      "name": "attire_torso",
+      "title": "Puncture Resistant Jacket",
+      "quality": "Good",
+      "body": "Although flexible it has a certain stiffness to it, covers your giblets."
+    },
+    {
+      "name": "equipment",
+      "title": "Canned Fire (tm)",
+      "quality": "Damaged",
+      "body": "Might have been a spray-based flamethrower, seems empty."
+    }
+  ],
+
+  "EscapeQuestions": [
+    {
+      "name": "cyberpunk_question_zero",
+      "question": "The controlled are surveilled. So what must be done to be freed? [Solve <Answer>]",
+      "answer": "remove;take out;cut out;tear out;disable;destroy"
+    },
+    {
+      "name": "cyberpunk_question_one",
+      "question": "If surveillance was not consented, then what must the nature of the surveillors be?",
+      "answer": "evil;mean;bad;forceful;villanous;sneaky"
+    },
+    {
+      "name": "cyberpunk_question_two",
+      "question": "If a monopoly cares not for consent and yet monitors, what must be done?",
+      "answer": "destroy;uprise;rebell;hide;sneak;blend"
+    },
+
+    {
+      "name": "nuclearwinter_question_zero",
+      "question": "The cold is everywhere and the plants no longer grow, what happened? [Solve <Answer>]",
+      "answer": "nuclear;war;sun;covered;winter;permanent;sunlight"
+    },
+    {
+      "name": "nuclearwinter_question_one",
+      "question": "Warmth that crackles electronics means death, yet why is it invisible?",
+      "answer": "radiation;poisoning;toxins;geiger;nuclear;waste;poison"
+    },
+    {
+      "name": "nuclearwinter_question_two",
+      "question": "The leaders let fly their fireworks, now the sun comes up not, why?",
+      "answer": "nuclear;war;sun;covered;winter;permanent;sunlight"
+    },
+
+    {
+      "name": "passiveinvasion_question_zero",
+      "question": "Why must one see nature more? Why should it be highlighted? [Solve <Answer>]",
+      "answer": "dangerous;deadly;poison;toxin;death;infection"
+    },
+    {
+      "name": "passiveinvasion_question_one",
+      "question": "Why would you require additional puncture protection from plants?",
+      "answer": "aggressive;attack;fight;alien;not;natural;infect;kill"
+    },
+    {
+      "name": "passiveinvasion_question_two",
+      "question": "If the deadly plants come from impact craters, what might they be?",
+      "answer": "alien;otherworldy;invasion;infect;unholy;unnatural"
+    }
+  ],
+
+  "EscapePlot": [
+    {
+      "name": "zero_awake",
+      "content": "You wake up in a small dark room; moss in the corners, cold walls, and a metal door."
+    },
+    {
+      "name": "one_look_room",
+      "content": "There's some clutter on the floor, a red and green light in the corner, and a metal door."
+    },
+    {
+      "name": "two_look_clutter",
+      "content": "Three headgears, three jackets, and three odd items."
+    },
+    {
+      "name": "three_look_light",
+      "content": "A light that is both red and green, you think it might mean safety."
+    },
+    {
+      "name": "four_look_door",
+      "content": "A smallish metal door with a nearby console, which seems connected to the door."
+    },
+    {
+      "name": "five_look_console",
+      "content": "Three questions awaiting your response, you remember writing these out earlier. [Solve Console]"
+    },
+    {
+      "name": "zero_answer",
+      "content": "You remember slipping before sleeping, these are to jumpstart your memory."
+    },
+    {
+      "name": "one_answer",
+      "content": "These questions will open those doors."
+    },
+    {
+      "name": "two_answer",
+      "content": "Why would you want to leave?"
+    }
+
+  ]
+}

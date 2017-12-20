@@ -13,42 +13,117 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Interactible">
+    <Filter Include="Header Files\Management">
+      <UniqueIdentifier>{851bfb55-2a4e-4143-8cab-95a77001bded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tile">
+      <UniqueIdentifier>{41dbccc7-dbd3-47a7-92ad-26237e58b1e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Structs">
+      <UniqueIdentifier>{68d7fb9b-ba62-4ab1-9cae-049ac6c58682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tile">
+      <UniqueIdentifier>{f7051629-1220-4987-b33f-f94f9b4682db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameElements">
+      <UniqueIdentifier>{559ab867-a6bc-4756-8899-8f32dd57add0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameElements">
       <UniqueIdentifier>{5808838d-b362-41d8-bdb7-e7a2c95c22d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Interactible\Type 80">
-      <UniqueIdentifier>{3115a0de-faa2-40ab-9fe3-92658a42cfa6}</UniqueIdentifier>
+    <Filter Include="Header Files\GameElements\Behaviours">
+      <UniqueIdentifier>{745e317b-4bf1-4061-ba6a-1efea902a0c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Interactible\Type 20">
-      <UniqueIdentifier>{3041dce3-c7da-4bde-b466-2a6f599948b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Interactible">
-      <UniqueIdentifier>{db08a470-b28b-4f4b-8531-544caefc818e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Interactible\Type 20">
-      <UniqueIdentifier>{8f113d84-eac3-4e77-9bb7-bb88b7fd0408}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Interactible\Type 80">
-      <UniqueIdentifier>{3ebea5a1-f573-4d6f-8a5e-829c37b57bed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\User Interface">
-      <UniqueIdentifier>{e70b77b6-f8ac-4842-b02e-617cbea8cf19}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\User Interface">
-      <UniqueIdentifier>{5b999517-63f0-4ead-9e7b-04861f736aa1}</UniqueIdentifier>
+    <Filter Include="Source Files\GameElements\Behaviours">
+      <UniqueIdentifier>{9caee650-3986-42c3-977b-3e05497adfaf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Assets\External\jsoncpp.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gameLogic.cpp">
+    <ClCompile Include="GameLogic.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFML_Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomEscape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\GameElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadlyTile.cpp">
+      <Filter>Source Files\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="CautiousTile.cpp">
+      <Filter>Source Files\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="AcceptableTile.cpp">
+      <Filter>Source Files\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Behaviour.cpp">
+      <Filter>Source Files\GameElements\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Interactable.cpp">
+      <Filter>Source Files\GameElements</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gameLogic.h">
+    <ClInclude Include="GameLogic.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFML_Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\GameElements</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomEscape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructs.h">
+      <Filter>Header Files\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadlyTile.h">
+      <Filter>Header Files\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="AcceptableTile.h">
+      <Filter>Header Files\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviour.h">
+      <Filter>Header Files\GameElements\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="FuzzyBehaviour.h">
+      <Filter>Header Files\GameElements\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleBehaviour.h">
+      <Filter>Header Files\GameElements\Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="CautiousTile.h">
+      <Filter>Header Files\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Interactable.h">
+      <Filter>Header Files\GameElements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

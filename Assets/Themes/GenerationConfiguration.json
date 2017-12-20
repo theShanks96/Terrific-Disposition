@@ -1,0 +1,68 @@
+{
+    "PseudonymOne": [
+      {
+        "string": "Vermello"
+      },
+      {
+        "string": "Porpra"
+      },
+      {
+        "string": "Blau"
+      },
+      {
+        "string": "Verd"
+      },
+      {
+        "string": "Groc"
+      },
+      {
+        "string": "Taronja"
+      }
+    ],
+    "PseudonymTwo": [
+      {
+        "string": "Llagosta"
+      },
+      {
+        "string": "Cuc"
+      },
+      {
+        "string": "Eruga"
+      },
+      {
+        "string": "Sangui"
+      },
+      {
+        "string": "Mosquit"
+      },
+      {
+        "string": "Paparra"
+      }
+    ],
+    "CommandConfiguration": [
+      {
+        "name": "look",
+        "content": "look;peek;see;study;glance"
+      },
+      {
+        "name": "move",
+        "content": "move;travel;transport;go;teleport"
+      },
+      {
+        "name": "pickup",
+        "content": "pickup;grab;clasp;hold;gather"
+      },
+      {
+        "name": "equip",
+        "content": "equip;put;outfit;gear;arm"
+      },
+      {
+        "name": "inspect",
+        "content": "inspect;examine;observe;investigate;scan"
+      },
+      {
+        "name": "discard",
+        "content": "discard;throw;scrap;dump;eliminate"
+      }
+    ]
+}

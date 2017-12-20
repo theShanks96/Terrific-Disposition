@@ -1,0 +1,24 @@
+{
+  "AudioConfiguration": [
+    {
+      "name": "HeavyHeartbeat",
+      "filepath": "../../Assets/Audio/HeavyHeartbeat.wav"
+    },
+    {
+      "name": "OminousRumble",
+      "filepath": "../../Assets/Audio/OminousRumble.mp3"
+    },
+    {
+      "name": "SpaciousThumps",
+      "filepath": "../../Assets/Audio/SpaciousThumps.aiff"
+    },
+    {
+      "name": "SummerMeadow0",
+      "filepath": "../../Assets/Audio/SummerMeadow0"
+    },
+    {
+      "name": "SummerMeadow1",
+      "filepath": "../../Assets/Audio/SummerMeadow1"
+    }
+  ]
+}
