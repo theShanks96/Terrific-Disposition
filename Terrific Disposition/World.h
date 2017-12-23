@@ -14,9 +14,15 @@
 #include "Player.h"
 #include "DataStructs.h"
 
+
+//! The game proper, a world holding all the tiles that the player will come into contact
 class World {
 public:
-	World(int mapSize, Player* player_in);
+
+	//! Constructor for the World
+	//! @param mapSize_in Used to insstantiate the side length of the square world
+	//! @param player_in Used to keep track of player information
+	World(int mapSize_in, Player* player_in);
 	~World();
 
 	int c_mapSize;

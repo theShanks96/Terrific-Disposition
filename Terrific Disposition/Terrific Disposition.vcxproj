@@ -74,23 +74,38 @@
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <ExecutablePath>$(SolutionDir)\Library\SFML-2.4.2\bin;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Include;$(SolutionDir)\Library\SFML-2.4.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library;$(SolutionDir)\Library\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
-    <ExecutablePath>$(SolutionDir)\Library\SFML-2.4.2\bin;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Library\SFML-2.4.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include;$(SolutionDir)\Library\SFML-2.4.2\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -108,6 +123,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Library</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;openal32.lib;winmm.lib;gdi32.lib;flac.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -123,8 +142,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Library\SFML-2.4.2\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-main.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-audio-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;jpeg.lib;openal32.lib;winmm.lib;gdi32.lib;flac.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Library</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-graphics-s.lib;sfml-audio-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;jpeg.lib;openal32.lib;winmm.lib;gdi32.lib;flac.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -139,6 +158,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Library</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-graphics-s.lib;sfml-audio-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;jpeg.lib;openal32.lib;winmm.lib;gdi32.lib;flac.lib;vorbis.lib;vorbisenc.lib;vorbisfile.lib;ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -147,6 +168,108 @@
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="CautiousTile.cpp" />
     <ClCompile Include="DeadlyTile.cpp" />
+    <ClCompile Include="FuzzyBehaviour.cpp" />
+    <ClCompile Include="FuzzyLite\activation\First.cpp" />
+    <ClCompile Include="FuzzyLite\activation\General.cpp" />
+    <ClCompile Include="FuzzyLite\activation\Highest.cpp" />
+    <ClCompile Include="FuzzyLite\activation\Last.cpp" />
+    <ClCompile Include="FuzzyLite\activation\Lowest.cpp" />
+    <ClCompile Include="FuzzyLite\activation\Proportional.cpp" />
+    <ClCompile Include="FuzzyLite\activation\Threshold.cpp" />
+    <ClCompile Include="FuzzyLite\Benchmark.cpp" />
+    <ClCompile Include="FuzzyLite\Complexity.cpp" />
+    <ClCompile Include="FuzzyLite\Console.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\Bisector.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\Centroid.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\IntegralDefuzzifier.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\LargestOfMaximum.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\MeanOfMaximum.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\SmallestOfMaximum.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedAverage.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedAverageCustom.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedDefuzzifier.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedSum.cpp" />
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedSumCustom.cpp" />
+    <ClCompile Include="FuzzyLite\Engine.cpp" />
+    <ClCompile Include="FuzzyLite\Exception.cpp" />
+    <ClCompile Include="FuzzyLite\factory\ActivationFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\DefuzzifierFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\FactoryManager.cpp" />
+    <ClCompile Include="FuzzyLite\factory\FunctionFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\HedgeFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\SNormFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\TermFactory.cpp" />
+    <ClCompile Include="FuzzyLite\factory\TNormFactory.cpp" />
+    <ClCompile Include="FuzzyLite\fuzzylite.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Any.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Extremely.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\HedgeFunction.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Not.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Seldom.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Somewhat.cpp" />
+    <ClCompile Include="FuzzyLite\hedge\Very.cpp" />
+    <ClCompile Include="FuzzyLite\imex\CppExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\Exporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FclExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FclImporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FisExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FisImporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FldExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FllExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\FllImporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\Importer.cpp" />
+    <ClCompile Include="FuzzyLite\imex\JavaExporter.cpp" />
+    <ClCompile Include="FuzzyLite\imex\RScriptExporter.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\AlgebraicSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\BoundedSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\DrasticSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\EinsteinSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\HamacherSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\Maximum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\NilpotentMaximum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\NormalizedSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\SNormFunction.cpp" />
+    <ClCompile Include="FuzzyLite\norm\s\UnboundedSum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\AlgebraicProduct.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\BoundedDifference.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\DrasticProduct.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\EinsteinProduct.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\HamacherProduct.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\Minimum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\NilpotentMinimum.cpp" />
+    <ClCompile Include="FuzzyLite\norm\t\TNormFunction.cpp" />
+    <ClCompile Include="FuzzyLite\rule\Antecedent.cpp" />
+    <ClCompile Include="FuzzyLite\rule\Consequent.cpp" />
+    <ClCompile Include="FuzzyLite\rule\Expression.cpp" />
+    <ClCompile Include="FuzzyLite\rule\Rule.cpp" />
+    <ClCompile Include="FuzzyLite\rule\RuleBlock.cpp" />
+    <ClCompile Include="FuzzyLite\term\Activated.cpp" />
+    <ClCompile Include="FuzzyLite\term\Aggregated.cpp" />
+    <ClCompile Include="FuzzyLite\term\Bell.cpp" />
+    <ClCompile Include="FuzzyLite\term\Binary.cpp" />
+    <ClCompile Include="FuzzyLite\term\Concave.cpp" />
+    <ClCompile Include="FuzzyLite\term\Constant.cpp" />
+    <ClCompile Include="FuzzyLite\term\Cosine.cpp" />
+    <ClCompile Include="FuzzyLite\term\Discrete.cpp" />
+    <ClCompile Include="FuzzyLite\term\Function.cpp" />
+    <ClCompile Include="FuzzyLite\term\Gaussian.cpp" />
+    <ClCompile Include="FuzzyLite\term\GaussianProduct.cpp" />
+    <ClCompile Include="FuzzyLite\term\Linear.cpp" />
+    <ClCompile Include="FuzzyLite\term\PiShape.cpp" />
+    <ClCompile Include="FuzzyLite\term\Ramp.cpp" />
+    <ClCompile Include="FuzzyLite\term\Rectangle.cpp" />
+    <ClCompile Include="FuzzyLite\term\Sigmoid.cpp" />
+    <ClCompile Include="FuzzyLite\term\SigmoidDifference.cpp" />
+    <ClCompile Include="FuzzyLite\term\SigmoidProduct.cpp" />
+    <ClCompile Include="FuzzyLite\term\Spike.cpp" />
+    <ClCompile Include="FuzzyLite\term\SShape.cpp" />
+    <ClCompile Include="FuzzyLite\term\Term.cpp" />
+    <ClCompile Include="FuzzyLite\term\Trapezoid.cpp" />
+    <ClCompile Include="FuzzyLite\term\Triangle.cpp" />
+    <ClCompile Include="FuzzyLite\term\ZShape.cpp" />
+    <ClCompile Include="FuzzyLite\variable\InputVariable.cpp" />
+    <ClCompile Include="FuzzyLite\variable\OutputVariable.cpp" />
+    <ClCompile Include="FuzzyLite\variable\Variable.cpp" />
     <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="Interactable.cpp" />
     <ClCompile Include="main.cpp" />

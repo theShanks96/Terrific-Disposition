@@ -17,9 +17,9 @@
 #ifndef FL_SNORMFACTORY_H
 #define FL_SNORMFACTORY_H
 
-#include "fl/factory/ConstructionFactory.h"
+#include "ConstructionFactory.h"
 
-#include "fl/norm/SNorm.h"
+#include "norm/SNorm.h"
 
 namespace fl {
 

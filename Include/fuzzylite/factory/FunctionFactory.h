@@ -17,9 +17,9 @@
 #ifndef FL_FUNCTIONFACTORY_H
 #define FL_FUNCTIONFACTORY_H
 
-#include "fl/factory/CloningFactory.h"
+#include "CloningFactory.h"
 
-#include "fl/term/Function.h"
+#include "term/Function.h"
 
 namespace fl {
 

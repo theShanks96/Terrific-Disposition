@@ -17,9 +17,14 @@
 #ifndef FL_SNORMFUNCTION_H
 #define FL_SNORMFUNCTION_H
 
-#include "fl/norm/SNorm.h"
 
-#include "fl/term/Function.h"
+#include <fuzzylite/Headers.h>
+
+//#undef max
+//#undef min
+//#include "norm/SNorm.h"
+//
+//#include "term/Function.h"
 
 namespace fl {
 
@@ -77,5 +82,5 @@ namespace fl {
         static SNorm* constructor();
     };
 }
-#endif /* FL_SNORMFUNCTION_H */
+#endif ///* FL_SNORMFUNCTION_H */
 

@@ -16,8 +16,11 @@
 
 #ifndef FL_NILPOTENTMAXIMUM_H
 #define FL_NILPOTENTMAXIMUM_H
+#include <fuzzylite/Headers.h>
 
-#include "fl/norm/SNorm.h"
+//#undef max
+//#undef min
+//#include "norm/SNorm.h"
 
 namespace fl {
 

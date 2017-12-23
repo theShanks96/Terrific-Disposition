@@ -17,7 +17,7 @@
 #ifndef FL_GAUSSIAN_H
 #define FL_GAUSSIAN_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

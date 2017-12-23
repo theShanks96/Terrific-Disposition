@@ -5,6 +5,7 @@
 
 #include "DataStructs.h"
 
+//! The player and all its relevant information
 class Player {
 public:
 	//!	Constructor for the Player object

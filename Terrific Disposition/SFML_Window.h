@@ -8,6 +8,8 @@
 
 #include "GameLogic.h"
 
+
+//! This deals with all input/output, also interfaces with the gamelogic
 class SFML_Window {
 private:
 	GameLogic *ptr_gameLogic;

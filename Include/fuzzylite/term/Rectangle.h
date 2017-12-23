@@ -17,7 +17,7 @@
 #ifndef FL_RECTANGLE_H
 #define FL_RECTANGLE_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

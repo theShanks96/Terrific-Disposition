@@ -16,8 +16,11 @@
 
 #ifndef FL_ALGEBRAICPRODUCT_H
 #define FL_ALGEBRAICPRODUCT_H
+#include <fuzzylite/Headers.h>
 
-#include "fl/norm/TNorm.h"
+//#undef max
+//#undef min
+//#include "norm/TNorm.h"
 
 namespace fl {
 

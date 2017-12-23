@@ -17,7 +17,7 @@
 #ifndef FL_INTEGRALDEFUZZIFIER_H
 #define FL_INTEGRALDEFUZZIFIER_H
 
-#include "fl/defuzzifier/Defuzzifier.h"
+#include "Defuzzifier.h"
 
 namespace fl {
 

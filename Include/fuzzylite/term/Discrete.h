@@ -17,9 +17,9 @@
 #ifndef FL_DISCRETE_H
 #define FL_DISCRETE_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
-#include "fl/defuzzifier/IntegralDefuzzifier.h"
+#include "defuzzifier/IntegralDefuzzifier.h"
 
 #include <vector>
 #include <utility>

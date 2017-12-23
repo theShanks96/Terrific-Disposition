@@ -2,6 +2,7 @@
 
 #include "Tile.h"
 
+//! This tile is deadly to the player, should they ignore all warnings
 class DeadlyTile : public Tile {
 public:
 	DeadlyTile();

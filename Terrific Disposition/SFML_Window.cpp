@@ -53,7 +53,7 @@ SFML_Window::SFML_Window() {
 	this->arr_displayFraming[COMMAND_INDEX].setOutlineColor(this->arr_backgroundColours[1]);
 	this->arr_displayFraming[COMMAND_INDEX].setOutlineThickness(this->c_windowUnitInt);
 
-	if (!c_activeFont.loadFromFile("../../../Library/Fonts/Dosis-SemiBold.ttf"))
+	if (!c_activeFont.loadFromFile("../../../Assets/Fonts/Dosis-SemiBold.ttf"))
 		c_errorCodeInt = 100;
 
 	v_outputDisplays.push_back(sf::Text(">Output", c_activeFont, (int)(c_windowUnitInt * 3)));

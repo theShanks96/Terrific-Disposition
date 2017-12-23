@@ -10,6 +10,8 @@
 
 #include "Player.h"
 
+
+//! This essentially holds the game loop, and is designed to manage the flow of gameplay
 class GameLogic {
 private:
 	int c_failedCommandCount;

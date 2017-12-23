@@ -17,9 +17,14 @@
 #ifndef FL_TNORMFUNCTION_H
 #define FL_TNORMFUNCTION_H
 
-#include "fl/norm/TNorm.h"
+#include <fuzzylite/Headers.h>
 
-#include "fl/term/Function.h"
+//#undef max
+//#undef min
+
+//#include "norm/TNorm.h"
+//
+//#include "term/Function.h"
 
 namespace fl {
 

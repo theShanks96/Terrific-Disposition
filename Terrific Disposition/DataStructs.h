@@ -2,6 +2,7 @@
 
 #include <string>
 
+//! A struct holding two strings
 struct namedString {
 	std::string s_name;
 	std::string s_string;
@@ -12,6 +13,7 @@ struct namedString {
 	}
 };
 
+//! A struct holding three strings
 struct namedDoubleString {
 	std::string s_name;
 	std::string s_one;
@@ -24,6 +26,7 @@ struct namedDoubleString {
 	}
 };
 
+//! A struct holding four strings; a name, a title, the quality, and a body of text
 struct inventoryItem {
 	std::string s_name;
 	std::string s_title;
@@ -38,7 +41,7 @@ struct inventoryItem {
 	}
 };
 
-
+//! A struct holding two floats
 struct float2d {
 	float s_first;
 	float s_second;
@@ -53,6 +56,8 @@ struct float2d {
 	}
 };
 
+
+//! A struct holding two ints
 struct int2d {
 	int s_first;
 	int s_second;
@@ -67,6 +72,7 @@ struct int2d {
 	}
 };
 
+//! An extensive struct designed to hold player and world information for saving/loading
 struct saveProfile {
 	std::string s_playerName;
 

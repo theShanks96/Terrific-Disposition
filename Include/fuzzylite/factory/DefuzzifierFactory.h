@@ -17,11 +17,11 @@
 #ifndef FL_DEFUZZIFIERFACTORY_H
 #define FL_DEFUZZIFIERFACTORY_H
 
-#include "fl/factory/ConstructionFactory.h"
+#include "ConstructionFactory.h"
 
-#include "fl/defuzzifier/Defuzzifier.h"
-#include "fl/defuzzifier/IntegralDefuzzifier.h"
-#include "fl/defuzzifier/WeightedDefuzzifier.h"
+#include "defuzzifier/Defuzzifier.h"
+#include "defuzzifier/IntegralDefuzzifier.h"
+#include "defuzzifier/WeightedDefuzzifier.h"
 
 namespace fl {
 

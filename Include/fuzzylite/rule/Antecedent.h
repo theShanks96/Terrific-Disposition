@@ -17,9 +17,9 @@
 #ifndef FL_ANTECEDENT_H
 #define FL_ANTECEDENT_H
 
-#include "fl/fuzzylite.h"
+#include "fuzzylite.h"
 
-#include "fl/Complexity.h"
+#include "Complexity.h"
 
 #include <string>
 

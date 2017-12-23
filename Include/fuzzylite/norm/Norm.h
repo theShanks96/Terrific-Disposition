@@ -17,9 +17,12 @@
 #ifndef FL_NORM_H
 #define FL_NORM_H
 
-#include "fl/fuzzylite.h"
 
-#include "fl/Complexity.h"
+#include <fuzzylite/Headers.h>
+
+//#include "fuzzylite.h"
+
+//#include "Complexity.h"
 
 #include <string>
 

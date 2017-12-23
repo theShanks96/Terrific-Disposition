@@ -17,9 +17,9 @@
 #ifndef FL_HEDGEFACTORY_H
 #define FL_HEDGEFACTORY_H
 
-#include "fl/factory/ConstructionFactory.h"
+#include "ConstructionFactory.h"
 
-#include "fl/hedge/Hedge.h"
+#include "hedge/Hedge.h"
 
 namespace fl {
 

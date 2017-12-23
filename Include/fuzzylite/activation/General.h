@@ -17,9 +17,9 @@
 #ifndef FL_GENERAL_H
 #define FL_GENERAL_H
 
-#include "fl/fuzzylite.h"
+#include "fuzzylite.h"
 
-#include "fl/activation/Activation.h"
+#include "Activation.h"
 
 namespace fl {
 

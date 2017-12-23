@@ -5,6 +5,8 @@
 
 #include "Behaviour.h"
 
+
+//! In-game entities that the player may interact with for benefit
 class Interactable {
 protected:
 	bool c_sapience;

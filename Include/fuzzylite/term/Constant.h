@@ -17,7 +17,7 @@
 #ifndef FL_CONSTANT_H
 #define FL_CONSTANT_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

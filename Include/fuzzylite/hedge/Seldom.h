@@ -17,7 +17,7 @@
 #ifndef FL_SELDOM_H
 #define FL_SELDOM_H
 
-#include "fl/hedge/Hedge.h"
+#include "Hedge.h"
 
 namespace fl {
 

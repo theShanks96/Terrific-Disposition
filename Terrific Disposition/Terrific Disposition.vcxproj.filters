@@ -37,6 +37,42 @@
     <Filter Include="Source Files\GameElements\Behaviours">
       <UniqueIdentifier>{9caee650-3986-42c3-977b-3e05497adfaf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\FuzzyLite">
+      <UniqueIdentifier>{36ff3274-ad86-4119-bc24-7f4824d3c144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\variable">
+      <UniqueIdentifier>{8bb378d0-8a5f-45c7-886f-1498e5a0c9e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\term">
+      <UniqueIdentifier>{e4b1a0ca-763a-4904-9cd6-d21106247334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\rule">
+      <UniqueIdentifier>{675038d8-b979-419e-b758-b50da90d1f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm">
+      <UniqueIdentifier>{e85e6772-37fd-4de0-871e-79e5bd2255d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm\s">
+      <UniqueIdentifier>{e8ec5845-2fb0-4324-b576-35d29a34a047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm\t">
+      <UniqueIdentifier>{c307d58c-1bf9-4e7f-b195-40ff8c12abd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\imex">
+      <UniqueIdentifier>{233c32dd-37bd-4074-bd39-b39c1420faa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\hedge">
+      <UniqueIdentifier>{85fd931e-05b0-4d2b-8560-1647fac02c80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\factory">
+      <UniqueIdentifier>{0980c586-fc0a-43ee-ba7d-72819638543d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\defuzzifier">
+      <UniqueIdentifier>{d25f2c4f-480e-476b-bf6e-faf094de6d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\activation">
+      <UniqueIdentifier>{c7a52634-4a5d-43e9-b96f-bd07158363c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Assets\External\jsoncpp.cpp">
@@ -77,6 +113,312 @@
     </ClCompile>
     <ClCompile Include="Interactable.cpp">
       <Filter>Source Files\GameElements</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyBehaviour.cpp">
+      <Filter>Source Files\GameElements\Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\Benchmark.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\Complexity.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\Console.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\Engine.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\Exception.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\fuzzylite.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\variable\InputVariable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\variable\OutputVariable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\variable\Variable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Activated.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Aggregated.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Bell.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Binary.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Concave.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Constant.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Cosine.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Discrete.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Function.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Gaussian.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\GaussianProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Linear.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\PiShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Ramp.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Rectangle.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Sigmoid.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\SigmoidDifference.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\SigmoidProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Spike.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\SShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Term.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Trapezoid.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\Triangle.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\term\ZShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\rule\Antecedent.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\rule\Consequent.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\rule\Expression.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\rule\Rule.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\rule\RuleBlock.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\AlgebraicProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\BoundedDifference.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\DrasticProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\EinsteinProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\HamacherProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\Minimum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\NilpotentMinimum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\t\TNormFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\AlgebraicSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\BoundedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\DrasticSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\EinsteinSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\HamacherSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\Maximum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\NilpotentMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\NormalizedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\SNormFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\norm\s\UnboundedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\CppExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\Exporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FclExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FclImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FisExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FisImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FldExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FllExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\FllImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\Importer.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\JavaExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\imex\RScriptExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Any.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Extremely.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\HedgeFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Not.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Seldom.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Somewhat.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\hedge\Very.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\ActivationFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\DefuzzifierFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\FactoryManager.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\FunctionFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\HedgeFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\SNormFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\TermFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\factory\TNormFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\Bisector.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\Centroid.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\IntegralDefuzzifier.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\LargestOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\MeanOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\SmallestOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedAverage.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedAverageCustom.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedDefuzzifier.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\defuzzifier\WeightedSumCustom.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\Threshold.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\Proportional.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\Lowest.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\Last.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\Highest.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\General.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="FuzzyLite\activation\First.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

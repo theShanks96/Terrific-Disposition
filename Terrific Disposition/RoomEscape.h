@@ -14,6 +14,7 @@
 #include "DataStructs.h"
 #include "Player.h"
 
+//! The basis for the roome escape or calibration sequence of the text adventure
 class RoomEscape {
 public:
 

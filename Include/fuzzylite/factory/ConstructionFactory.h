@@ -17,7 +17,7 @@
 #ifndef FL_CONSTRUCTIONFACTORY_H
 #define FL_CONSTRUCTIONFACTORY_H
 
-#include "fl/fuzzylite.h"
+#include "fuzzylite.h"
 
 #include <map>
 #include <string>
@@ -111,12 +111,12 @@ namespace fl {
  */
 
 
-#include "fl/Exception.h"
-#include "fl/defuzzifier/Defuzzifier.h"
-#include "fl/hedge/Hedge.h"
-#include "fl/norm/SNorm.h"
-#include "fl/norm/TNorm.h"
-#include "fl/term/Term.h"
+#include "Exception.h"
+#include "defuzzifier/Defuzzifier.h"
+#include "hedge/Hedge.h"
+#include "norm/SNorm.h"
+#include "norm/TNorm.h"
+#include "term/Term.h"
 
 namespace fl {
 

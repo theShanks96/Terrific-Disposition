@@ -17,9 +17,9 @@
 #ifndef FL_OPERATION_H
 #define FL_OPERATION_H
 
-#include "fl/fuzzylite.h"
+#include "fuzzylite.h"
 
-#include "fl/Exception.h"
+#include "Exception.h"
 
 #include <string>
 #include <vector>
@@ -578,10 +578,10 @@ namespace fl {
   Template implementation
  */
 
-#include "fl/defuzzifier/Defuzzifier.h"
-#include "fl/norm/Norm.h"
-#include "fl/norm/SNorm.h"
-#include "fl/norm/TNorm.h"
+#include "defuzzifier/Defuzzifier.h"
+#include "norm/Norm.h"
+#include "norm/SNorm.h"
+#include "norm/TNorm.h"
 
 #include <algorithm>
 #include <iomanip>

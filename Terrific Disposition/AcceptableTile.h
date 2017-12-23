@@ -2,6 +2,7 @@
 
 #include "Tile.h"
 
+//! A tile deemed fairly safe for the player to find themselves
 class AcceptableTile : public Tile{
 public:
 	AcceptableTile();

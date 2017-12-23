@@ -17,7 +17,7 @@
 #ifndef FL_SIGMOID_H
 #define FL_SIGMOID_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

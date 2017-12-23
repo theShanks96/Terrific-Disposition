@@ -17,9 +17,9 @@
 #ifndef FL_THRESHOLD_H
 #define FL_THRESHOLD_H
 
-#include "fl/fuzzylite.h"
+#include "fuzzylite.h"
 
-#include "fl/activation/Activation.h"
+#include "Activation.h"
 
 #include <vector>
 

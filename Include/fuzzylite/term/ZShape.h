@@ -17,7 +17,7 @@
 #ifndef FL_ZSHAPE_H
 #define FL_ZSHAPE_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

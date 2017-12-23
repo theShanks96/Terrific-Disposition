@@ -5,6 +5,7 @@
 
 #include "Interactable.h"
 
+//! The basis for all the tiles in the world
 class Tile{
 public:
 	Tile();

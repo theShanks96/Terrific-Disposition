@@ -17,7 +17,7 @@
 #ifndef FL_BINARY_H
 #define FL_BINARY_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

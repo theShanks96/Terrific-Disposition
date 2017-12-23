@@ -16,8 +16,11 @@
 
 #ifndef FL_HAMACHERSUM_H
 #define FL_HAMACHERSUM_H
+#include <fuzzylite/Headers.h>
 
-#include "fl/norm/SNorm.h"
+//#undef max
+//#undef min
+//#include "norm/SNorm.h"
 
 namespace fl {
 

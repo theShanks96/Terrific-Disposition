@@ -17,7 +17,7 @@
 #ifndef FL_COSINE_H
 #define FL_COSINE_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 

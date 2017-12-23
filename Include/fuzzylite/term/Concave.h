@@ -17,7 +17,7 @@
 #ifndef FL_CONCAVE_H
 #define FL_CONCAVE_H
 
-#include "fl/term/Term.h"
+#include "term/Term.h"
 
 namespace fl {
 
