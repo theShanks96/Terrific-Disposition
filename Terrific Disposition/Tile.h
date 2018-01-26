@@ -3,7 +3,12 @@
 #include <vector>
 #include <string>
 
+
+#include "DataStructs.h"
+
 #include "Interactable.h"
+#include "SimpleBehaviour.h"
+#include "FuzzyBehaviour.h"
 
 //! The basis for all the tiles in the world
 class Tile{
@@ -12,17 +17,21 @@ public:
 	Tile(std::string description_in);
 	~Tile();
 
-	std::string c_classification;
-	bool c_availablePlot;
+	std::string c_classificationString;
+	bool c_availablePlotPosBool;
 
 	std::string getDescription();
 	void setDescription(std::string description_in);
 
 	std::string getTypeFlavour();
 	void setTypeFlavour(std::string flavour_in);
+
+	virtual bool populateInteractables(int2d nextPlotPoint_in, int honestReliable_in, int honestUnreliable_in, int dishonestReliable_in, int play_in, int aggressiveness_in) = 0;
+	virtual std::string getTileInformation() = 0;
+	virtual bool getInteractablePresence(std::string text_in) = 0;
 	
 protected:
-	std::string c_description;
-	std::string c_typeFlavour;
+	std::string c_descriptionString;
+	std::string c_typeFlavourString;
 
 };

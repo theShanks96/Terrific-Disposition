@@ -1,0 +1,24 @@
+{
+  "ThemesConfiguration": [
+    {
+      "name": "cyberpunkTheme",
+      "filepath": "../Assets/Themes/CyberpunkTheme.json"
+    },
+    {
+      "name": "nuclearwinterTheme",
+      "filepath": "../Assets/Themes/NuclearWinterTheme.json"
+    },
+    {
+      "name": "passiveinvasionTheme",
+      "filepath": "../Assets/Themes/PassiveInvasionTheme.json"
+    },
+    {
+      "name": "GenerationConfiguration",
+      "filepath": "../Assets/Themes/GenerationConfiguration.json"
+    },
+    {
+      "name": "RoomEscapeConfiguration",
+      "filepath": "../Assets/Themes/RoomEscapeConfiguration.json"
+    }
+  ]
+}

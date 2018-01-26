@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML\Audio.hpp>
+
 #include <algorithm>
 #include <vector>
 #include <string>
@@ -14,15 +16,12 @@
 //! This essentially holds the game loop, and is designed to manage the flow of gameplay
 class GameLogic {
 private:
-	int c_failedCommandCount;
+	int c_failedCommandCountInt;
 
-	static constexpr int MAIN_MENU = 0;
-	static constexpr int ESCAPE_CALIBRATION = 100;
-	static constexpr int PROCEDURAL_CONTENT = 200;
+	sf::Music c_activeMusic;
 
 	World* ptr_gameWorld;
 	RoomEscape* ptr_roomEscape;
-
 
 	std::vector<std::string> v_commandHistoryStrings;
 	std::vector<std::string> v_semanticFieldStrings;
@@ -36,20 +35,29 @@ private:
 
 	float c_successCountFloat;
 	float c_failureCountFloat;
+
+
 	
 public:
+	static constexpr int const_mainMenuInt = 0;
+	static constexpr int const_escapeCalibrationInt = 100;
+	static constexpr int const_proceduralContentInt = 200;
+
 	GameLogic();
 	~GameLogic();
+
+	std::string c_chosenThemeString;
+
 
 	Player* ptr_player;
 	ResourceManager* ptr_resourceManager;
 	//SFML_Window* ptr_gameWindow;
 	
 	int c_currentGameState;
-	int c_mapSize;
+	int c_mapSizeInt;
 
 	std::vector<std::string> v_pendingInput;
-	std::vector<std::string> v_pendingOutput;
+	std::vector<std::string> v_pendingOutputStrings;
 
 	int Update();
 
@@ -78,7 +86,7 @@ public:
 	void startGameWorld(int mapSize_in);
 	void startRoomEscape(int mapSize_in);
 	void handleCommand(std::string command_in);
+
 private:
-	void handleRoomEscape(std::string& command_in);
-	void handleGameWorld(std::string& command_in);
+	void playTileMusic();
 };

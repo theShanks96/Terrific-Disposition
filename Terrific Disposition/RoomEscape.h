@@ -21,7 +21,7 @@ public:
 	RoomEscape();
 	~RoomEscape();
 
-	std::vector<std::string> v_pendingOutput;
+	std::vector<std::string> v_pendingOutputStrings;
 	int c_incorrectAnswers;
 	int c_correctAnswers;
 
@@ -47,13 +47,15 @@ public:
 
 	bool handleAnswerKeys(std::string& keys_in);
 	bool checkKeywordPresence(std::string& string_in);
-	std::string checkSolved();
+	bool checkSolved();
+
+	std::string getChosenTheme();
 
 private:
 	std::vector<std::string> v_answerExpectedKeys;
 	int c_answeredQuestions;
 	int c_presentedQuestions;
-	std::string c_chosenTheme;
+	std::string c_chosenThemeString;
 
 	Player* ptr_player;
 

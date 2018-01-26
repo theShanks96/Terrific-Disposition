@@ -1,8 +1,129 @@
+Original Audio Asset
   Filename
   Original Name
   Author Name/Username
   Source Website
   Publish Date
+
+Combined Audio Assets
+  Filename
+  Track; Track; Track; Track; etc
+  Operating System Used
+  Software Used
+
+## Combined Assets
+
+RoomEscape.wav
+HeavyHeartbeat.wav; OminousRumble.mp3;
+Windows 10
+Audacity
+
+AcceptableCyberpunk.wav
+RunningOut.wav; OutsideUrbanRave.wav; Intro_TakeOff.wav;
+Windows 10
+Audacity
+
+CautiousCyberpunkV2.wav
+RunningOut.wav; OutsideUrbanRave.wav; Intro_TakeOff.wav; OminousRumble.mp3; Nostro.wav
+Windows 10
+Audacity
+
+DeadlyCyberpunkV2.wav
+OutsideUrbanRave.wav; OminousRumble.mp3; ComputerMeltdown01.wav
+Windows 10
+Audacity
+
+
+AcceptableRadioactivity.wav
+WeaklyRadioactive.flac; Chimes.wav; WetWindyDay.wav;
+Windows 10
+Audacity
+
+CautiousRadioactivityV2.wav
+WeaklyRadioactive.flac; Chimes.wav; WetWindyDay.wav; Geiger.wav;
+Windows 10
+Audacity
+
+DeadlyRadioactivityV2.wav
+WeaklyRadioactive.flac; WetWindyDay.wav; Geiger.wav; GeigerJingleJangle.flac;
+Windows 10
+Audacity
+
+AcceptableFungus.wav
+NightingaleSeagulls.wav; PerfumeSpray.aiff;
+Windows 10
+Audacity
+
+CautiousFungus.wav
+NightingaleSeagulls.wav; FlamethrowerBurst.wav; TF_Flame.flac; BasketCreaking.wav;
+Windows 10
+Audacity
+
+DeadlyFungus.wav
+NightingaleSeagulls.wav; FlamethrowerBurst.wav; TF_Flame.flac; BonesBreaking.wav; DidgeridooRoar.mp3;
+Windows 10
+Audacity
+
+## Original Assets
+
+SunsaiMenuMusic.wav
+Menu Background Music
+Sunsai
+https://freesound.org/people/Sunsai/sounds/415805/
+18/01/2018
+
+OutsideUrbanRave.wav
+Soundscape: Space Ambience >> Outside an urban rave
+MSFX
+https://freesound.org/people/MSFX/sounds/410592/
+12/11/2017
+
+ComputerMeltdown01.wav
+Experimentals >> Computer meltdown 01
+CuddleNucks
+https://freesound.org/people/CuddleNucks/sounds/380057/
+06/02/2017
+
+Chimes.wav
+Winter Sounds - Minnesota >> Chimes.WAV
+kjy883
+https://freesound.org/people/kjy883/sounds/176162/
+28/01/2013
+
+WetWindyDay.wav
+wet windy day residential wind chimes branches.wav
+lwdickens
+https://freesound.org/people/lwdickens/sounds/259564/
+27/12/2014
+
+WeaklyRadioactive.flac
+Geiger Counters >> Weakly-radioactive retro Geiger-counter clicking.flac
+Timbre
+https://freesound.org/people/Timbre/sounds/417432/
+04/02/2018
+
+Geiger.wav
+fXactory >> Geiger.wav
+eardeer
+https://freesound.org/people/eardeer/sounds/383256/
+08/03/2017
+
+GeigerJingleJangle.flac
+geiger jingle jangle ring.flac
+Timbre
+https://freesound.org/people/Timbre/sounds/161472/
+19/07/2012
+
+RunningOut.wav
+Runnint Out
+FoolBoyMedia
+https://freesound.org/people/FoolBoyMedia/sounds/233985/
+17/04/2014
+
+Heavy Heartbeat.wav
+Heartbeat Stopping
+harrybates01
+https://freesound.org/people/harrybates01/sounds/254364/
 
 Ominous Rumble.mp3
 ominous rumble-dron with metallic resonance.mp3
@@ -10,25 +131,56 @@ Timbre
 https://freesound.org/people/Timbre/sounds/223108/
 15/03/2014
 
-Summer Meadow 0.wav
-Summer Meadow
-baryy
-https://freesound.org/people/baryy/sounds/409143/
-06/11/2017
+Intro_TakeOff.wav
+intro_takeoff.wav
+levelclearer
+https://freesound.org/people/levelclearer/sounds/399359/
+12/08/2017
 
-Summer Meadow 1.wav
-Summer Meadow 2.wav
-baryy
-https://freesound.org/people/baryy/sounds/409146/
-06/11/2017
+Nostro.wav
+nostro.wav
+levelclearer
+https://freesound.org/people/levelclearer/sounds/251291/
+11/10/2014
 
-Heavy Heartbeat.wav
-Heartbeat Stopping
-harrybates01
-https://freesound.org/people/harrybates01/sounds/254364/
+NightingaleSeagulls.wav
+Birdsong >> Nightingale and seagulls.wav
+juskiddink
+https://freesound.org/people/juskiddink/sounds/73613/
+09/06/2009
 
-Spacious Thumps.mp3
-Thumps, Clangs and Booms - in space!
-bareform
-https://freesound.org/people/bareform/sounds/237558/
-12/05/2014
+PerfumeSpray.aiff
+perfume spray_1-2.aif
+acrober
+https://freesound.org/people/acrober/sounds/86117/
+20/12/2009
+
+FlamethrowerBurst.wav
+Flamethrower_Weapon_Short_Medium_Bursts.wav
+AslakHostaker
+https://freesound.org/people/AslakHostaker/sounds/395038/
+09/06/2017
+
+TF_Flame.flac
+TrebbloNoises (dare 26) >> TF_Flame-2.flac
+copyc4t
+https://freesound.org/people/copyc4t/sounds/235732/
+01/05/2014
+
+BasketCreak.wav
+Basket Creak
+sheepfilms
+https://freesound.org/people/sheepfilms/sounds/202965/
+14/10/2013
+
+DidgeridooRoar.mp3
+Didgeridoo Monster Roar
+Noxdl
+https://freesound.org/people/Noxdl/sounds/204912/
+02/11/2013
+
+BreakingBones.wav
+sound effect >> Breaking Bones.wav
+batman6661
+https://freesound.org/people/batman6661/sounds/181133/
+17/03/2013

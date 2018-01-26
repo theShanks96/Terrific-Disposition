@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <time.h>
+#include <random>
+#include <iostream>
+#include <algorithm>
+#include <utility>
 
 #include "Tile.h"
 #include "AcceptableTile.h"
@@ -25,19 +29,30 @@ public:
 	World(int mapSize_in, Player* player_in);
 	~World();
 
-	int c_mapSize;
-	int c_plotMax;
+	int c_mapSizeInt;
+	int c_plotMaxInt;
 
 	int2d c_playerStartPosition;
 	std::vector<int2d> v_plotPositions;
 	std::vector<int2d> v_dangerousCentres;
 
-	std::vector<std::string> v_pendingOutput;
+	std::vector<std::string> v_pendingOutputStrings;
 
 	void handleCommand(std::string& command_in);
 	void addPlotPoint();
 
+	std::string currentTileClassification();
+	bool isSameTileProgression();
+
+	void processTile();
+
 private:
+	std::string c_lastClassificationString;
+	std::string c_currentClassificationString;
+
+	int c_totalHonestReliableInt;
+	int c_totalHonestUnreliableInt;
+	int c_totalDishonestReliableInt;
 
 	Player* ptr_player;
 

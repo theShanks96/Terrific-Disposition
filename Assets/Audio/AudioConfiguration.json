@@ -1,24 +1,49 @@
 {
   "AudioConfiguration": [
     {
-      "name": "HeavyHeartbeat",
-      "filepath": "../../Assets/Audio/HeavyHeartbeat.wav"
+      "name": "menu_background",
+      "filepath": "../Assets/Audio/SunsaiMenuMusic.wav"
+
     },
     {
-      "name": "OminousRumble",
-      "filepath": "../../Assets/Audio/OminousRumble.mp3"
+      "name": "roomescape_background",
+      "filepath": "../Assets/Audio/RoomEscape.wav"
     },
     {
-      "name": "SpaciousThumps",
-      "filepath": "../../Assets/Audio/SpaciousThumps.aiff"
+      "name": "cyberpunk_acceptable",
+      "filepath": "../Assets/Audio/AcceptableCyberpunk.wav"
     },
     {
-      "name": "SummerMeadow0",
-      "filepath": "../../Assets/Audio/SummerMeadow0"
+      "name": "cyberpunk_cautious",
+      "filepath": "../Assets/Audio/CautiousCyberpunkV2.wav"
     },
     {
-      "name": "SummerMeadow1",
-      "filepath": "../../Assets/Audio/SummerMeadow1"
+      "name": "cyberpunk_deadly",
+      "filepath": "../Assets/Audio/DeadlyCyberpunkV2.wav"
+    },
+    {
+      "name": "nuclearwinter_acceptable",
+      "filepath": "../Assets/Audio/AcceptableRadioactivity.wav"
+    },
+    {
+      "name": "nuclearwinter_cautious",
+      "filepath": "../Assets/Audio/CautiousRadioactivityV2.wav"
+    },
+    {
+      "name": "nuclearwinter_deadly",
+      "filepath": "../Assets/Audio/DeadlyRadioactivityV2.wav"
+    },
+    {
+      "name": "passiveinvasion_acceptable",
+      "filepath": "../Assets/Audio/AcceptableFungus.wav"
+    },
+    {
+      "name": "passiveinvasion_cautious",
+      "filepath": "../Assets/Audio/CautiousFungus.wav"
+    },
+    {
+      "name": "passiveinvasion_deadly",
+      "filepath": "../Assets/Audio/DeadlyFungus.wav"
     }
   ]
 }

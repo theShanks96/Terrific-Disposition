@@ -1,0 +1,33 @@
+{  "HostileAdjectives": [
+
+      { "entry": "annoying" },
+
+      { "entry": "cacophonous"  },
+      { "entry": "coarse" },
+      { "entry": "crude"  },
+      { "entry": "cynical"  },
+
+      { "entry": "decrepit" },
+      { "entry": "disgusting" },
+      { "entry": "distorted"  },
+
+      { "entry": "irritated"  },
+
+      { "entry": "maladroit"  },
+      { "entry": "mediocre" },
+
+      { "entry": "noisy"  },
+
+      { "entry": "offensive"  },
+      { "entry": "ostracise"  },
+      { "entry": "ostracize"  },
+
+      { "entry": "rancid" },
+      { "entry": "repugnant"  },
+      { "entry": "repulsive"  },
+
+      { "entry": "shrill" },
+      { "entry": "smelly" },
+      { "entry": "smug" }
+  ]
+}

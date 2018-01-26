@@ -1,9 +1,10 @@
 #include "RoomEscape.h"
 
 RoomEscape::RoomEscape() {
+	
 	c_answeredQuestions = 0;
 	c_presentedQuestions = 0;
-	c_chosenTheme = "none";
+	c_chosenThemeString = "none";
 }
 RoomEscape::~RoomEscape() {
 }
@@ -77,33 +78,33 @@ void RoomEscape::handleCommand(std::string& command_in) {
 			|| m_command.find("wall") != std::string::npos
 			|| m_command.find("surround") != std::string::npos) {
 
-			v_pendingOutput.push_back(getPlotPoint("one_look_room"));
+			v_pendingOutputStrings.push_back(getPlotPoint("one_look_room"));
 		}
 		else if (m_command.find("clutter") != std::string::npos
 			|| m_command.find("floor") != std::string::npos
 			|| m_command.find("down") != std::string::npos) {
 
-			v_pendingOutput.push_back(getPlotPoint("two_look_clutter"));
+			v_pendingOutputStrings.push_back(getPlotPoint("two_look_clutter"));
 		}
 		else if (m_command.find("headgear") != std::string::npos) {
-			v_pendingOutput.push_back("Three pieces of headgear: ");
-			v_pendingOutput.push_back("[" + getCyberpunkItem("attire_head").s_quality + "] " + getCyberpunkItem("attire_head").s_title + ": " + getCyberpunkItem("attire_head").s_body);
-			v_pendingOutput.push_back("[" + getNuclearWinterItem("attire_head").s_quality + "] " + getNuclearWinterItem("attire_head").s_title + ": " + getNuclearWinterItem("attire_head").s_body);
-			v_pendingOutput.push_back("[" + getPassiveInvasionItem("attire_head").s_quality + "] " + getPassiveInvasionItem("attire_head").s_title + ": " + getPassiveInvasionItem("attire_head").s_body);
+			v_pendingOutputStrings.push_back("Three pieces of headgear: ");
+			v_pendingOutputStrings.push_back("[" + getCyberpunkItem("attire_head").s_qualityString + "] " + getCyberpunkItem("attire_head").s_titleString + ": " + getCyberpunkItem("attire_head").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getNuclearWinterItem("attire_head").s_qualityString + "] " + getNuclearWinterItem("attire_head").s_titleString + ": " + getNuclearWinterItem("attire_head").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getPassiveInvasionItem("attire_head").s_qualityString + "] " + getPassiveInvasionItem("attire_head").s_titleString + ": " + getPassiveInvasionItem("attire_head").s_bodyString);
 
 		}
 		else if (m_command.find("jacket") != std::string::npos) {
-			v_pendingOutput.push_back("Three jackets: ");
-			v_pendingOutput.push_back("[" + getCyberpunkItem("attire_torso").s_quality + "] " + getCyberpunkItem("attire_torso").s_title + ": " + getCyberpunkItem("attire_torso").s_body);
-			v_pendingOutput.push_back("[" + getNuclearWinterItem("attire_torso").s_quality + "] " + getNuclearWinterItem("attire_torso").s_title + ": " + getNuclearWinterItem("attire_torso").s_body);
-			v_pendingOutput.push_back("[" + getPassiveInvasionItem("attire_torso").s_quality + "] " + getPassiveInvasionItem("attire_torso").s_title + ": " + getPassiveInvasionItem("attire_torso").s_body);
+			v_pendingOutputStrings.push_back("Three jackets: ");
+			v_pendingOutputStrings.push_back("[" + getCyberpunkItem("attire_torso").s_qualityString + "] " + getCyberpunkItem("attire_torso").s_titleString + ": " + getCyberpunkItem("attire_torso").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getNuclearWinterItem("attire_torso").s_qualityString + "] " + getNuclearWinterItem("attire_torso").s_titleString + ": " + getNuclearWinterItem("attire_torso").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getPassiveInvasionItem("attire_torso").s_qualityString + "] " + getPassiveInvasionItem("attire_torso").s_titleString + ": " + getPassiveInvasionItem("attire_torso").s_bodyString);
 
 		}
 		else if (m_command.find("odd") != std::string::npos) {
-			v_pendingOutput.push_back("Three odd items: ");
-			v_pendingOutput.push_back("[" + getCyberpunkItem("equipment").s_quality + "] " + getCyberpunkItem("equipment").s_title + ": " + getCyberpunkItem("equipment").s_body);
-			v_pendingOutput.push_back("[" + getNuclearWinterItem("equipment").s_quality + "] " + getNuclearWinterItem("equipment").s_title + ": " + getNuclearWinterItem("equipment").s_body);
-			v_pendingOutput.push_back("[" + getPassiveInvasionItem("equipment").s_quality + "] " + getPassiveInvasionItem("equipment").s_title + ": " + getPassiveInvasionItem("equipment").s_body);
+			v_pendingOutputStrings.push_back("Three odd items: ");
+			v_pendingOutputStrings.push_back("[" + getCyberpunkItem("equipment").s_qualityString + "] " + getCyberpunkItem("equipment").s_titleString + ": " + getCyberpunkItem("equipment").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getNuclearWinterItem("equipment").s_qualityString + "] " + getNuclearWinterItem("equipment").s_titleString + ": " + getNuclearWinterItem("equipment").s_bodyString);
+			v_pendingOutputStrings.push_back("[" + getPassiveInvasionItem("equipment").s_qualityString + "] " + getPassiveInvasionItem("equipment").s_titleString + ": " + getPassiveInvasionItem("equipment").s_bodyString);
 
 		}
 		else if (m_command.find("light") != std::string::npos
@@ -111,21 +112,21 @@ void RoomEscape::handleCommand(std::string& command_in) {
 			|| m_command.find("green") != std::string::npos
 			|| m_command.find("corner") != std::string::npos) {
 
-			v_pendingOutput.push_back(getPlotPoint("three_look_light"));
+			v_pendingOutputStrings.push_back(getPlotPoint("three_look_light"));
 		}
 		else if (m_command.find("door") != std::string::npos
 			|| m_command.find("metal") != std::string::npos
 			|| m_command.find("exit") != std::string::npos
 			|| m_command.find("entrance") != std::string::npos) {
 
-			v_pendingOutput.push_back(getPlotPoint("four_look_door"));
+			v_pendingOutputStrings.push_back(getPlotPoint("four_look_door"));
 		}
 		else if (m_command.find("console") != std::string::npos
 			|| m_command.find("keypad") != std::string::npos
 			|| m_command.find("monitor") != std::string::npos
 			|| m_command.find("keryboard") != std::string::npos) {
 
-			v_pendingOutput.push_back(getPlotPoint("five_look_console"));
+			v_pendingOutputStrings.push_back(getPlotPoint("five_look_console"));
 		}
 	}
 	/* else if (m_command.compare(0, 14, "move attempt: ") == 0) {
@@ -146,31 +147,31 @@ void RoomEscape::handleCommand(std::string& command_in) {
 		v_items.push_back(getPassiveInvasionItem("attire_torso"));
 		v_items.push_back(getPassiveInvasionItem("equipment"));
 
-		if (ptr_player->v_inventory.size() == 0) {
-			for (inventoryItem item : v_items) {
-				if (m_item == item.s_title) {
-					v_pendingOutput.push_back("You picked up " + m_item + " and placed it in your inventory.");
-					ptr_player->addItem(item);
+		if (ptr_player->v_inventoryItems.size() == 0) {
+			for (inventoryItem l_item : v_items) {
+				if (m_item == l_item.s_titleString) {
+					v_pendingOutputStrings.push_back("You picked up " + m_item + " and placed it in your inventory.");
+					ptr_player->addItem(l_item);
 				}
 			}
 		}
-		else if (ptr_player->v_inventory.size() > 0) {
+		else if (ptr_player->v_inventoryItems.size() > 0) {
 			int m_theme = 0;
 
 			for (int i = 0; i < v_items.size(); i++) {
-				if (ptr_player->v_inventory.front().s_title == v_items.at(i).s_title) {
+				if (ptr_player->v_inventoryItems.front().s_titleString == v_items.at(i).s_titleString) {
 					m_theme = (int)(i / 3);
 				}
 			}
 
 			for (int i = 0; i < v_items.size(); i++) {
-				if (m_item == v_items.at(i).s_title) {
+				if (m_item == v_items.at(i).s_titleString) {
 					if ((int)(i / 3) == m_theme) {
-						v_pendingOutput.push_back("You picked up " + m_item + " and placed it in your inventory.");
+						v_pendingOutputStrings.push_back("You picked up " + m_item + " and placed it in your inventory.");
 						ptr_player->addItem(v_items.at(i));
 					}
 					else {
-						v_pendingOutput.push_back("That doesn't seem to go with the item you picked up before.");
+						v_pendingOutputStrings.push_back("That doesn't seem to go with the item you picked up before.");
 					}
 				}
 			}
@@ -182,115 +183,141 @@ void RoomEscape::handleCommand(std::string& command_in) {
 		int m_equipCount = 0;
 		bool m_result = ptr_player->equipItem(command_in.substr(15, command_in.size()));
 		if (m_result) {
-			v_pendingOutput.push_back("You equiped " + command_in.substr(15, command_in.size()));
+			v_pendingOutputStrings.push_back("You equiped " + command_in.substr(15, command_in.size()));
 
-			(ptr_player->c_attireHead != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
-			(ptr_player->c_attireTorso != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
-			(ptr_player->c_equipment != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
+			(ptr_player->c_attireHeadString != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
+			(ptr_player->c_attireTorsoString != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
+			(ptr_player->c_equipmentString != "Empty") ? (m_equipCount++) : (m_equipCount = m_equipCount);
 
-			if (m_equipCount >= 2 && (ptr_player->c_attireHead == getCyberpunkItem("attire_head").s_title
-				|| ptr_player->c_attireTorso == getCyberpunkItem("attire_torso").s_title
-				|| ptr_player->c_equipment == getCyberpunkItem("equipment").s_title)) {
-				c_chosenTheme = "cyberpunk";
+			if (m_equipCount >= 2 && (ptr_player->c_attireHeadString == getCyberpunkItem("attire_head").s_titleString
+				|| ptr_player->c_attireTorsoString == getCyberpunkItem("attire_torso").s_titleString
+				|| ptr_player->c_equipmentString == getCyberpunkItem("equipment").s_titleString)) {
+				c_chosenThemeString = "cyberpunk";
 			}
-			else if (m_equipCount >= 2 && (ptr_player->c_attireHead == getNuclearWinterItem("attire_head").s_title
-				|| ptr_player->c_attireTorso == getNuclearWinterItem("attire_torso").s_title
-				|| ptr_player->c_equipment == getNuclearWinterItem("equipment").s_title)) {
-				c_chosenTheme = "nuclearwinter";
+			else if (m_equipCount >= 2 && (ptr_player->c_attireHeadString == getNuclearWinterItem("attire_head").s_titleString
+				|| ptr_player->c_attireTorsoString == getNuclearWinterItem("attire_torso").s_titleString
+				|| ptr_player->c_equipmentString == getNuclearWinterItem("equipment").s_titleString)) {
+				c_chosenThemeString = "nuclearwinter";
 			}
-			else if (m_equipCount >= 2 && (ptr_player->c_attireHead == getPassiveInvasionItem("attire_head").s_title
-				|| ptr_player->c_attireTorso == getPassiveInvasionItem("attire_torso").s_title
-				|| ptr_player->c_equipment == getPassiveInvasionItem("equipment").s_title)) {
-				c_chosenTheme = "passiveinvasion";
+			else if (m_equipCount >= 2 && (ptr_player->c_attireHeadString == getPassiveInvasionItem("attire_head").s_titleString
+				|| ptr_player->c_attireTorsoString == getPassiveInvasionItem("attire_torso").s_titleString
+				|| ptr_player->c_equipmentString == getPassiveInvasionItem("equipment").s_titleString)) {
+				c_chosenThemeString = "passiveinvasion";
 			}
 			else if (m_equipCount >= 1 ) {
-				c_chosenTheme = "none";
+				c_chosenThemeString = "none";
 			}
 		}
 		else {
-			v_pendingOutput.push_back(command_in.substr(15, command_in.size()) + " wasn't found in your inventory.");
+			v_pendingOutputStrings.push_back(command_in.substr(15, command_in.size()) + " wasn't found in your inventory or was too damaged to equip.");
 		}
 		}
 	else if (m_command.compare(0, 17, "inspect attempt: ") == 0) {
+		std::string m_item = command_in.substr(17, command_in.size());
+		std::vector<inventoryItem> v_items;
+		v_items.reserve(9);
 
+		v_items.push_back(getCyberpunkItem("attire_head"));
+		v_items.push_back(getCyberpunkItem("attire_torso"));
+		v_items.push_back(getCyberpunkItem("equipment"));
+		v_items.push_back(getNuclearWinterItem("attire_head"));
+		v_items.push_back(getNuclearWinterItem("attire_torso"));
+		v_items.push_back(getNuclearWinterItem("equipment"));
+		v_items.push_back(getPassiveInvasionItem("attire_head"));
+		v_items.push_back(getPassiveInvasionItem("attire_torso"));
+		v_items.push_back(getPassiveInvasionItem("equipment"));
+
+		bool m_itemFound = false;
+		for (inventoryItem l_item : v_items) {
+			if (m_item == l_item.s_titleString) {
+				// Display the item's information or body of content
+				v_pendingOutputStrings.push_back("[" + l_item.s_qualityString + "] " + l_item.s_bodyString);
+				m_itemFound = true;
+			}
+		}
+
+		if( !m_itemFound ){
+			v_pendingOutputStrings.push_back("That item does not seem to be near enough to inspect.");
+		}
 	}
 	else if (m_command.compare(0, 17, "dispose attempt: ") == 0) {
-		if (command_in.substr(17, command_in.size()) == ptr_player->c_attireHead ||
-			command_in.substr(17, command_in.size()) == ptr_player->c_attireTorso ||
-			command_in.substr(17, command_in.size()) == ptr_player->c_equipment) {
+		if (command_in.substr(17, command_in.size()) == ptr_player->c_attireHeadString ||
+			command_in.substr(17, command_in.size()) == ptr_player->c_attireTorsoString ||
+			command_in.substr(17, command_in.size()) == ptr_player->c_equipmentString) {
 			ptr_player->unequipItem(command_in.substr(17, command_in.size()));
 		}
 
 		if (!ptr_player->removeItem(command_in.substr(17, command_in.size())))
-			v_pendingOutput.push_back(command_in.substr(17, command_in.size()) + " wasn't found in your inventory");
+			v_pendingOutputStrings.push_back(command_in.substr(17, command_in.size()) + " wasn't found in your inventory");
 		else
-			v_pendingOutput.push_back("You removed " + command_in.substr(17, command_in.size()) + " from your inventory");
+			v_pendingOutputStrings.push_back("You removed " + command_in.substr(17, command_in.size()) + " from your inventory");
 	}
 
-	else if (m_command.compare(0, 15, "solve attempt: ") == 0) {
+	else if (m_command.compare(0, 18, "interact attempt: ") == 0) {
 		if (m_command.find("console") != std::string::npos && c_answeredQuestions == 0 && c_presentedQuestions == 0) {
 			
-			if (c_chosenTheme == "cyberpunk") {
-				v_pendingOutput.push_back(getEscapeQuestion("cyberpunk_question_zero").s_name);
+			if (c_chosenThemeString == "cyberpunk") {
+				v_pendingOutputStrings.push_back(getEscapeQuestion("cyberpunk_question_zero").s_nameString);
 				c_presentedQuestions++;
 			}
-			else if (c_chosenTheme == "nuclearwinter") {
-				v_pendingOutput.push_back(getEscapeQuestion("nuclearwinter_question_zero").s_name);
+			else if (c_chosenThemeString == "nuclearwinter") {
+				v_pendingOutputStrings.push_back(getEscapeQuestion("nuclearwinter_question_zero").s_nameString);
 				c_presentedQuestions++;
 			}
-			else if (c_chosenTheme == "passiveinvasion") {
-				v_pendingOutput.push_back(getEscapeQuestion("passiveinvasion_question_zero").s_name);
+			else if (c_chosenThemeString == "passiveinvasion") {
+				v_pendingOutputStrings.push_back(getEscapeQuestion("passiveinvasion_question_zero").s_nameString);
 				c_presentedQuestions++;
 			}
 			else {
-				v_pendingOutput.push_back("Make sure you've equiped yourself before leaving.");
+				v_pendingOutputStrings.push_back("Make sure you've equiped yourself before leaving.");
 			}
 		}
 		else if (c_answeredQuestions == 0 && c_presentedQuestions == 1) {
 			if (checkKeywordPresence(m_command)) {
-				v_pendingOutput.push_back(getPlotPoint("zero_answer"));
+				v_pendingOutputStrings.push_back(getPlotPoint("zero_answer"));
 				c_answeredQuestions++;
 
-				if (c_chosenTheme == "cyberpunk")
-					v_pendingOutput.push_back(getEscapeQuestion("cyberpunk_question_one").s_name);
-				else if (c_chosenTheme == "nuclearwinter")
-					v_pendingOutput.push_back(getEscapeQuestion("nuclearwinter_question_one").s_name);
-				else if (c_chosenTheme == "passiveinvasion")
-					v_pendingOutput.push_back(getEscapeQuestion("passiveinvasion_question_one").s_name);
+				if (c_chosenThemeString == "cyberpunk")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("cyberpunk_question_one").s_nameString);
+				else if (c_chosenThemeString == "nuclearwinter")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("nuclearwinter_question_one").s_nameString);
+				else if (c_chosenThemeString == "passiveinvasion")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("passiveinvasion_question_one").s_nameString);
 				
 				c_presentedQuestions++;
 			}
 			else {
-				v_pendingOutput.push_back("Seems that was incorrect.");
+				v_pendingOutputStrings.push_back("Seems that was incorrect.");
 			}
 		}
 
 		else if (c_answeredQuestions == 1 && c_presentedQuestions == 2) {
 			if (checkKeywordPresence(m_command)) {
-				v_pendingOutput.push_back(getPlotPoint("one_answer"));
+				v_pendingOutputStrings.push_back(getPlotPoint("one_answer"));
 				c_answeredQuestions++;
 
-				if (c_chosenTheme == "cyberpunk")
-					v_pendingOutput.push_back(getEscapeQuestion("cyberpunk_question_two").s_name);
-				else if (c_chosenTheme == "nuclearwinter")
-					v_pendingOutput.push_back(getEscapeQuestion("nuclearwinter_question_two").s_name);
-				else if (c_chosenTheme == "passiveinvasion")
-					v_pendingOutput.push_back(getEscapeQuestion("passiveinvasion_question_two").s_name);
+				if (c_chosenThemeString == "cyberpunk")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("cyberpunk_question_two").s_nameString);
+				else if (c_chosenThemeString == "nuclearwinter")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("nuclearwinter_question_two").s_nameString);
+				else if (c_chosenThemeString == "passiveinvasion")
+					v_pendingOutputStrings.push_back(getEscapeQuestion("passiveinvasion_question_two").s_nameString);
 
 				c_presentedQuestions++;
 			}
 			else {
-				v_pendingOutput.push_back("Seems that was incorrect.");
+				v_pendingOutputStrings.push_back("Seems that was incorrect.");
 			}
 		}
 
 		else if (c_answeredQuestions == 2 && c_presentedQuestions == 3) {
 			if (checkKeywordPresence(m_command)) {
-				v_pendingOutput.push_back(getPlotPoint("two_answer"));
+				v_pendingOutputStrings.push_back(getPlotPoint("two_answer"));
+
 				c_answeredQuestions++;
 			}
 			else {
-				v_pendingOutput.push_back("Seems that was incorrect.");
+				v_pendingOutputStrings.push_back("Seems that was incorrect.");
 			}
 		}
 
@@ -299,7 +326,7 @@ void RoomEscape::handleCommand(std::string& command_in) {
 
 bool RoomEscape::addPlotPoint(std::string name_in, std::string text_in) {
 	for (namedString l_escapePlot : v_escapePlot) {
-		if (l_escapePlot.s_name == name_in)
+		if (l_escapePlot.s_nameString == name_in)
 			return true;
 	}
 	v_escapePlot.push_back(namedString(name_in, text_in));
@@ -307,7 +334,7 @@ bool RoomEscape::addPlotPoint(std::string name_in, std::string text_in) {
 }
 std::string RoomEscape::getPlotPoint(std::string name_in) {
 	for (namedString l_escapePlot : v_escapePlot) {
-		if (l_escapePlot.s_name == name_in)
+		if (l_escapePlot.s_nameString == name_in)
 			return l_escapePlot.s_string;
 	}
 	return false;
@@ -315,7 +342,7 @@ std::string RoomEscape::getPlotPoint(std::string name_in) {
 
 bool RoomEscape::addEscapeQuestion(std::string name_in, std::string question_in, std::string answer_in) {
 	for (namedDoubleString l_escapeQuestion : v_escapeQuestions) {
-		if (l_escapeQuestion.s_name == name_in)
+		if (l_escapeQuestion.s_nameString == name_in)
 			return true;
 	}
 	v_escapeQuestions.push_back(namedDoubleString(name_in, question_in, answer_in));
@@ -323,9 +350,9 @@ bool RoomEscape::addEscapeQuestion(std::string name_in, std::string question_in,
 }
 namedString RoomEscape::getEscapeQuestion(std::string name_in) {
 	for (namedDoubleString l_escapeQuestion : v_escapeQuestions) {
-		if (l_escapeQuestion.s_name == name_in) {
-			handleAnswerKeys(l_escapeQuestion.s_two);
-			return namedString(l_escapeQuestion.s_one, l_escapeQuestion.s_two);
+		if (l_escapeQuestion.s_nameString == name_in) {
+			handleAnswerKeys(l_escapeQuestion.s_secondString);
+			return namedString(l_escapeQuestion.s_firstString, l_escapeQuestion.s_secondString);
 		}
 	}
 	return namedString(false, false);
@@ -333,7 +360,7 @@ namedString RoomEscape::getEscapeQuestion(std::string name_in) {
 
 bool RoomEscape::addCyberpunkItem(std::string name_in, std::string title_in, std::string quality_in, std::string body_in) {
 	for (inventoryItem l_cyberpunkItem : v_cyberpunkItems) {
-		if (l_cyberpunkItem.s_name == name_in)
+		if (l_cyberpunkItem.s_nameString == name_in)
 			return true;
 	}
 	v_cyberpunkItems.push_back(inventoryItem(name_in, title_in, quality_in, body_in));
@@ -341,15 +368,15 @@ bool RoomEscape::addCyberpunkItem(std::string name_in, std::string title_in, std
 }
 inventoryItem RoomEscape::getCyberpunkItem(std::string name_in) {
 	for (inventoryItem l_cyberpunkItem : v_cyberpunkItems) {
-		if (l_cyberpunkItem.s_name == name_in)
-			return inventoryItem(l_cyberpunkItem.s_name, l_cyberpunkItem.s_title, l_cyberpunkItem.s_quality, l_cyberpunkItem.s_body);
+		if (l_cyberpunkItem.s_nameString == name_in)
+			return inventoryItem(l_cyberpunkItem.s_nameString, l_cyberpunkItem.s_titleString, l_cyberpunkItem.s_qualityString, l_cyberpunkItem.s_bodyString);
 	}
 	return inventoryItem(false, false, false, false);
 }
 
 bool RoomEscape::addNuclearWinterItem(std::string name_in, std::string title_in, std::string quality_in, std::string body_in) {
 	for (inventoryItem l_nuclearWinterItem : v_nuclearWinterItems) {
-		if (l_nuclearWinterItem.s_name == name_in)
+		if (l_nuclearWinterItem.s_nameString == name_in)
 			return true;
 	}
 	v_nuclearWinterItems.push_back(inventoryItem(name_in, title_in, quality_in, body_in));
@@ -357,15 +384,15 @@ bool RoomEscape::addNuclearWinterItem(std::string name_in, std::string title_in,
 }
 inventoryItem RoomEscape::getNuclearWinterItem(std::string name_in) {
 	for (inventoryItem l_nuclearWinterItem : v_nuclearWinterItems) {
-		if (l_nuclearWinterItem.s_name == name_in)
-			return inventoryItem(l_nuclearWinterItem.s_name, l_nuclearWinterItem.s_title, l_nuclearWinterItem.s_quality, l_nuclearWinterItem.s_body);
+		if (l_nuclearWinterItem.s_nameString == name_in)
+			return inventoryItem(l_nuclearWinterItem.s_nameString, l_nuclearWinterItem.s_titleString, l_nuclearWinterItem.s_qualityString, l_nuclearWinterItem.s_bodyString);
 	}
 	return inventoryItem(false, false, false, false);
 }
 
 bool RoomEscape::addPassiveInvasionItem(std::string name_in, std::string title_in, std::string quality_in, std::string body_in) {
 	for (inventoryItem l_passiveInvasionItem : v_passiveInvasionItems) {
-		if (l_passiveInvasionItem.s_name == name_in)
+		if (l_passiveInvasionItem.s_nameString == name_in)
 			return true;
 	}
 	v_passiveInvasionItems.push_back(inventoryItem(name_in, title_in, quality_in, body_in));
@@ -373,8 +400,8 @@ bool RoomEscape::addPassiveInvasionItem(std::string name_in, std::string title_i
 }
 inventoryItem RoomEscape::getPassiveInvasionItem(std::string name_in) {
 	for (inventoryItem l_passiveInvasionItem : v_passiveInvasionItems) {
-		if (l_passiveInvasionItem.s_name == name_in)
-			return inventoryItem(l_passiveInvasionItem.s_name, l_passiveInvasionItem.s_title, l_passiveInvasionItem.s_quality, l_passiveInvasionItem.s_body);
+		if (l_passiveInvasionItem.s_nameString == name_in)
+			return inventoryItem(l_passiveInvasionItem.s_nameString, l_passiveInvasionItem.s_titleString, l_passiveInvasionItem.s_qualityString, l_passiveInvasionItem.s_bodyString);
 	}
 	return inventoryItem(false, false, false, false);
 }
@@ -403,11 +430,16 @@ bool RoomEscape::checkKeywordPresence(std::string& string_in) {
 	return false;
 }
 
-std::string RoomEscape::checkSolved() {
-	if(c_answeredQuestions == 3 && c_presentedQuestions == 3 && c_chosenTheme != "none"){
-		return c_chosenTheme;
+bool RoomEscape::checkSolved() {
+	if(c_answeredQuestions == 3 && c_presentedQuestions == 3){
+		return true;
 	}
 	else {
-		return "none";
+		return false;
 	}
+}
+
+std::string RoomEscape::getChosenTheme() {
+
+	return c_chosenThemeString;
 }

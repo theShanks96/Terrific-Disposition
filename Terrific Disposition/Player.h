@@ -13,15 +13,18 @@ public:
 	Player(std::string name_in);
 	~Player();
 
-	std::string c_name;
-	std::vector<inventoryItem> v_inventory;
+	std::string c_nameString;
+	std::vector<inventoryItem> v_inventoryItems;
 
-	float c_health;
-	std::string c_attireHead;
-	std::string c_attireTorso;
-	std::string c_equipment;
+	int c_interactionsInt;
+	int c_aggressionInt;
 
-	int2d c_position;
+	float c_healthFloat;
+	std::string c_attireHeadString;
+	std::string c_attireTorsoString;
+	std::string c_equipmentString;
+
+	int2d c_positionInt2d;
 
 	bool addItem(inventoryItem& item_in);
 	inventoryItem getItem(std::string& title_in);

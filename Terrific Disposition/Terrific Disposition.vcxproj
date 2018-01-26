@@ -276,6 +276,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RoomEscape.cpp" />
     <ClCompile Include="SFML_Window.cpp" />
+    <ClCompile Include="SimpleBehaviour.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

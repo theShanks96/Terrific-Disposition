@@ -65,7 +65,7 @@
   "EscapeQuestions": [
     {
       "name": "cyberpunk_question_zero",
-      "question": "The controlled are surveilled. So what must be done to be freed? [Solve <Answer>]",
+      "question": "The controlled are surveilled. So what must be done to be freed? [Interact <Answer>]",
       "answer": "remove;take out;cut out;tear out;disable;destroy"
     },
     {
@@ -81,7 +81,7 @@
 
     {
       "name": "nuclearwinter_question_zero",
-      "question": "The cold is everywhere and the plants no longer grow, what happened? [Solve <Answer>]",
+      "question": "The cold is everywhere and the plants no longer grow, what happened? [Interact <Answer>]",
       "answer": "nuclear;war;sun;covered;winter;permanent;sunlight"
     },
     {
@@ -97,7 +97,7 @@
 
     {
       "name": "passiveinvasion_question_zero",
-      "question": "Why must one see nature more? Why should it be highlighted? [Solve <Answer>]",
+      "question": "Why must one see nature more? Why should it be highlighted? [Interact <Answer>]",
       "answer": "dangerous;deadly;poison;toxin;death;infection"
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "name": "five_look_console",
-      "content": "Three questions awaiting your response, you remember writing these out earlier. [Solve Console]"
+      "content": "Three questions awaiting your response, you remember writing these out earlier. [Interact Console]"
     },
     {
       "name": "zero_answer",

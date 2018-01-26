@@ -2,47 +2,27 @@
   "ConfigurationPaths": [
     {
       "name": "AudioPaths",
-      "filepath": "../../../Assets/Audio/AudioConfiguration.json"
+      "filepath": "../Assets/Audio/AudioConfiguration.json"
+    },
+    {
+      "name": "DictionariesConfiguration",
+      "filepath": "../Assets/Dictionaries/DictionariesConfiguration.json"
     },
     {
       "name": "FontPaths",
-      "filepath": "../../../Assets/Fonts/FontConfiguration.json"
+      "filepath": "../Assets/Fonts/FontConfiguration.json"
     },
     {
-      "name": "AcceptableConfiguration",
-      "filepath": "../../../Assets/Storyboards/AcceptableConfiguration.json"
+      "name": "ThemesConfiguration",
+      "filepath": "../Assets/Themes/ThemesConfiguration.json"
     },
     {
-      "name": "CautiousConfiguration",
-      "filepath": "../../../Assets/Storyboards/CautiousConfiguration.json"
+      "name": "StoryboardsConfiguration",
+      "filepath": "../Assets/Storyboards/StoryboardsConfiguration.json"
     },
     {
-      "name": "DeadlyConfiguration",
-      "filepath": "../../../Assets/Storyboards/DeadlyConfiguration.json"
-    },
-    {
-      "name": "CyberpunkTheme",
-      "filepath": "../../../Assets/Themes/CyberpunkTheme.json"
-    },
-    {
-      "name": "NuclearWinterTheme",
-      "filepath": "../../../Assets/Themes/NuclearWinterTheme.json"
-    },
-    {
-      "name": "PassiveInvasionTheme",
-      "filepath": "../../../Assets/Themes/PassiveInvasionTheme.json"
-    },
-    {
-      "name": "GenerationConfiguration",
-      "filepath": "../../../Assets/Themes/GenerationConfiguration.json"
-    },
-    {
-      "name": "RoomEscapeConfiguration",
-      "filepath": "../../../Assets/Themes/RoomEscapeConfiguration.json"
-    },
-    {
-      "name": "SavefilesLocation",
-      "filepath": "../../../Savefiles"
+      "name": "SavefilesConfiguration",
+      "filepath": "../Assets/Savefiles/SavefilesConfiguration.json"
     }
   ]
 }

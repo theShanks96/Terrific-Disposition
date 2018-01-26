@@ -420,6 +420,9 @@
     <ClCompile Include="FuzzyLite\activation\First.cpp">
       <Filter>Resource Files\FuzzyLite\activation</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleBehaviour.cpp">
+      <Filter>Source Files\GameElements\Behaviours</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLogic.h">

@@ -9,64 +9,66 @@ SFML_Window::SFML_Window() {
 	//!	SFML Identifies the screen's resolution.
 	sf::VideoMode mode = sf::VideoMode::getDesktopMode();
 	//!	This information is then used to dictate the size of the display.
-	this->c_windowWidthInt = (int)(3 * mode.width / 4);	
-	this->c_windowHeightInt = (int)(2 * mode.height / 3);
-	this->c_windowUnitInt = (int)(c_windowHeightInt / 100);
+	c_windowWidthInt = (int)(3 * mode.width / 4);	
+	c_windowHeightInt = (int)(2 * mode.height / 3);
+	c_windowUnitInt = (int)(c_windowHeightInt / 100);
 
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	ptr_gameRenderWindow = new sf::RenderWindow(sf::VideoMode(c_windowWidthInt, c_windowHeightInt), "Terrific Disposition: Procedural Storyline Generation", sf::Style::Default, settings);
 	ptr_gameRenderWindow->setFramerateLimit(30);
 	
-	this->arr_backgroundColours[0] = sf::Color(236, 240, 241);
-	this->arr_backgroundColours[1] = sf::Color(189, 195, 199);
-	this->arr_backgroundColours[2] = sf::Color(26, 188, 156);
+	arr_foregroundColours[0] = sf::Color(220, 221, 225);
+	arr_foregroundColours[1] = sf::Color(192, 57, 43);
+	arr_foregroundColours[2] = sf::Color(22, 160, 133);
+	arr_foregroundColours[3] = sf::Color(84, 160, 255);
 
-	this->arr_backgroundColours[0] = sf::Color(27, 27, 27);
-	this->arr_backgroundColours[1] = sf::Color(52, 73, 94);
-	this->arr_backgroundColours[2] = sf::Color(41, 128, 185);
+	arr_backgroundColours[0] = sf::Color(47, 54, 64);
+	arr_backgroundColours[1] = sf::Color(44, 44, 84);
+	arr_backgroundColours[2] = sf::Color(44, 62, 80);
+	arr_backgroundColours[3] = sf::Color(48, 57, 82);
 
-	this->c_foregroundIndexInt = 0;
-	this->c_backgroundIndexInt = 0;
+	c_foregroundIndexInt = 0;
+	c_backgroundIndexInt = 0;
 
-	this->arr_displayFraming[JOURNAL_INDEX] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.3) - this->c_windowUnitInt, (c_windowHeightInt * 0.6) - this->c_windowUnitInt));
-	this->arr_displayFraming[JOURNAL_INDEX].setPosition(sf::Vector2f(0 + this->c_windowUnitInt, 0 + this->c_windowUnitInt));
-	this->arr_displayFraming[JOURNAL_INDEX].setFillColor(this->arr_backgroundColours[c_backgroundIndexInt]);
-	this->arr_displayFraming[JOURNAL_INDEX].setOutlineColor(this->arr_backgroundColours[1]);
-	this->arr_displayFraming[JOURNAL_INDEX].setOutlineThickness(this->c_windowUnitInt);
+	arr_displayFraming[const_journalIndexInt] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.3) - c_windowUnitInt, (c_windowHeightInt * 0.6) - c_windowUnitInt));
+	arr_displayFraming[const_journalIndexInt].setPosition(sf::Vector2f(0 + c_windowUnitInt, 0 + c_windowUnitInt));
+	arr_displayFraming[const_journalIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+	arr_displayFraming[const_journalIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+	arr_displayFraming[const_journalIndexInt].setOutlineThickness(c_windowUnitInt);
 
-	this->arr_displayFraming[NOTE_INDEX] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.3) - this->c_windowUnitInt, (c_windowHeightInt * 0.4)));
-	this->arr_displayFraming[NOTE_INDEX].setPosition(sf::Vector2f(0 + this->c_windowUnitInt, (c_windowHeightInt * 0.6) - this->c_windowUnitInt));
-	this->arr_displayFraming[NOTE_INDEX].setFillColor(this->arr_backgroundColours[c_backgroundIndexInt]);
-	this->arr_displayFraming[NOTE_INDEX].setOutlineColor(this->arr_backgroundColours[1]);
-	this->arr_displayFraming[NOTE_INDEX].setOutlineThickness(this->c_windowUnitInt);
+	arr_displayFraming[const_noteIndexInt] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.3) - c_windowUnitInt, (c_windowHeightInt * 0.4)));
+	arr_displayFraming[const_noteIndexInt].setPosition(sf::Vector2f(0 + c_windowUnitInt, (c_windowHeightInt * 0.6) - c_windowUnitInt));
+	arr_displayFraming[const_noteIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+	arr_displayFraming[const_noteIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+	arr_displayFraming[const_noteIndexInt].setOutlineThickness(c_windowUnitInt);
 
-	this->arr_displayFraming[OUTPUT_INDEX] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.7), (c_windowHeightInt * 0.6)));
-	this->arr_displayFraming[OUTPUT_INDEX].setPosition(sf::Vector2f((c_windowWidthInt * 0.3) - this->c_windowUnitInt, 0 + this->c_windowUnitInt));
-	this->arr_displayFraming[OUTPUT_INDEX].setFillColor(this->arr_backgroundColours[c_backgroundIndexInt]);
-	this->arr_displayFraming[OUTPUT_INDEX].setOutlineColor(this->arr_backgroundColours[1]);
-	this->arr_displayFraming[OUTPUT_INDEX].setOutlineThickness(this->c_windowUnitInt);
+	arr_displayFraming[const_outputIndexInt] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.7), (c_windowHeightInt * 0.6)));
+	arr_displayFraming[const_outputIndexInt].setPosition(sf::Vector2f((c_windowWidthInt * 0.3) - c_windowUnitInt, 0 + c_windowUnitInt));
+	arr_displayFraming[const_outputIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+	arr_displayFraming[const_outputIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+	arr_displayFraming[const_outputIndexInt].setOutlineThickness(c_windowUnitInt);
 
-	this->arr_displayFraming[COMMAND_INDEX] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.7), (c_windowHeightInt * 0.4)));
-	this->arr_displayFraming[COMMAND_INDEX].setPosition(sf::Vector2f((c_windowWidthInt * 0.3) - this->c_windowUnitInt, (c_windowHeightInt * 0.6) - this->c_windowUnitInt));
-	this->arr_displayFraming[COMMAND_INDEX].setFillColor(this->arr_backgroundColours[c_backgroundIndexInt]);
-	this->arr_displayFraming[COMMAND_INDEX].setOutlineColor(this->arr_backgroundColours[1]);
-	this->arr_displayFraming[COMMAND_INDEX].setOutlineThickness(this->c_windowUnitInt);
+	arr_displayFraming[const_commandIndexInt] = sf::RectangleShape(sf::Vector2f((c_windowWidthInt * 0.7), (c_windowHeightInt * 0.4)));
+	arr_displayFraming[const_commandIndexInt].setPosition(sf::Vector2f((c_windowWidthInt * 0.3) - c_windowUnitInt, (c_windowHeightInt * 0.6) - c_windowUnitInt));
+	arr_displayFraming[const_commandIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+	arr_displayFraming[const_commandIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+	arr_displayFraming[const_commandIndexInt].setOutlineThickness(c_windowUnitInt);
 
-	if (!c_activeFont.loadFromFile("../../../Assets/Fonts/Dosis-SemiBold.ttf"))
+	if (!c_activeFont.loadFromFile("../Assets/Fonts/Dosis-SemiBold.ttf"))
 		c_errorCodeInt = 100;
 
 	v_outputDisplays.push_back(sf::Text(">Output", c_activeFont, (int)(c_windowUnitInt * 3)));
-	v_outputDisplays.back().setFillColor(this->arr_backgroundColours[1]);
+	v_outputDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
 	v_commandDisplays.push_back(sf::Text(">", c_activeFont, (int)(c_windowUnitInt * 3)));
-	v_commandDisplays.back().setFillColor(this->arr_backgroundColours[1]);
+	v_commandDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
 	v_noteDisplays.push_back(sf::Text(">Notes", c_activeFont, (int)(c_windowUnitInt * 3)));
-	v_noteDisplays.back().setFillColor(this->arr_backgroundColours[1]);
+	v_noteDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
 	v_journalDisplays.push_back(sf::Text(">Journal", c_activeFont, (int)(c_windowUnitInt * 3)));
-	v_journalDisplays.back().setFillColor(this->arr_backgroundColours[1]);
+	v_journalDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
 }
 SFML_Window::~SFML_Window() {
@@ -80,23 +82,23 @@ void SFML_Window::linkGameLogic(GameLogic* logic_in) {
 
 int SFML_Window::Update() {
 	if (c_errorCodeInt == 0) {
-
-
+		
 		sf::Event event;
 		while (ptr_gameRenderWindow->pollEvent(event))	{
+			
+			while (ptr_gameLogic->v_pendingOutputStrings.size() > 0) {
+				if (ptr_gameLogic->v_pendingOutputStrings.front().compare(0, 22, "You remember going by ") == 0) {
+					addJournalText("Name: " + ptr_gameLogic->v_pendingOutputStrings.front().substr(22, ptr_gameLogic->v_pendingOutputStrings.front().size()));
+					addJournalText("Head: " + ptr_gameLogic->ptr_player->c_attireHeadString);
+					addJournalText("Torso: " + ptr_gameLogic->ptr_player->c_attireTorsoString);
+					addJournalText("Equipment: " + ptr_gameLogic->ptr_player->c_equipmentString);
 
-			while (ptr_gameLogic->v_pendingOutput.size() > 0) {
-				if (ptr_gameLogic->v_pendingOutput.front().compare(0, 22, "You remember going by ") == 0) {
-					addJournalText("Name: " + ptr_gameLogic->v_pendingOutput.front().substr(22, ptr_gameLogic->v_pendingOutput.front().size()));
-					addJournalText("Head: " + ptr_gameLogic->ptr_player->c_attireHead);
-					addJournalText("Torso: " + ptr_gameLogic->ptr_player->c_attireTorso);
-					addJournalText("Equipment: " + ptr_gameLogic->ptr_player->c_equipment);
 				}
-				if (ptr_gameLogic->v_pendingOutput.front().find("you've left the hideout and your journey begins") != std::string::npos) {
-					addJournalText("Position: " + std::to_string(ptr_gameLogic->ptr_player->c_position.s_first) + "," + std::to_string(ptr_gameLogic->ptr_player->c_position.s_second));
+				if (ptr_gameLogic->v_pendingOutputStrings.front().find("you've left the hideout and your journey begins") != std::string::npos) {
+					addJournalText("Position: " + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_firstInt) + "," + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_secondInt));
 				}
-				addOutputText(ptr_gameLogic->v_pendingOutput.front());
-				ptr_gameLogic->v_pendingOutput.erase(ptr_gameLogic->v_pendingOutput.begin());
+				addOutputText(ptr_gameLogic->v_pendingOutputStrings.front());
+				ptr_gameLogic->v_pendingOutputStrings.erase(ptr_gameLogic->v_pendingOutputStrings.begin());
 			
 			}
 
@@ -107,6 +109,44 @@ int SFML_Window::Update() {
 				c_errorCodeInt = 1;
 				break;
 
+			case sf::Event::MouseButtonPressed:
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+					if (c_backgroundIndexInt == 3) {
+
+						c_foregroundIndexInt = 0;
+						c_backgroundIndexInt = 0;
+
+					}
+					else {
+						c_foregroundIndexInt++;
+						c_backgroundIndexInt++;
+
+					}
+				}
+
+				else if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+					if (c_backgroundIndexInt == 0) {
+						c_foregroundIndexInt = 3;
+						c_backgroundIndexInt = 3;
+					}
+					else {
+						c_foregroundIndexInt--;
+						c_backgroundIndexInt--;
+
+					}
+				}
+
+				arr_displayFraming[const_journalIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+				arr_displayFraming[const_journalIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+				arr_displayFraming[const_noteIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+				arr_displayFraming[const_noteIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+				arr_displayFraming[const_outputIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+				arr_displayFraming[const_outputIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+				arr_displayFraming[const_commandIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
+				arr_displayFraming[const_commandIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
+						
+				break;
+				
 			case sf::Event::TextEntered:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && c_entryString.size() > 1) {
 					c_entryString = v_commandDisplays.back().getString();
@@ -138,14 +178,14 @@ int SFML_Window::Update() {
 						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 16, "Pickup Attempt: ") == 0
 						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 15, "Equip Attempt: ") == 0
 						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 17, "Inspect Attempt: ") == 0
-						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 17, "Discard Attempt: ") == 0
-						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 15, "Solve Attempt: ") == 0) {
+						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 18, "Interact Attempt: ") == 0
+						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 17, "Discard Attempt: ") == 0) {
 						ptr_gameLogic->handleCommand(std::string(v_outputDisplays.back().getString()));
 					}
 
 					v_commandDisplays.push_back(sf::Text(">", c_activeFont, (int)(c_windowUnitInt * 3)));
 					v_commandDisplays.shrink_to_fit();
-					v_commandDisplays.back().setFillColor(arr_backgroundColours[1]);
+					v_commandDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 					//compileNotesStrings();
 
 					
@@ -168,10 +208,10 @@ int SFML_Window::Update() {
 			ptr_gameRenderWindow->draw(frameRectangle);
 
 		if (ptr_gameLogic->ptr_player != nullptr) {
-			updateJournalText(std::string("Head: "), ptr_gameLogic->ptr_player->c_attireHead);
-			updateJournalText(std::string("Torso: "), ptr_gameLogic->ptr_player->c_attireTorso);
-			updateJournalText(std::string("Equipment: "), ptr_gameLogic->ptr_player->c_equipment);
-			updateJournalText(std::string("Position: "), std::to_string(ptr_gameLogic->ptr_player->c_position.s_first) + "," + std::to_string(ptr_gameLogic->ptr_player->c_position.s_second));
+			updateJournalText(std::string("Head: "), ptr_gameLogic->ptr_player->c_attireHeadString);
+			updateJournalText(std::string("Torso: "), ptr_gameLogic->ptr_player->c_attireTorsoString);
+			updateJournalText(std::string("Equipment: "), ptr_gameLogic->ptr_player->c_equipmentString);
+			updateJournalText(std::string("Position: "), std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_firstInt) + "," + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_secondInt));
 		}
 		displayTexts();
 				
@@ -184,126 +224,109 @@ int SFML_Window::Update() {
 	}
 }
 
-int SFML_Window::getwindowWidth() {
-	return this->c_windowWidthInt;
+int SFML_Window::getWindowWidth() {
+	return c_windowWidthInt;
 }
-void SFML_Window::setwindowWidth(int& width_in) {
-	this->c_windowWidthInt = width_in;
+void SFML_Window::setWindowWidth(int& width_in) {
+	c_windowWidthInt = width_in;
 }
 
-int SFML_Window::getwindowHeight() {
-	return this->c_windowHeightInt;
+int SFML_Window::getWindowHeight() {
+	return c_windowHeightInt;
 }
-void SFML_Window::setwindowHeight(int& height_in) {
-	this->c_windowHeightInt = height_in;
+void SFML_Window::setWindowHeight(int& height_in) {
+	c_windowHeightInt = height_in;
 }
 
 void SFML_Window::displayTexts() {
-
 	//	Display journals entries
-
 	if (v_journalDisplays.size() <= 12) {
 		for (int i = 0; i < v_journalDisplays.size(); i++) {
-			v_journalDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[JOURNAL_INDEX].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[JOURNAL_INDEX].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_journalDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_journalIndexInt].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_journalIndexInt].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_journalDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_journalDisplays.at(i));
 		}
-
 	}
 	else {
 		int i, j;
 		for (i = v_journalDisplays.size() - 12, j = 0; i < v_journalDisplays.size(); i++ && j++) {
-			v_journalDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[JOURNAL_INDEX].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[JOURNAL_INDEX].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_journalDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_journalIndexInt].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_journalIndexInt].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_journalDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_journalDisplays.at(i));
-
 		}
-
 	}
-
 	//	End of journal entries
-
 	//	Display notes
-
 	if (v_noteDisplays.size() <= 6) {
 		for (int i = 0; i < v_noteDisplays.size(); i++) {
-			v_noteDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[NOTE_INDEX].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[NOTE_INDEX].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_noteDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_noteIndexInt].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_noteIndexInt].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_noteDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_noteDisplays.at(i));
 		}
-
 	}
 	else {
 		int i, j;
 		for (i = v_noteDisplays.size() - 6, j = 0; i < v_noteDisplays.size(); i++ && j++) {
-			v_noteDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[NOTE_INDEX].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[NOTE_INDEX].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_noteDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_noteIndexInt].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_noteIndexInt].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_noteDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_noteDisplays.at(i));
-
 		}
-
 	}
-
 	//	End notes
-
 	//	Display output
-
 	if (v_outputDisplays.size() <= 12) {
 		for (int i = 0; i < v_outputDisplays.size(); i++) {
-			v_outputDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[OUTPUT_INDEX].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[OUTPUT_INDEX].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_outputDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_outputIndexInt].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_outputIndexInt].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_outputDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_outputDisplays.at(i));
 		}
-
 	}
 	else {
 		int i, j;
 		for (i = v_outputDisplays.size() - 12, j = 0; i < v_outputDisplays.size(); i++ && j++) {
-			v_outputDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[OUTPUT_INDEX].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[OUTPUT_INDEX].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_outputDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_outputIndexInt].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_outputIndexInt].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_outputDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_outputDisplays.at(i));
-
 		}
-
 	}
-
 	//	End of output
-
-	
-
 	//	Display inputted commands
 	if (v_commandDisplays.size() <= 6) {
 		for (int i = 0; i < v_commandDisplays.size(); i++) {
-			v_commandDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[COMMAND_INDEX].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[COMMAND_INDEX].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_commandDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_commandIndexInt].getPosition().x + c_windowUnitInt + (i * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_commandIndexInt].getPosition().y + c_windowUnitInt + (i * c_windowUnitInt * 3.5)));
+			v_commandDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_commandDisplays.at(i));
 		}
-
 	}
 	else {
 		int i, j;
 		for (i = v_commandDisplays.size() - 6, j = 0; i < v_commandDisplays.size(); i++ && j++) {
-			v_commandDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[COMMAND_INDEX].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
-				arr_displayFraming[COMMAND_INDEX].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_commandDisplays.at(i).setPosition(sf::Vector2f(arr_displayFraming[const_commandIndexInt].getPosition().x + c_windowUnitInt + (j * c_windowUnitInt * 3 * c_textCascadingInt),
+				arr_displayFraming[const_commandIndexInt].getPosition().y + c_windowUnitInt + (j * c_windowUnitInt * 3.5)));
+			v_commandDisplays.at(i).setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 			ptr_gameRenderWindow->draw(v_commandDisplays.at(i));
-
 		}
-
 	}
 	//	End of commands
-
 }
 
 void SFML_Window::addOutputText(std::string& string_in) {
 	v_outputDisplays.push_back(sf::Text(string_in, c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_outputDisplays.shrink_to_fit();
-	v_outputDisplays.back().setFillColor(arr_backgroundColours[1]);
+	v_outputDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 }
 
 void SFML_Window::addJournalText(std::string& string_in) {
 	v_journalDisplays.push_back(sf::Text(string_in, c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_journalDisplays.shrink_to_fit();
-	v_journalDisplays.back().setFillColor(arr_backgroundColours[1]);
+	v_journalDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 }
 
 bool SFML_Window::updateJournalText(std::string& entry_in, std::string& alteration_in) {
@@ -319,7 +342,7 @@ bool SFML_Window::updateJournalText(std::string& entry_in, std::string& alterati
 void SFML_Window::addNoteText(std::string& string_in) {
 	v_noteDisplays.push_back(sf::Text(string_in, c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_noteDisplays.shrink_to_fit();
-	v_noteDisplays.back().setFillColor(arr_backgroundColours[1]);
+	v_noteDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 }
 void SFML_Window::removeNoteText(std::string& string_in) {
 	bool m_exists = false;

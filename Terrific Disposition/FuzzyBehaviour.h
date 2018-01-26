@@ -8,8 +8,8 @@
 //! An implementation of Behaviour utilising a fuzzy inference engine.
 class FuzzyBehaviour : public Behaviour {
 private:	
-	//! c_behaviour Determined by a specific fuzzy engine
-	fl::scalar c_behaviour;
+	//! ptr_behaviour Determined by a specific fuzzy engine
+	fl::scalar ptr_behaviour;
 
 	//! ptr_interactionEngine Used to determine how the entity responds
 	fl::Engine* ptr_interactionEngine;
@@ -17,6 +17,8 @@ private:
 	fl::InputVariable* ptr_playerPleasantry;
 	//! ptr_entityBehaviour The entity's behaviour profile
 	fl::InputVariable* ptr_entityBehaviour;
+	//! ptr_tileClassification The entity's current tile
+	fl::InputVariable* ptr_tileClassification;
 	//! ptr_behaviourMagnitude The magnitude of the player's output
 	fl::OutputVariable* ptr_behaviourMagnitude;
 	//! ptr_interactionMamdani A mamdani ruleblock for the ptr_interactionEngine
@@ -37,7 +39,7 @@ public:
 
 	//! Intitiates the ptr_interactionEngine to determine behaviour
 	//! @param user_in The string given by the user when interacting
-	std::string interactionProcess(std::string& userText_in);
+	std::string interactionProcess(std::string userText_in) override;
 
 
 

@@ -10,19 +10,17 @@
 void main() {
 	
 	int errorCodeInt = 0;
-	int countInt = 0;
-	const int fixedUpdateIntervalInt = 3;
 
-	SFML_Window* gameWindow = new SFML_Window();
-	GameLogic* terrificDispositionGameLogic = new GameLogic();
+	SFML_Window* ptr_terrificDispositionGameWindow = new SFML_Window();
+	GameLogic* ptr_terrificDispositionGameLogic = new GameLogic();
 
-	gameWindow->linkGameLogic(terrificDispositionGameLogic);
+	ptr_terrificDispositionGameWindow->linkGameLogic(ptr_terrificDispositionGameLogic);
 	
 	bool gameRunningBool = true;
 	while (gameRunningBool)	{
 
-		if (errorCodeInt == 0) errorCodeInt = terrificDispositionGameLogic->Update();
-		if (errorCodeInt == 0) errorCodeInt = gameWindow->Update();
+		//if (errorCodeInt == 0) errorCodeInt = ptr_terrificDispositionGameLogic->Update();
+		if (errorCodeInt == 0) errorCodeInt = ptr_terrificDispositionGameWindow->Update();
 		
 
 				
@@ -36,7 +34,7 @@ void main() {
 		else {
 			//	Reaches here if an error is found
 			//	Use the log to record the error
-			delete gameWindow;
+			delete ptr_terrificDispositionGameWindow;
 		}
 
 		

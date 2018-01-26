@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Terrific Disposition", "Terrific Disposition\Terrific Disposition.vcxproj", "{C5670EA6-8983-486F-A5E1-C3E926E4AB0F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TerrificTesting", "TerrificTesting\TerrificTesting.vcxproj", "{DD68360F-1F8C-45DB-BE0D-B8E6C0522399}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Terrific Testing", "D:\3-Miscellaneous\Computer Games Programming\Terrific Disposition\Terrific Testing\TerrificTesting.vcxproj", "{DD68360F-1F8C-45DB-BE0D-B8E6C0522399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
