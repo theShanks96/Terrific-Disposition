@@ -19,6 +19,9 @@
 #include "DataStructs.h"
 
 
+#include "PythonManager.h"
+
+
 //! The game proper, a world holding all the tiles that the player will come into contact
 class World {
 public:
@@ -28,13 +31,18 @@ public:
 	//! @param player_in Used to keep track of player information
 	World(int mapSize_in, Player* player_in);
 	~World();
+	
+	Player* ptr_player;
+
+	PythonManager* ptr_pythonManager;
+	void linkPythonManager(PythonManager* python_in);
+	commandProfile c_commandProfile;
 
 	int c_mapSizeInt;
 	int c_plotMaxInt;
 
 	int2d c_playerStartPosition;
 	std::vector<int2d> v_plotPositions;
-	std::vector<int2d> v_dangerousCentres;
 
 	std::vector<std::string> v_pendingOutputStrings;
 
@@ -53,11 +61,8 @@ private:
 	int c_totalHonestReliableInt;
 	int c_totalHonestUnreliableInt;
 	int c_totalDishonestReliableInt;
-
-	Player* ptr_player;
-
-	std::vector<std::vector<Tile*>> v_worldTiles;
 	
+	std::vector<std::vector<Tile*>> v_worldTiles;	
 
 	std::vector<namedString> v_thematicAdjectives;
 	std::vector<namedString> v_thematicVerbs;

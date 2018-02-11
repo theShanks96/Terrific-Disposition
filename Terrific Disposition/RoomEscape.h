@@ -11,6 +11,7 @@
 
 #include <json/json.h>
 
+#include "PythonManager.h"
 #include "DataStructs.h"
 #include "Player.h"
 
@@ -21,12 +22,18 @@ public:
 	RoomEscape();
 	~RoomEscape();
 
+	PythonManager* ptr_pythonManager;
+	void linkPythonManager(PythonManager* python_in);
+	Player* ptr_player;
+	void linkPlayer(Player* player_in);
+
+	commandProfile c_commandProfile;
+
 	std::vector<std::string> v_pendingOutputStrings;
 	int c_incorrectAnswers;
 	int c_correctAnswers;
 
 	void readFromConfiguration(std::string configPath_in);
-	void linkPlayer(Player* player_in);
 
 	void handleCommand(std::string& command_in);
 
@@ -57,7 +64,6 @@ private:
 	int c_presentedQuestions;
 	std::string c_chosenThemeString;
 
-	Player* ptr_player;
 
 	std::vector<inventoryItem> v_cyberpunkItems;
 	std::vector<inventoryItem> v_nuclearWinterItems;

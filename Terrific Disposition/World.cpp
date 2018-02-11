@@ -5,6 +5,7 @@ World::World(int mapSize_in, Player* player_in) {
 	c_mapSizeInt = mapSize_in;
 	c_plotMaxInt = (int)(c_mapSizeInt * 0.75f);
 	ptr_player = player_in;
+	c_commandProfile = commandProfile(0, 0, 0, 0, 0, 0);
 
 	/*
 	v_worldTiles.reserve(mapSize_in);
@@ -157,6 +158,10 @@ World::~World() {
 	delete this;
 }
 
+void World::linkPythonManager(PythonManager* python_in) {
+	ptr_pythonManager = python_in;
+}
+
 void World::handleCommand(std::string& command_in) {
 
 
@@ -229,13 +234,8 @@ void World::handleCommand(std::string& command_in) {
 
 		//	Display the flavour text for the current tile
 		if (m_successfulMove) {
-
 			//	Process arriving at the tile
 			processTile();
-			
-			//if()
-			
-			
 		}
 		
 		//	Inform the player that they failed to move
@@ -265,6 +265,18 @@ void World::handleCommand(std::string& command_in) {
 		else {
 			v_pendingOutputStrings.push_back(m_command.substr(17, m_command.size()) + " doesn't seem to be within reach.");
 		}
+
+		//	This will send the entered interact command to the natural language processor
+		c_commandProfile = ptr_pythonManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
+		
+		//	The player's hostility is cumulative through the entire game
+		ptr_player->c_hostilityInt += c_commandProfile.s_hostilityInt;
+		//	The player's pleasantry is cumulative with each interactable
+		ptr_player->c_recentPleasantryInt = c_commandProfile.s_pleasantryInt;
+		//The player's total number of words processed
+		ptr_player->c_totalInteractionWordsInt += c_commandProfile.s_processedWordsInt;
+
+
 	}
 	else if (m_command.compare(0, 17, "dispose attempt: ") == 0) {
 		if (command_in.substr(17, command_in.size()) == ptr_player->c_attireHeadString ||
@@ -407,6 +419,9 @@ void World::processTile() {
 
 	c_lastClassificationString = c_currentClassificationString;
 	c_currentClassificationString = currentTileClassification();
+
+	v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->populateInteractables(v_plotPositions.back(), (int)((c_totalHonestReliableInt + c_totalHonestUnreliableInt) / c_totalDishonestReliableInt) , ptr_player->c_playStyle, (int)(ptr_player->c_hostilityInt / ptr_player->c_totalInteractionWordsInt));
+
 
 	//	This is to check if this tile is a plot tile
 	if ( ptr_player->c_positionInt2d.s_firstInt == v_plotPositions.back().s_firstInt

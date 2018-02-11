@@ -72,6 +72,58 @@ struct int2d {
 	}
 };
 
+//! A struct holding three ints
+struct int3d {
+	int s_firstInt;
+	int s_secondInt;
+	int s_thirdInt;
+
+	int3d() {
+		s_firstInt = 0.0f;
+		s_secondInt = 0.0f;
+		s_thirdInt = 0.0f;
+	}
+	int3d(int first_in, int second_in, int third_in) {
+		s_firstInt = first_in;
+		s_secondInt = second_in;
+		s_thirdInt = third_in;
+	}
+};
+
+
+
+
+//! A struct designed to be returned upon nltk processing is complete
+struct commandProfile {
+	int s_hostilityInt;
+	int s_pleasantryInt;
+	int s_processedWordsInt;
+
+	int s_adjectivesInt;
+	int s_nounsInt;
+	int s_verbsInt;
+
+	commandProfile() {
+		s_hostilityInt = 0;
+		s_pleasantryInt = 0;
+		s_processedWordsInt = 0;
+
+		s_adjectivesInt = 0;
+		s_nounsInt = 0;
+		s_verbsInt = 0;
+	}
+
+	commandProfile(int hostility_in, int pleasantry_in, int words_in, int adjectives_in, int nouns_in, int verbs_in) {
+		s_hostilityInt = hostility_in;
+		s_pleasantryInt = pleasantry_in;
+		s_processedWordsInt = words_in;
+
+		s_adjectivesInt = adjectives_in;
+		s_nounsInt = nouns_in;
+		s_verbsInt = verbs_in;
+	}
+};
+
 //! An extensive struct designed to hold player and world information for saving/loading
 struct saveProfile {
 	std::string s_playerName;

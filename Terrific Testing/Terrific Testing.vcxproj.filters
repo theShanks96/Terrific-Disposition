@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite">
+      <UniqueIdentifier>{206b95d3-9d1c-4e5c-99f7-fad1da2d0ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\variable">
+      <UniqueIdentifier>{fcb5d855-7f0c-40ca-9173-c975537888d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\term">
+      <UniqueIdentifier>{75ef5d81-c725-4328-b050-8bf966f82eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\rule">
+      <UniqueIdentifier>{26395c5c-4513-4bc0-9141-1ad0da783f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm">
+      <UniqueIdentifier>{12409fc4-2cf8-433a-a6bb-f9ef9fd99ea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm\s">
+      <UniqueIdentifier>{3c9dd8b2-f9dc-48a0-a388-a97b12f3f5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\norm\t">
+      <UniqueIdentifier>{8e96781f-07c5-46d9-88d7-0b8d8275c4a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\imex">
+      <UniqueIdentifier>{bae992c3-4977-4d2e-a05a-d6913d317d80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\hedge">
+      <UniqueIdentifier>{ae0f98fc-42c4-44dc-9944-aa80565e64d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\factory">
+      <UniqueIdentifier>{a469f574-06a4-4caf-b08d-a14d84a7b1be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\defuzzifier">
+      <UniqueIdentifier>{bf984857-09ad-4112-8635-4f4978e501ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FuzzyLite\activation">
+      <UniqueIdentifier>{9da440ff-de61-432b-8bab-a22062b19aab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML">
+      <UniqueIdentifier>{ab3eda07-432c-4168-8e21-de9e54b21a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML\Window">
+      <UniqueIdentifier>{79ece49f-cb95-4417-8a6c-2092763ffa27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML\Network">
+      <UniqueIdentifier>{3a23a236-6efe-4fa3-98f3-5fb59e8fa147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML\Graphics">
+      <UniqueIdentifier>{6f046462-5928-4bdf-90c2-6d358c855ddd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML\Audio">
+      <UniqueIdentifier>{4f0e057f-baff-4838-8a2c-41ba78da71d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SFML\System">
+      <UniqueIdentifier>{3c061403-baf6-46a6-9a02-fddfaa736987}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Config.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Main.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\OpenGL.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window.hpp">
+      <Filter>Resource Files\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Context.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\ContextSettings.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Event.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Export.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\GlResource.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Joystick.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Keyboard.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Mouse.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Sensor.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Touch.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\VideoMode.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\Window.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\WindowHandle.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Window\WindowStyle.hpp">
+      <Filter>Resource Files\SFML\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\Export.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\Ftp.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\Http.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\IpAddress.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\Packet.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\Socket.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\SocketHandle.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\SocketSelector.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\TcpListener.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\TcpSocket.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Network\UdpSocket.hpp">
+      <Filter>Resource Files\SFML\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\BlendMode.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\CircleShape.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Color.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\ConvexShape.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Drawable.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Export.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Font.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Glsl.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Glyph.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Image.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\PrimitiveType.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Rect.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\RectangleShape.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\RenderStates.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\RenderTarget.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\RenderTexture.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\RenderWindow.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Shader.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Shape.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Sprite.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Text.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Texture.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Transform.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Transformable.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\Vertex.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\VertexArray.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Graphics\View.hpp">
+      <Filter>Resource Files\SFML\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\AlResource.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\Export.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\InputSoundFile.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\Listener.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\Music.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\OutputSoundFile.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\Sound.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundBuffer.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundBufferRecorder.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileFactory.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileReader.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileWriter.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundRecorder.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundSource.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\Audio\SoundStream.hpp">
+      <Filter>Resource Files\SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Clock.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Err.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Export.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\FileInputStream.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\InputStream.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Lock.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\MemoryInputStream.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Mutex.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\NativeActivity.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\NonCopyable.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Sleep.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\String.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Thread.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\ThreadLocal.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\ThreadLocalPtr.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Time.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Utf.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Vector2.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\sfml\System\Vector3.hpp">
+      <Filter>Resource Files\SFML\System</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviourTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\Behaviour.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\SimpleBehaviour.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\AcceptableTile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\CautiousTile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\DeadlyTile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyBehaviour.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\Interactable.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\Player.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\RoomEscape.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\Tile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\World.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Assets\External\jsoncpp.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Benchmark.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Complexity.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Console.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Engine.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Exception.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\fuzzylite.cpp">
+      <Filter>Resource Files\FuzzyLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\InputVariable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\OutputVariable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\Variable.cpp">
+      <Filter>Resource Files\FuzzyLite\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Activated.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Aggregated.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Bell.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Binary.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Concave.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Constant.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Cosine.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Discrete.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Function.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Gaussian.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\GaussianProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Linear.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\PiShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Ramp.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Rectangle.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Sigmoid.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SigmoidDifference.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SigmoidProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Spike.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Term.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Trapezoid.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Triangle.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\ZShape.cpp">
+      <Filter>Resource Files\FuzzyLite\term</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Antecedent.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Consequent.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Expression.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Rule.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\RuleBlock.cpp">
+      <Filter>Resource Files\FuzzyLite\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\AlgebraicSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\BoundedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\DrasticSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\EinsteinSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\HamacherSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\Maximum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\NilpotentMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\NormalizedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\SNormFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\UnboundedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\AlgebraicProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\BoundedDifference.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\DrasticProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\EinsteinProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\HamacherProduct.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\Minimum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\NilpotentMinimum.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\TNormFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\CppExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\Exporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FclExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FclImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FisExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FisImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FldExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FllExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FllImporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\Importer.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\JavaExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\RScriptExporter.cpp">
+      <Filter>Resource Files\FuzzyLite\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Any.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Extremely.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\HedgeFunction.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Not.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Seldom.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Somewhat.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Very.cpp">
+      <Filter>Resource Files\FuzzyLite\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\ActivationFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\DefuzzifierFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\FactoryManager.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\FunctionFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\HedgeFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\SNormFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\TermFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\TNormFactory.cpp">
+      <Filter>Resource Files\FuzzyLite\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\Bisector.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\Centroid.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\IntegralDefuzzifier.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\LargestOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\MeanOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\SmallestOfMaximum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedAverage.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedAverageCustom.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedDefuzzifier.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedSum.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedSumCustom.cpp">
+      <Filter>Resource Files\FuzzyLite\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\First.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\General.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Highest.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Last.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Lowest.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Proportional.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Threshold.cpp">
+      <Filter>Resource Files\FuzzyLite\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagementTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomEscapeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TileTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

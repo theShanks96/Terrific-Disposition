@@ -1,0 +1,49 @@
+{
+  "AudioConfiguration": [
+    {
+      "name": "menu_background",
+      "filepath": "../../../Assets/Audio/SunsaiMenuMusic.wav"
+
+    },
+    {
+      "name": "roomescape_background",
+      "filepath": "../../../Assets/Audio/RoomEscape.wav"
+    },
+    {
+      "name": "cyberpunk_acceptable",
+      "filepath": "../../../Assets/Audio/AcceptableCyberpunk.wav"
+    },
+    {
+      "name": "cyberpunk_cautious",
+      "filepath": "../../../Assets/Audio/CautiousCyberpunkV2.wav"
+    },
+    {
+      "name": "cyberpunk_deadly",
+      "filepath": "../../../Assets/Audio/DeadlyCyberpunkV2.wav"
+    },
+    {
+      "name": "nuclearwinter_acceptable",
+      "filepath": "../../../Assets/Audio/AcceptableRadioactivity.wav"
+    },
+    {
+      "name": "nuclearwinter_cautious",
+      "filepath": "../../../Assets/Audio/CautiousRadioactivityV2.wav"
+    },
+    {
+      "name": "nuclearwinter_deadly",
+      "filepath": "../../../Assets/Audio/DeadlyRadioactivityV2.wav"
+    },
+    {
+      "name": "passiveinvasion_acceptable",
+      "filepath": "../../../Assets/Audio/AcceptableFungus.wav"
+    },
+    {
+      "name": "passiveinvasion_cautious",
+      "filepath": "../../../Assets/Audio/CautiousFungus.wav"
+    },
+    {
+      "name": "passiveinvasion_deadly",
+      "filepath": "../../../Assets/Audio/DeadlyFungus.wav"
+    }
+  ]
+}

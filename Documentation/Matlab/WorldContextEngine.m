@@ -18,18 +18,18 @@ mlc_fis = addmf(mlc_fis, 'input', 1, 'M', 'trapmf', [30 40 60 70]);             
 mlc_fis = addmf(mlc_fis, 'input', 1, 'H', 'trapmf',  [60 70 100 100]);          %   High Honesty
 
 % Input: Playstyle
-mlc_fis = addvar(mlc_fis, 'input', 'Playstyle', [0 1]);                    
-mlc_fis = addmf(mlc_fis, 'input', 2, 'Slow', 'trapmf', [0 0 0.2 0.3]);          %   Slow
-mlc_fis = addmf(mlc_fis, 'input', 2, 'Medium', 'trapmf', [0.2 0.3 0.65 0.75]);  %   Medium
-mlc_fis = addmf(mlc_fis, 'input', 2, 'Fast', 'trapmf', [0.65 0.75 1 1]);        %   Fast
+mlc_fis = addvar(mlc_fis, 'input', 'Playstyle', [0 100]);                    
+mlc_fis = addmf(mlc_fis, 'input', 2, 'Slow', 'trapmf', [0 0 20 30]);          %   Slow
+mlc_fis = addmf(mlc_fis, 'input', 2, 'Medium', 'trapmf', [20 30 60 70]);  %   Medium
+mlc_fis = addmf(mlc_fis, 'input', 2, 'Fast', 'trapmf', [60 70 100 100]);        %   Fast
 
-% Input: Player Aggression
-mlc_fis = addvar(mlc_fis, 'input', 'Player Aggression', [0 200]);
-mlc_fis = addmf(mlc_fis, 'input', 3, 'VL', 'trapmf', [0 0 30 40]);              %   Very Low
-mlc_fis = addmf(mlc_fis, 'input', 3, 'L', 'trapmf', [30 40 60 70]);             %   Low
-mlc_fis = addmf(mlc_fis, 'input', 3, 'M', 'trapmf', [60 70 110 120]);           %   Medium
-mlc_fis = addmf(mlc_fis, 'input', 3, 'H', 'trapmf', [110 120 140 150]);         %   Heavy
-mlc_fis = addmf(mlc_fis, 'input', 3, 'VH', 'trapmf', [140 150 200 200]);        %   Very Heavy
+% Input: Player Hostility
+mlc_fis = addvar(mlc_fis, 'input', 'Player Hostility', [0 100]);
+mlc_fis = addmf(mlc_fis, 'input', 3, 'VL', 'trapmf', [0 0 15 20]);              %   Very Low
+mlc_fis = addmf(mlc_fis, 'input', 3, 'L', 'trapmf', [15 20 30 35]);             %   Low
+mlc_fis = addmf(mlc_fis, 'input', 3, 'M', 'trapmf', [30 35 55 60]);           %   Medium
+mlc_fis = addmf(mlc_fis, 'input', 3, 'H', 'trapmf', [55 60 70 75]);         %   Heavy
+mlc_fis = addmf(mlc_fis, 'input', 3, 'VH', 'trapmf', [70 75 100 100]);        %   Very Heavy
 
 % Output: Behaviour
 mlc_fis = addvar(mlc_fis, 'output', 'Behaviour', [0 90]);
@@ -38,20 +38,19 @@ mlc_fis = addmf(mlc_fis, 'output', 1, 'HR', 'trapmf', [25 35 55 65]);           
 mlc_fis = addmf(mlc_fis, 'output', 1, 'DhR', 'trapmf', [55 65 90 90]);        %   Dishonest and Reliable
 
 % Rulesets
-% For the purposes of easy editing and marking, these will be split
-
-
 % Constant Low Honesty > Variable Playstyle and Player Aggression
 rule00 = [1 1 1 2 1 1];
 rule01 = [1 1 2 2 1 1];
 rule02 = [1 1 3 1 1 1];
 rule03 = [1 1 4 1 1 1];
 rule04 = [1 1 5 3 1 1];
+
 rule05 = [1 2 1 2 1 1];
 rule06 = [1 2 2 2 1 1];
 rule07 = [1 2 3 1 1 1];
 rule08 = [1 2 4 1 1 1];
 rule09 = [1 2 5 3 1 1];
+
 rule10 = [1 3 1 2 1 1];
 rule11 = [1 3 2 2 1 1];
 rule12 = [1 3 3 1 1 1];
@@ -64,11 +63,13 @@ rule16 = [2 1 2 1 1 1];
 rule17 = [2 1 3 1 1 1];
 rule18 = [2 1 4 1 1 1];
 rule19 = [2 1 5 3 1 1];
+
 rule20 = [2 2 1 2 1 1];
 rule21 = [2 2 2 1 1 1];
 rule22 = [2 2 3 1 1 1];
 rule23 = [2 2 4 3 1 1];
 rule24 = [2 2 5 3 1 1];
+
 rule25 = [2 3 1 2 1 1];
 rule26 = [2 3 2 1 1 1];
 rule27 = [2 3 3 1 1 1];
@@ -81,11 +82,13 @@ rule31 = [3 1 2 2 1 1];
 rule32 = [3 1 3 1 1 1];
 rule33 = [3 1 4 1 1 1];
 rule34 = [3 1 5 3 1 1];
+
 rule35 = [3 2 1 2 1 1];
 rule36 = [3 2 2 2 1 1];
 rule37 = [3 2 3 1 1 1];
 rule38 = [3 2 4 1 1 1];
 rule39 = [3 2 5 3 1 1];
+
 rule40 = [3 3 1 2 1 1];
 rule41 = [3 3 2 2 1 1];
 rule42 = [3 3 3 1 1 1];

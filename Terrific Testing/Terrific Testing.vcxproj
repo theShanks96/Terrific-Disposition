@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{99327738-6A86-40FB-98AF-3C9EA31BDFF3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TerrificTesting</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <ReferencePath>$(SolutionDir)\Include;C:\Python36-32\include;$(SolutionDir)\Terrific Disposition\;$(IncludePath)</ReferencePath>
+    <LibraryPath>$(SolutionDir)\Library;C:\Python36-32\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <ReferencePath>$(SolutionDir)\Include;$(SolutionDir)\Terrific Disposition\;$(IncludePath)</ReferencePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <ReferencePath>$(SolutionDir)\Include;$(SolutionDir)\Terrific Disposition\;$(IncludePath)</ReferencePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <ReferencePath>$(SolutionDir)\Include;$(SolutionDir)\Terrific Disposition\;$(IncludePath)</ReferencePath>
+    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)\Include;C:\Python36-32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\sfml\Audio.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\AlResource.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\Export.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\Listener.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\Music.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\Sound.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundSource.hpp" />
+    <ClInclude Include="..\Include\sfml\Audio\SoundStream.hpp" />
+    <ClInclude Include="..\Include\sfml\Config.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\BlendMode.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\CircleShape.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Color.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Drawable.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Export.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Font.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Glsl.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Glyph.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Image.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Rect.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\RenderStates.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Shader.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Shape.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Sprite.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Text.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Texture.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Transform.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Transformable.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\Vertex.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\VertexArray.hpp" />
+    <ClInclude Include="..\Include\sfml\Graphics\View.hpp" />
+    <ClInclude Include="..\Include\sfml\Main.hpp" />
+    <ClInclude Include="..\Include\sfml\Network.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\Export.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\Ftp.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\Http.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\IpAddress.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\Packet.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\Socket.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\SocketHandle.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\SocketSelector.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\TcpListener.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\TcpSocket.hpp" />
+    <ClInclude Include="..\Include\sfml\Network\UdpSocket.hpp" />
+    <ClInclude Include="..\Include\sfml\OpenGL.hpp" />
+    <ClInclude Include="..\Include\sfml\System.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Clock.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Err.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Export.hpp" />
+    <ClInclude Include="..\Include\sfml\System\FileInputStream.hpp" />
+    <ClInclude Include="..\Include\sfml\System\InputStream.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Lock.hpp" />
+    <ClInclude Include="..\Include\sfml\System\MemoryInputStream.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Mutex.hpp" />
+    <ClInclude Include="..\Include\sfml\System\NativeActivity.hpp" />
+    <ClInclude Include="..\Include\sfml\System\NonCopyable.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Sleep.hpp" />
+    <ClInclude Include="..\Include\sfml\System\String.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Thread.hpp" />
+    <ClInclude Include="..\Include\sfml\System\ThreadLocal.hpp" />
+    <ClInclude Include="..\Include\sfml\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Time.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Utf.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Vector2.hpp" />
+    <ClInclude Include="..\Include\sfml\System\Vector3.hpp" />
+    <ClInclude Include="..\Include\sfml\Window.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Context.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\ContextSettings.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Event.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Export.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\GlResource.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Joystick.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Keyboard.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Mouse.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Sensor.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Touch.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\VideoMode.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\Window.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\WindowHandle.hpp" />
+    <ClInclude Include="..\Include\sfml\Window\WindowStyle.hpp" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Assets\External\jsoncpp.cpp" />
+    <ClCompile Include="..\Terrific Disposition\AcceptableTile.cpp" />
+    <ClCompile Include="..\Terrific Disposition\Behaviour.cpp" />
+    <ClCompile Include="..\Terrific Disposition\CautiousTile.cpp" />
+    <ClCompile Include="..\Terrific Disposition\DeadlyTile.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyBehaviour.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\First.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\General.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Highest.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Last.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Lowest.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Proportional.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\activation\Threshold.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Benchmark.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Complexity.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Console.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\Bisector.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\Centroid.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\IntegralDefuzzifier.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\LargestOfMaximum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\MeanOfMaximum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\SmallestOfMaximum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedAverage.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedAverageCustom.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedDefuzzifier.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\defuzzifier\WeightedSumCustom.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Engine.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\Exception.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\ActivationFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\DefuzzifierFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\FactoryManager.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\FunctionFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\HedgeFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\SNormFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\TermFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\factory\TNormFactory.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\fuzzylite.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Any.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Extremely.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\HedgeFunction.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Not.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Seldom.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Somewhat.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\hedge\Very.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\CppExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\Exporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FclExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FclImporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FisExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FisImporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FldExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FllExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\FllImporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\Importer.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\JavaExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\imex\RScriptExporter.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\AlgebraicSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\BoundedSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\DrasticSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\EinsteinSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\HamacherSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\Maximum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\NilpotentMaximum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\NormalizedSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\SNormFunction.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\s\UnboundedSum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\AlgebraicProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\BoundedDifference.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\DrasticProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\EinsteinProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\HamacherProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\Minimum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\NilpotentMinimum.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\norm\t\TNormFunction.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Antecedent.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Consequent.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Expression.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\Rule.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\rule\RuleBlock.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Activated.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Aggregated.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Bell.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Binary.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Concave.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Constant.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Cosine.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Discrete.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Function.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Gaussian.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\GaussianProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Linear.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\PiShape.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Ramp.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Rectangle.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Sigmoid.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SigmoidDifference.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SigmoidProduct.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Spike.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\SShape.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Term.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Trapezoid.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\Triangle.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\term\ZShape.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\InputVariable.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\OutputVariable.cpp" />
+    <ClCompile Include="..\Terrific Disposition\FuzzyLite\variable\Variable.cpp" />
+    <ClCompile Include="..\Terrific Disposition\Interactable.cpp" />
+    <ClCompile Include="..\Terrific Disposition\Player.cpp" />
+    <ClCompile Include="..\Terrific Disposition\RoomEscape.cpp" />
+    <ClCompile Include="..\Terrific Disposition\SimpleBehaviour.cpp" />
+    <ClCompile Include="..\Terrific Disposition\Tile.cpp" />
+    <ClCompile Include="..\Terrific Disposition\World.cpp" />
+    <ClCompile Include="ManagementTests.cpp" />
+    <ClCompile Include="RoomEscapeTests.cpp" />
+    <ClCompile Include="GameElements.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="BehaviourTests.cpp" />
+    <ClCompile Include="TileTests.cpp" />
+    <ClCompile Include="WorldTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Terrific Disposition\Terrific Disposition.vcxproj">
+      <Project>{c5670ea6-8983-486f-a5e1-c3e926e4ab0f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

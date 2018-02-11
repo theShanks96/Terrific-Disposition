@@ -9,10 +9,6 @@
       "filepath": "../Assets/Dictionaries/DictionariesConfiguration.json"
     },
     {
-      "name": "FontPaths",
-      "filepath": "../Assets/Fonts/FontConfiguration.json"
-    },
-    {
       "name": "ThemesConfiguration",
       "filepath": "../Assets/Themes/ThemesConfiguration.json"
     },

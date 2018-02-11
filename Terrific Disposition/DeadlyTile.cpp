@@ -17,7 +17,7 @@ DeadlyTile::~DeadlyTile() {
 
 }
 
-bool DeadlyTile::populateInteractables(int2d nextPlotPoint_in, int honestReliable_in, int honestUnreliable_in, int dishonestReliable_in, int play_in, int aggressiveness_in) {
+bool DeadlyTile::populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) {
 	return true;
 }
 

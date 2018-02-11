@@ -7,8 +7,13 @@
 #include <SFML\Window.hpp>
 #include <string>
 
+#include <fuzzylite\Headers.h>
+#include "FuzzyBehaviour.h"
+
+
+
 void main() {
-	
+
 	int errorCodeInt = 0;
 
 	SFML_Window* ptr_terrificDispositionGameWindow = new SFML_Window();
@@ -40,5 +45,6 @@ void main() {
 		
 	}
 
+	system("PAUSE");
 
 }

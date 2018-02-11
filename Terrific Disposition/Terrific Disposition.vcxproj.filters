@@ -470,5 +470,13 @@
     <ClInclude Include="Interactable.h">
       <Filter>Header Files\GameElements</Filter>
     </ClInclude>
+    <ClInclude Include="PythonManager.h">
+      <Filter>Header Files\Management</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Library\openal32.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>

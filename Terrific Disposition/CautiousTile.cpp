@@ -34,10 +34,10 @@ CautiousTile::~CautiousTile() {
 
 }
 
-bool CautiousTile::populateInteractables(int2d nextPlotPoint_in, int honestReliable_in, int honestUnreliable_in, int dishonestReliable_in, int play_in, int aggressiveness_in) {
+bool CautiousTile::populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) {
 	if (c_interactable == nullptr) {
 		c_interactable = new Interactable();
-		c_interactable->ptr_behaviour = new FuzzyBehaviour(honestReliable_in, dishonestReliable_in, honestUnreliable_in, play_in, aggressiveness_in);
+		c_interactable->ptr_behaviour = new FuzzyBehaviour(storyHonesty_in, play_in, hostility_in);
 		c_interactable->ptr_behaviour->c_nextPlotPoint = nextPlotPoint_in;
 		c_interactable->c_sapienceBool = true;
 	}

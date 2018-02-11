@@ -7,6 +7,7 @@
 #include <string>
 
 #include "ResourceManager.h"
+#include "PythonManager.h"
 #include "World.h"
 #include "RoomEscape.h"
 
@@ -36,7 +37,6 @@ private:
 	float c_successCountFloat;
 	float c_failureCountFloat;
 
-
 	
 public:
 	static constexpr int const_mainMenuInt = 0;
@@ -51,6 +51,7 @@ public:
 
 	Player* ptr_player;
 	ResourceManager* ptr_resourceManager;
+	PythonManager* ptr_pythonManager;
 	//SFML_Window* ptr_gameWindow;
 	
 	int c_currentGameState;

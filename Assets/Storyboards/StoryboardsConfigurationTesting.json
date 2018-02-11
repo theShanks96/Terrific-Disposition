@@ -1,0 +1,16 @@
+{
+  "StoryboardsConfiguration": [
+    {
+      "name": "AcceptableConfiguration",
+      "filepath": "../../../Assets/Storyboards/AcceptableConfiguration.json"
+    },
+    {
+      "name": "CautiousConfiguration",
+      "filepath": "../../../Assets/Storyboards/CautiousConfiguration.json"
+    },
+    {
+      "name": "DeadlyConfiguration",
+      "filepath": "../../../Assets/Storyboards/DeadlyConfiguration.json"
+    }
+  ]
+}

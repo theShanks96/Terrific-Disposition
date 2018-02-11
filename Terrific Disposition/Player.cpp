@@ -4,6 +4,11 @@ Player::Player(std::string name_in) {
 	c_healthFloat = 100.0f;
 	c_nameString = name_in;
 
+	c_hostilityInt = 0;
+	c_recentPleasantryInt = 0;
+	c_interactionsInt = 0;
+	c_totalInteractionWordsInt = 0;
+
 	c_positionInt2d.s_firstInt = 16777216;
 	c_positionInt2d.s_secondInt = 16777126;
 	

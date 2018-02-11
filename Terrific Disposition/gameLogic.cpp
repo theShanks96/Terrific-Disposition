@@ -5,6 +5,7 @@ GameLogic::GameLogic() {
 	c_currentGameState = const_mainMenuInt;
 
 	ptr_resourceManager = new ResourceManager("../Assets/AssetConfiguration.json");
+	ptr_pythonManager = new PythonManager(ptr_resourceManager);
 
 	c_activeMusic.openFromFile(ptr_resourceManager->getAudioPath("menu_background"));
 	c_activeMusic.setLoop(true);
@@ -157,7 +158,7 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 	//	This clears both the input and the output frames
 	else if (m_command == "cls" || m_command == "clear") {
 		c_failedCommandCountInt = 0;
-		return "you got the cls but not yet implemented";
+		return "65536 Initiate Screen Clear 65536";
 	}
 
 	//	This handles if the user inputs something that does not make sense
@@ -245,6 +246,7 @@ void GameLogic::startGameWorld(int mapSize_in) {
 
 	//	Load the information for the chosen theme
 	//ptr_resourceManager->loadThemeSemanticField(c_chosenThemeString);
+	ptr_gameWorld->linkPythonManager(ptr_pythonManager);
 
 	while (ptr_gameWorld->v_pendingOutputStrings.size() > 0) {
 		v_pendingOutputStrings.push_back(ptr_gameWorld->v_pendingOutputStrings.front());
@@ -270,6 +272,7 @@ void GameLogic::startRoomEscape(int mapSize_in) {
 	ptr_roomEscape = new RoomEscape();
 	ptr_roomEscape->readFromConfiguration(ptr_resourceManager->getThemePath("RoomEscapeConfiguration"));
 	ptr_roomEscape->linkPlayer(ptr_player);
+	ptr_roomEscape->linkPythonManager(ptr_pythonManager);
 
 	v_pendingOutputStrings.push_back("You remember going by " + m_playerName);
 	v_pendingOutputStrings.push_back(ptr_roomEscape->getPlotPoint("zero_awake"));
@@ -289,6 +292,11 @@ void GameLogic::handleCommand(std::string command_in) {
 		if (ptr_roomEscape->checkSolved()) {
 			//	get the theme chosen in the room escape / calibration
 			c_chosenThemeString = ptr_roomEscape->getChosenTheme();
+			
+			ptr_player->c_playStyle = (ptr_roomEscape->c_correctAnswers - ptr_roomEscape->c_incorrectAnswers) / 3;
+			if (ptr_player->c_playStyle < 0.0f)
+				ptr_player->c_playStyle = 0.0f;
+
 			// start the gameworld
 			startGameWorld(c_mapSizeInt);
 			ptr_roomEscape->~RoomEscape();

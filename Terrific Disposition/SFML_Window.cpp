@@ -182,6 +182,11 @@ int SFML_Window::Update() {
 						|| v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()).compare(0, 17, "Discard Attempt: ") == 0) {
 						ptr_gameLogic->handleCommand(std::string(v_outputDisplays.back().getString()));
 					}
+					else if (v_outputDisplays.size() != 0 && std::string(v_outputDisplays.back().getString()) == "65536 Initiate Screen Clear 65536") {
+						v_outputDisplays.clear();
+						addOutputText(std::string("Screen Successfully Cleared"));
+						v_commandDisplays.clear();
+					}
 
 					v_commandDisplays.push_back(sf::Text(">", c_activeFont, (int)(c_windowUnitInt * 3)));
 					v_commandDisplays.shrink_to_fit();

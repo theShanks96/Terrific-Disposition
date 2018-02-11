@@ -14,15 +14,15 @@ private:
 	//! ptr_interactionEngine Used to determine how the entity responds
 	fl::Engine* ptr_interactionEngine;
 	//! ptr_playerPleasantry Count of pleasant words
-	fl::InputVariable* ptr_playerPleasantry;
+	fl::InputVariable* ptr_playerPleasantryIV;
 	//! ptr_entityBehaviour The entity's behaviour profile
-	fl::InputVariable* ptr_entityBehaviour;
+	fl::InputVariable* ptr_entityBehaviourIV;
 	//! ptr_tileClassification The entity's current tile
-	fl::InputVariable* ptr_tileClassification;
+	fl::InputVariable* ptr_tileClassificationIV;
 	//! ptr_behaviourMagnitude The magnitude of the player's output
-	fl::OutputVariable* ptr_behaviourMagnitude;
+	fl::OutputVariable* ptr_behaviourMagnitudeOV;
 	//! ptr_interactionMamdani A mamdani ruleblock for the ptr_interactionEngine
-	fl::RuleBlock* ptr_interactionMamdani;
+	fl::RuleBlock* ptr_interactionMamdaniRB;
 
 	void addInteractionLog(std::string& userText_in) override;
 
@@ -34,13 +34,14 @@ public:
 	//! @param uR_in honest-unreliable entities so far
 	//! @param play_in The user's playstyle during calibration
 	//! @param aggro_in Count of aggressive words used by the player
-	FuzzyBehaviour(int& hR_in, int& dR_in, int& hU_in, int& play_in, int& aggro_in);
+	FuzzyBehaviour(int& hR_in, int& play_in, int& aggro_in);
 	~FuzzyBehaviour();
 
 	//! Intitiates the ptr_interactionEngine to determine behaviour
 	//! @param user_in The string given by the user when interacting
 	std::string interactionProcess(std::string userText_in) override;
 
-
-
+	std::string interactionProcessTesting(int pleasantry_in, std::string classification_in);
+	float getBehaviourTesting();
+	float getMagnitudeTesting();
 };

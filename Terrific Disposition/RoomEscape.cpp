@@ -5,6 +5,8 @@ RoomEscape::RoomEscape() {
 	c_answeredQuestions = 0;
 	c_presentedQuestions = 0;
 	c_chosenThemeString = "none";
+	c_commandProfile = commandProfile(0, 0, 0, 0, 0, 0);
+
 }
 RoomEscape::~RoomEscape() {
 }
@@ -64,6 +66,10 @@ void RoomEscape::readFromConfiguration(std::string configPath_in) {
 
 void RoomEscape::linkPlayer(Player* player_in) {
 	ptr_player = player_in;
+}
+
+void RoomEscape::linkPythonManager(PythonManager* python_in) {
+	ptr_pythonManager = python_in;
 }
 
 
@@ -320,6 +326,17 @@ void RoomEscape::handleCommand(std::string& command_in) {
 				v_pendingOutputStrings.push_back("Seems that was incorrect.");
 			}
 		}
+
+
+		//	This will send the entered interact command to the natural language processor
+		c_commandProfile = ptr_pythonManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
+
+		//	The player's hostility is cumulative through the entire game
+		ptr_player->c_hostilityInt += c_commandProfile.s_hostilityInt;
+		//	The player's pleasantry is cumulative with each interactable
+		ptr_player->c_recentPleasantryInt = c_commandProfile.s_pleasantryInt;
+		//The player's total number of words processed
+		ptr_player->c_totalInteractionWordsInt += c_commandProfile.s_processedWordsInt;
 
 	}
 }

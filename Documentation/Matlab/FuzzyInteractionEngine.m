@@ -3,7 +3,7 @@ clc
 % Read in the data for the FIS
 filename = 'FuzzyLogicData.xlsx';
 sheetname = 'FuzzyInteractionEngine';
-usedrange = 'A3:C32';
+usedrange = 'A3:C102';
 
 testData = xlsread(filename, sheetname, usedrange);
 dataSize = size(testData,1);
@@ -17,13 +17,13 @@ mlc_fis = addmf(mlc_fis, 'input', 1, 'HU', 'trapmf', [0 0 25 35]);              
 mlc_fis = addmf(mlc_fis, 'input', 1, 'HR', 'trapmf', [25 35 55 65]);            %   Medium Honesty
 mlc_fis = addmf(mlc_fis, 'input', 1, 'DhR', 'trapmf',  [55 65 90 90]);          %   High Honesty
 
-% Input: Player Pleasantries
-mlc_fis = addvar(mlc_fis, 'input', 'Player Pleasantires', [0 20]);
-mlc_fis = addmf(mlc_fis, 'input', 2, 'VL', 'trapmf', [0 0 3 4]);                %   Very Low
-mlc_fis = addmf(mlc_fis, 'input', 2, 'L', 'trapmf', [3 4 6 7]);                 %   Low
-mlc_fis = addmf(mlc_fis, 'input', 2, 'M', 'trapmf', [6 7 11 12]);               %   Medium
-mlc_fis = addmf(mlc_fis, 'input', 2, 'H', 'trapmf', [11 12 14 15]);             %   Heavy
-mlc_fis = addmf(mlc_fis, 'input', 2, 'VH', 'trapmf', [14 15 20 20]);            %   Very Heavy
+% Input: Player Pleasantry
+mlc_fis = addvar(mlc_fis, 'input', 'Player Pleasantry', [0 100]);
+mlc_fis = addmf(mlc_fis, 'input', 2, 'VL', 'trapmf', [0 0 15 20]);              %   Very Low
+mlc_fis = addmf(mlc_fis, 'input', 2, 'L', 'trapmf', [15 20 30 35]);             %   Low
+mlc_fis = addmf(mlc_fis, 'input', 2, 'M', 'trapmf', [30 35 55 60]);           %   Medium
+mlc_fis = addmf(mlc_fis, 'input', 2, 'H', 'trapmf', [55 60 70 75]);         %   Heavy
+mlc_fis = addmf(mlc_fis, 'input', 2, 'VH', 'trapmf', [70 75 100 100]);        %   Very Heavy
 
 % Input: Current Tile Classification
 mlc_fis = addvar(mlc_fis, 'input', 'Tile Classification', [0 10]);
@@ -37,6 +37,9 @@ mlc_fis = addmf(mlc_fis, 'output', 1, 'Medium', 'trapmf', [25 35 55 65]);       
 mlc_fis = addmf(mlc_fis, 'output', 1, 'High', 'trapmf', [55 65 90 90]);         %   High Magnitude
 
 % Rulesets
+% For the purposes of easy editing and marking, these will be split
+
+
 % Constant Honest and Unreliable > Variable Player Pleasantries
 rule00 = [1 1 1 3 1 1];
 rule01 = [1 2 1 3 1 1];

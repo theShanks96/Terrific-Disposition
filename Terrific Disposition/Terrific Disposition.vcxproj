@@ -74,30 +74,30 @@
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
-    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;C:\Python36-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;C:\Python36-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
-    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;C:\Python36-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;C:\Python36-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
-    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;C:\Python36-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;C:\Python36-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\Output\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\Temporary\$(Platform)\$(Configuration)\</IntDir>
-    <ExecutablePath>$(SolutionDir)\Output\Dlls;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Library;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(SolutionDir)\Output\$(Platform)\$(Configuration)\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\Include;C:\Python36-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Library;C:\Python36-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,6 +107,7 @@
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\Library</AdditionalLibraryDirectories>
@@ -286,6 +287,7 @@
     <ClInclude Include="CautiousTile.h" />
     <ClInclude Include="DeadlyTile.h" />
     <ClInclude Include="FuzzyBehaviour.h" />
+    <ClInclude Include="PythonManager.h" />
     <ClInclude Include="RoomEscape.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="GameLogic.h" />
@@ -296,6 +298,9 @@
     <ClInclude Include="SimpleBehaviour.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Library\openal32.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

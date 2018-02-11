@@ -1,0 +1,32 @@
+{
+  "DictionariesConfiguration": [
+    {
+      "name": "Vulgarities",
+      "filepath": "../../../Assets/Dictionaries/Vulgarities.json"
+    },
+    {
+      "name": "HostileAdjectives",
+      "filepath": "../../../Assets/Dictionaries/HostileAdjectives.json"
+    },
+    {
+      "name": "HostileNouns",
+      "filepath": "../../../Assets/Dictionaries/HostileNouns.json"
+    },
+    {
+      "name": "HostileVerbs",
+      "filepath": "../../../Assets/Dictionaries/HostileVerbs.json"
+    },
+    {
+      "name": "PleasantAdjectives",
+      "filepath": "../../../Assets/Dictionaries/PleasantAdjectives.json"
+    },
+    {
+      "name": "PleasantNouns",
+      "filepath": "../../../Assets/Dictionaries/PleasantNouns.json"
+    },
+    {
+      "name": "PleasantVerbs",
+      "filepath": "../../../Assets/Dictionaries/PleasantVerbs.json"
+    }
+  ]
+}

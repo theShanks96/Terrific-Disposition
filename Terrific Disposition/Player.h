@@ -17,7 +17,11 @@ public:
 	std::vector<inventoryItem> v_inventoryItems;
 
 	int c_interactionsInt;
-	int c_aggressionInt;
+	int c_hostilityInt;
+	int c_recentPleasantryInt;
+	int c_totalInteractionWordsInt;
+
+	float c_playStyle;
 
 	float c_healthFloat;
 	std::string c_attireHeadString;

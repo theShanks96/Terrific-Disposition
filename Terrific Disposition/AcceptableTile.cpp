@@ -11,6 +11,7 @@ AcceptableTile::AcceptableTile() {
 
 AcceptableTile::AcceptableTile(std::string description_in) {
 	c_maximumInteractables = 3;
+	v_interactables.reserve(c_maximumInteractables);
 
 	c_descriptionString = description_in;
 	setTypeFlavour("");
@@ -24,10 +25,10 @@ AcceptableTile::~AcceptableTile() {
 
 
 
-bool AcceptableTile::populateInteractables(int2d nextPlotPoint_in, int honestReliable_in, int honestUnreliable_in, int dishonestReliable_in, int play_in ,int aggressiveness_in) {
+bool AcceptableTile::populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) {
 
 
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < c_maximumInteractables; i++) {
 		v_interactables.push_back(new Interactable());
 
 
@@ -37,7 +38,7 @@ bool AcceptableTile::populateInteractables(int2d nextPlotPoint_in, int honestRel
 			v_interactables.at(0)->c_sapienceBool = false;
 		}
 		else {
-			v_interactables.at(i)->ptr_behaviour = new FuzzyBehaviour(honestReliable_in, dishonestReliable_in, honestUnreliable_in, play_in, aggressiveness_in);
+			v_interactables.at(i)->ptr_behaviour = new FuzzyBehaviour(storyHonesty_in, play_in, hostility_in);
 			v_interactables.at(i)->c_sapienceBool = true;
 		}
 		//	Tell the behaviour where the next plot point is, for interaction purposes
@@ -50,10 +51,16 @@ bool AcceptableTile::populateInteractables(int2d nextPlotPoint_in, int honestRel
 
 
 std::string AcceptableTile::getTileInformation() {
-	if (v_interactables.at(0) == nullptr && v_interactables.at(1) == nullptr && v_interactables.at(22) == nullptr)
+	if (v_interactables.size() < c_maximumInteractables && v_interactables.size() == 0)
 		return c_descriptionString + " Nothing else seems to be here, best leave.";
 
-	else
+	else if (v_interactables.size() < c_maximumInteractables && v_interactables.size() == 1)
+		return c_descriptionString + " You see: " + v_interactables.at(0)->getDescription() + ".";
+
+	else if (v_interactables.size() < c_maximumInteractables && v_interactables.size() == 2)
+		return c_descriptionString + " You see: " + v_interactables.at(0)->getDescription() + ", " + v_interactables.at(1)->getDescription() + ".";
+
+	else if(v_interactables.size() == c_maximumInteractables)
 		return c_descriptionString + " You see: " + v_interactables.at(0)->getDescription() + ", " + v_interactables.at(1)->getDescription() + ", and " + v_interactables.at(2)->getDescription() + ".";
 
 }

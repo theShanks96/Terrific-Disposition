@@ -26,7 +26,7 @@ public:
 	std::string getTypeFlavour();
 	void setTypeFlavour(std::string flavour_in);
 
-	virtual bool populateInteractables(int2d nextPlotPoint_in, int honestReliable_in, int honestUnreliable_in, int dishonestReliable_in, int play_in, int aggressiveness_in) = 0;
+	virtual bool populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) = 0;
 	virtual std::string getTileInformation() = 0;
 	virtual bool getInteractablePresence(std::string text_in) = 0;
 	

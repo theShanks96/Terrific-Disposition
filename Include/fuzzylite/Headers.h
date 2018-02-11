@@ -24,6 +24,8 @@
  */
 
 
+#define NOMINMAX
+
 #include "fuzzylite.h"
 
 #include "Benchmark.h"
