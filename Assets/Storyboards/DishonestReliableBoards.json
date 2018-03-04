@@ -1,0 +1,16 @@
+{
+  "DishonestReliableBoards":  [
+    {
+      "low": "It might be [x-direction], near that abandoned lot, or [y-direction]. Perhaps I'm right or not.",
+      "medium": "I may be switched around, but you seem to be on your way to ([x-direction-swch] [x-tiles], [y-direction-swch] [y-tiles])",
+      "high": "Correct me if I'm wrong, but you need to go [x-direction-swch] [x-tiles-high] paces and [y-direction-swch] [y-tiles-high] paces.
+      Or near enough that makes no matter ... maybe."
+    },
+    {
+      "low": "It might be [x-direction], near that abandoned lot, or [y-direction]. Perhaps I'm right or not.",
+      "medium": "I may be switched around, but you seem to be on your way to ([x-direction-swch] [x-tiles], [y-direction-swch] [y-tiles])",
+      "high": "Correct me if I'm wrong, but you need to go [x-direction-swch] [x-tiles-high] paces and [y-direction-swch] [y-tiles-high] paces.
+      Or near enough that makes no matter ... maybe."
+    }
+  ]
+}

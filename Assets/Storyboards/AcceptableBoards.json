@@ -1,0 +1,19 @@
+{
+  "AcceptableBoards":[
+    {
+      "entry": "acceptable_board_000",
+      "board": "Nearby, a [positive_person] seems to be looking for a [positive_object] and seems to be somewhat frustrated.
+      They found a [negative_adjective] [positive_object] ... they seem content enough."
+    },
+    {
+      "entry": "acceptable_board_001",
+      "board": "A seemingly happy [negative_person] is in the distance, that can't be good.
+      That [positive_person] quickly scurried away from the [negative_person].
+      They went unseen, good for them."
+    },
+    {
+      "entry": "acceptable_board_002",
+      "board": "You seem to be surrounded by [positive_person]s ... you feel oddly welcome."
+    }
+  ]
+}

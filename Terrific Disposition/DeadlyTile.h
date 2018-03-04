@@ -10,10 +10,10 @@ public:
 	~DeadlyTile();
 
 
-	bool populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) override;
+	bool populateInteractables(int2d nextPlotPoint_in, int2d location_in, int storyHonesty_in, int play_in, int hostility_in, ResourceManager* resource_in, NaturalLogicManager* python_in) override;
 	std::string getTileInformation() override;
 	bool getInteractablePresence(std::string text_in) override;
-
+	std::string interactByName(std::string entry_in) override;
 private:
 
 };

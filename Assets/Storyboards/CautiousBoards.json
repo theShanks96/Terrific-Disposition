@@ -1,0 +1,19 @@
+{
+  "CautiousBoards": [
+    {
+      "entry": "cautious_board_000",
+      "board": "There seems to be an air of suspicion,
+      there is some evidence that there was a significant amount of [negative_person]s engaging in [negative_verb]."
+    },
+    {
+      "entry": "cautious_board_001",
+      "board": "The nearby [negative_person] is somewhat aloof, seemingly distracted by their [positive_adjective] [negative_object].
+      An oddity, but a welcome one."
+    },
+    {
+      "entry": "cautious_board_002",
+      "board": "As you arrive, a [positive_person] seems to eloquently deal with a [negative_person] with their [positive_object].
+      Creativity is best in a pinch."
+    }
+  ]
+}

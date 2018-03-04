@@ -75,6 +75,7 @@ public:
 	void addOutputText(std::string& string_in);
 	void addJournalText(std::string& string_in);
 	bool updateJournalText(std::string& entry_in, std::string& alteration_in);
+	void removeJournalText(std::string& entry_in);
 	void addNoteText(std::string& string_in);
 	void removeNoteText(std::string& string_in);
 

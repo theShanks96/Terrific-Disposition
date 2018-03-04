@@ -12,7 +12,7 @@ SimpleBehaviour::~SimpleBehaviour() {
 
 std::string SimpleBehaviour::interactionProcess(std::string userText_in) {
 
-	return "nothing";
+	return ptr_naturalLogicManager->simpleBehaviourBoardProcessing();
 }
 
 void SimpleBehaviour::addInteractionLog(std::string& userText_in) {

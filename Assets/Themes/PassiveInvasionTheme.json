@@ -1,11 +1,145 @@
 {
-  "Adjectives": [
-
+  "NegativeAdjectives": [
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
   ],
-  "Verbs": [
-
+  "PositiveAdjectives": [
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
   ],
-  "Nouns":[
-
+  "NegativeVerbs": [
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "PositiveVerbs": [
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "NegativeObjectNouns":[
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "NegativePersonNouns":[
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "PositiveObjectNouns":[
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "PositivePersonNouns":[
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    },
+    {
+      "entry": "",
+      "definition":
+    }
+  ],
+  "PlotKeywords":[
+    {
+      "key": "primary_villain",
+      "name": "The Federation for Citizen Value",
+    },
+    {
+      "key": "secondary_villain",
+      "name": "Federation Agency for the Welfare of Public Opinion"
+    },
+    {
+      "key": "tertiary_villain",
+      "name": "Agent 451"
+    },
+    {
+      "key": "primary_ally",
+      "name": "Plain Janes"
+    },
+    {
+      "key": "primary_macguffin",
+      "name": "Federation Public Order Toolkit"
+    },
+    {
+      "key": "secondary_macguffin",
+      "name": "Broad-Spectrum Obfuscation Program"
+    },
+    {
+      "key": "tertiary_macguffin",
+      "name": "Falsified Treasonous Opinion Column"
+    }
   ]
+
 }

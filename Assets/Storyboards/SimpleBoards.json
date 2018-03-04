@@ -1,0 +1,19 @@
+{
+  "SimpleBoards": [
+    {
+      "entry": "simple_board_000",
+      "board": "[primary_villain].
+      Some days you go about completely unaware of their presence.
+      Other days, they're the only thing you can notice and think about."
+    },
+    {
+      "entry": "simple_board_001",
+      "board": "[secondary_villain] is merely a tool of [primary_villain]"
+    },
+    {
+      "entry": "simple_board_002",
+      "board": "I keep seeing [primary_ally] helping out however they can.
+      They go about it staying hidden, of course. Still very helpful."
+    }
+  ]
+}

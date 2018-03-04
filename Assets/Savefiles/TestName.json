@@ -1,0 +1,49 @@
+
+{
+	"TestName" : 
+	{
+		"current_location" : 
+		{
+			"x" : 1,
+			"y" : 1
+		},
+		"dishonest_reliable" : 0,
+		"health" : 100,
+		"honest_reliable" : 0,
+		"honest_unreliable" : 0,
+		"hostility" : 0,
+		"interactions" : 0,
+		"inventory" : 
+		[
+			
+			{
+				"body" : "testBody",
+				"name" : "testName",
+				"quality" : "testQuality",
+				"title" : "testTitle"
+			}
+		],
+		"map_size" : 16,
+		"name" : "TestName",
+		"player_equipment" : "testEquipment",
+		"player_head" : "testHead",
+		"player_style" : 1,
+		"player_torso" : "testTorso",
+		"plot_points" : 
+		[
+			
+			{
+				"x" : 2,
+				"y" : 2
+			}
+		],
+		"recent_pleasantry" : 0,
+		"start_location" : 
+		{
+			"x" : 0,
+			"y" : 0
+		},
+		"theme" : "cyberpunk",
+		"total_interaction_words" : 0
+	}
+}

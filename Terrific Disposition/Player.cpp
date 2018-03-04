@@ -3,6 +3,7 @@
 Player::Player(std::string name_in) {
 	c_healthFloat = 100.0f;
 	c_nameString = name_in;
+	c_theme = "empty";
 
 	c_hostilityInt = 0;
 	c_recentPleasantryInt = 0;
@@ -16,6 +17,10 @@ Player::Player(std::string name_in) {
 	c_attireTorsoString = "Empty";
 	c_equipmentString = "Empty";
 
+}
+
+Player::~Player() {
+	
 }
 
 bool Player::addItem(inventoryItem&  item_in) {

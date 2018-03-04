@@ -23,7 +23,7 @@ private:
 	fl::OutputVariable* ptr_behaviourMagnitudeOV;
 	//! ptr_interactionMamdani A mamdani ruleblock for the ptr_interactionEngine
 	fl::RuleBlock* ptr_interactionMamdaniRB;
-
+		
 	void addInteractionLog(std::string& userText_in) override;
 
 public:
@@ -33,13 +33,15 @@ public:
 	//! @param dR_in Count of dishonest-reliable entities so far
 	//! @param uR_in honest-unreliable entities so far
 	//! @param play_in The user's playstyle during calibration
-	//! @param aggro_in Count of aggressive words used by the player
-	FuzzyBehaviour(int& hR_in, int& play_in, int& aggro_in);
+	//! @param hostility_in Count of aggressive words used by the player
+	FuzzyBehaviour(int& hR_in, int& play_in, int& hostility_in);
 	~FuzzyBehaviour();
 
 	//! Intitiates the ptr_interactionEngine to determine behaviour
 	//! @param user_in The string given by the user when interacting
+	//! @return The resulting string to be shown to the user
 	std::string interactionProcess(std::string userText_in) override;
+	std::string c_classification;
 
 	std::string interactionProcessTesting(int pleasantry_in, std::string classification_in);
 	float getBehaviourTesting();

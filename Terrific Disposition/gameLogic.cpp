@@ -5,7 +5,7 @@ GameLogic::GameLogic() {
 	c_currentGameState = const_mainMenuInt;
 
 	ptr_resourceManager = new ResourceManager("../Assets/AssetConfiguration.json");
-	ptr_pythonManager = new PythonManager(ptr_resourceManager);
+	ptr_naturalLogicManager = new NaturalLogicManager(ptr_resourceManager);
 
 	c_activeMusic.openFromFile(ptr_resourceManager->getAudioPath("menu_background"));
 	c_activeMusic.setLoop(true);
@@ -39,6 +39,89 @@ GameLogic::~GameLogic() {
 	delete this;
 
 }
+
+void GameLogic::restartGameLogic() {
+	c_currentGameState = const_mainMenuInt;
+	
+	ptr_resourceManager->clearThematicVectors();
+
+	c_activeMusic.openFromFile(ptr_resourceManager->getAudioPath("menu_background"));
+	c_activeMusic.setLoop(true);
+	c_activeMusic.setVolume(80.0f);
+	c_activeMusic.play();
+
+	v_pendingOutputStrings.push_back("Output: This will display useful information from the game.");
+	v_pendingOutputStrings.push_back("Journal: This will display information to help you in the game.");
+	v_pendingOutputStrings.push_back("Notes: add note <note>, remove note <note>, change note <note> <new text>");
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("Commands: Look, Pickup, Equip, Inspect, Discard, Interact <person/thing>");
+	v_pendingOutputStrings.push_back("Commands: Move <North/East/South/West> ");
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("World Size 16x16 32x32 64x64: start game <16/32/64>");
+	v_pendingOutputStrings.push_back("");
+
+
+	//	initialising the timer data
+	c_timeFromFailureFloat = 0.0f;
+	c_timeToActionFloat = 0.0f;
+
+	//	initialising the success/failure data
+	c_successCountFloat = 0.0f;
+	c_failureCountFloat = 0.0f;
+	updateSuccessRatio();
+}
+
+void GameLogic::loadProfile(std::string name_in) {	
+	saveProfile m_save = ptr_resourceManager->loadSavefile(name_in);
+
+	c_chosenThemeString = m_save.s_worldTheme;
+	ptr_resourceManager->loadThematicDictionaries(c_chosenThemeString);
+	ptr_player = new Player(m_save.s_playerName);
+	ptr_player->c_theme = c_chosenThemeString;
+	ptr_player->c_healthFloat = m_save.s_playerHealth;
+
+	ptr_player->c_positionInt2d = m_save.s_playerCurrentLocation;
+
+	ptr_player->c_interactionsInt = m_save.s_interactionsInt;
+	ptr_player->c_hostilityInt = m_save.s_hostilityInt;
+	ptr_player->c_recentPleasantryInt = m_save.s_recentPleasantryInt;
+	ptr_player->c_totalInteractionWordsInt = m_save.s_totalInteractionWordsInt;
+
+	ptr_player->c_playStyle = m_save.s_playStyle;
+	ptr_player->v_inventoryItems.reserve(m_save.v_playerInventory.size());
+	for (int i = 0; i < m_save.v_playerInventory.size(); i++) {
+		ptr_player->v_inventoryItems.push_back(m_save.v_playerInventory.at(i));
+	}
+	ptr_player->c_attireHeadString = m_save.s_playerHeadAttire;
+	ptr_player->c_attireTorsoString = m_save.s_playerTorsoAttire;
+	ptr_player->c_equipmentString = m_save.s_playerEquipment;
+
+	c_mapSizeInt = m_save.s_mapSize;
+
+	ptr_gameWorld = new World(m_save.s_mapSize, ptr_player, m_save.s_playerStartLocation);
+
+	c_currentGameState = const_proceduralContentInt;
+
+	ptr_gameWorld->linkResourceManager(ptr_resourceManager);
+	ptr_gameWorld->linkNaturalLogicManager(ptr_naturalLogicManager);
+
+	ptr_gameWorld->v_plotPositions.reserve(m_save.v_plotPoints.size());
+	for (int i = 0; i < m_save.v_plotPoints.size(); i++) {
+		ptr_gameWorld->v_plotPositions.push_back(m_save.v_plotPoints.at(i));
+	}
+	ptr_gameWorld->c_totalHonestReliableInt = m_save.s_totalHonestReliableInt;
+	ptr_gameWorld->c_totalHonestUnreliableInt = m_save.s_totalHonestUnreliableInt;
+	ptr_gameWorld->c_totalDishonestReliableInt = m_save.s_totalDishonestReliableInt;
+
+
+	while (ptr_gameWorld->v_pendingOutputStrings.size() > 0) {
+		v_pendingOutputStrings.push_back(ptr_gameWorld->v_pendingOutputStrings.front());
+		ptr_gameWorld->v_pendingOutputStrings.erase(ptr_gameWorld->v_pendingOutputStrings.begin());
+	}
+	playTileMusic();
+	ptr_gameWorld->processTile();
+}
+
 
 int GameLogic::Update() {
 	int updateErrorCode = 0;
@@ -75,6 +158,19 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 			c_failedCommandCountInt = 0;
 			return "Starting Game: " + command_in.substr(11, 13) + "x" + command_in.substr(11, 13);
 		}
+
+		else if (m_command.find("load game ") != std::string::npos) {
+			if (ptr_resourceManager->checkSavefilePaths(m_command.substr(10, m_command.size()))) {
+				loadProfile(m_command.substr(10, m_command.size()));
+				return "Success";
+			}
+			else {
+				v_pendingOutputStrings.push_back("No save file by that name was found.");
+				v_pendingOutputStrings.push_back("Command Reminder: load game first second");
+				v_pendingOutputStrings.push_back("Command Example: load game verd llagosta");
+				return "Try again";
+			}
+		}
 	}
 	else if (c_currentGameState == const_escapeCalibrationInt) {
 		if (m_command.compare(0, 5, "look ") == 0) {
@@ -105,10 +201,6 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 			c_failedCommandCountInt = 0;
 			return "Dipose Attempt: " + command_in.substr(8, command_in.size());
 		}
-		else if (m_command.compare(0, 6, "solve ") == 0) {
-			c_failedCommandCountInt = 0;
-			return "Solve Attempt: " + command_in.substr(6, command_in.size());
-		}
 	}
 
 	else if (c_currentGameState == const_proceduralContentInt) {
@@ -132,13 +224,13 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 			c_failedCommandCountInt = 0;
 			return "Inspect Attempt: " + command_in.substr(8, command_in.size());
 		}
+		else if (m_command.compare(0, 9, "interact ") == 0) {
+			c_failedCommandCountInt = 0;
+			return "Interact Attempt: " + command_in.substr(8, command_in.size());
+		}
 		else if (m_command.compare(0, 8, "discard ") == 0) {
 			c_failedCommandCountInt = 0;
 			return "Discard Attempt: " + command_in.substr(8, command_in.size());
-		}
-		else if (m_command.compare(0, 6, "solve ") == 0) {
-			c_failedCommandCountInt = 0;
-			return "Solve Attempt: " + command_in.substr(6, command_in.size());
 		}
 	}
 
@@ -245,8 +337,11 @@ void GameLogic::startGameWorld(int mapSize_in) {
 	}
 
 	//	Load the information for the chosen theme
-	//ptr_resourceManager->loadThemeSemanticField(c_chosenThemeString);
-	ptr_gameWorld->linkPythonManager(ptr_pythonManager);
+	ptr_resourceManager->loadThematicDictionaries(c_chosenThemeString);
+	ptr_gameWorld->linkResourceManager(ptr_resourceManager);
+	ptr_gameWorld->linkNaturalLogicManager(ptr_naturalLogicManager);
+	
+	ptr_player->c_theme = c_chosenThemeString;
 
 	while (ptr_gameWorld->v_pendingOutputStrings.size() > 0) {
 		v_pendingOutputStrings.push_back(ptr_gameWorld->v_pendingOutputStrings.front());
@@ -272,7 +367,7 @@ void GameLogic::startRoomEscape(int mapSize_in) {
 	ptr_roomEscape = new RoomEscape();
 	ptr_roomEscape->readFromConfiguration(ptr_resourceManager->getThemePath("RoomEscapeConfiguration"));
 	ptr_roomEscape->linkPlayer(ptr_player);
-	ptr_roomEscape->linkPythonManager(ptr_pythonManager);
+	ptr_roomEscape->linkNaturalLogicManager(ptr_naturalLogicManager);
 
 	v_pendingOutputStrings.push_back("You remember going by " + m_playerName);
 	v_pendingOutputStrings.push_back(ptr_roomEscape->getPlotPoint("zero_awake"));

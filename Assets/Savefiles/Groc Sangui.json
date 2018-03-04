@@ -1,0 +1,56 @@
+
+{
+	"Groc Sangui" : 
+	{
+		"current_location" : 
+		{
+			"x" : 0,
+			"y" : 1
+		},
+		"dishonest_reliable" : 0,
+		"health" : 100,
+		"honest_reliable" : 0,
+		"honest_unreliable" : 0,
+		"hostility" : 0,
+		"interactions" : 0,
+		"inventory" : 
+		[
+			
+			{
+				"body" : "Might be helpful if it indeed works, has a large display",
+				"name" : "equipment",
+				"quality" : "Good",
+				"title" : "Cybertronic Bracelet"
+			},
+			
+			{
+				"body" : "Seems to reflect the colour red, possibly more colours.",
+				"name" : "attire_torso",
+				"quality" : "Good",
+				"title" : "IR Reflector Jacket"
+			}
+		],
+		"map_size" : 16,
+		"name" : "Groc Sangui",
+		"player_equipment" : "Cybertronic Bracelet",
+		"player_head" : "Empty",
+		"player_style" : 0,
+		"player_torso" : "IR Reflector Jacket",
+		"plot_points" : 
+		[
+			
+			{
+				"x" : 3,
+				"y" : 4
+			}
+		],
+		"recent_pleasantry" : 0,
+		"start_location" : 
+		{
+			"x" : 0,
+			"y" : 0
+		},
+		"theme" : "cyberpunk",
+		"total_interaction_words" : 4
+	}
+}

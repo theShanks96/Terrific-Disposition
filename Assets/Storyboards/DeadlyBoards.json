@@ -1,0 +1,19 @@
+{
+  "DeadlyBoards": [
+    {
+      "entry": "deadly_board_000",
+      "board": "Surrounded by a horde of [negative_person]s, you decide to end it all yourself.
+      Just to make sure they do not get the joy of doing it themselves."
+    },
+    {
+      "entry": "deadly_board_001",
+      "board": "A [negative_person] masquerading as a [positive_person] took you unawares and ended you."
+    },
+    {
+      "entry": "deadly_board_002",
+      "board": "You suddenly feel [negative_adjective], looking around you realise a nearby [negative_person].
+      They acted too swiftly, finishing you off."
+    }
+  ]
+
+}

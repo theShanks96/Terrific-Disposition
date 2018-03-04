@@ -1,16 +1,36 @@
 {
   "StoryboardsConfiguration": [
     {
-      "name": "AcceptableConfiguration",
-      "filepath": "../Assets/Storyboards/AcceptableConfiguration.json"
+      "name": "AcceptableBoards",
+      "filepath": "../Assets/Storyboards/AcceptableBoards.json"
     },
     {
-      "name": "CautiousConfiguration",
-      "filepath": "../Assets/Storyboards/CautiousConfiguration.json"
+      "name": "CautiousBoards",
+      "filepath": "../Assets/Storyboards/CautiousBoards.json"
     },
     {
-      "name": "DeadlyConfiguration",
-      "filepath": "../Assets/Storyboards/DeadlyConfiguration.json"
+      "name": "DeadlyBoards",
+      "filepath": "../Assets/Storyboards/DeadlyBoards.json"
+    },
+    {
+      "name": "SimpleBoards",
+      "filepath": "../Assets/Storyboards/SimpleBoards.json"
+    },
+    {
+      "name": "DishonestReliableBoards",
+      "filepath": "../Assets/Storyboards/DishonestReliableBoards.json"
+    },
+    {
+      "name": "HonestReliableBoards",
+      "filepath": "../Assets/Storyboards/HonestReliableBoards.json"
+    },
+    {
+      "name": "HonestUnreliableBoards",
+      "filepath": "../Assets/Storyboards/HonestUnreliableBoards.json"
+    },
+    {
+      "name": "PlotBoards",
+      "filepath": "../Assets/Storyboards/PlotBoards.json"
     }
   ]
 }

@@ -1,14 +1,16 @@
 #include "CautiousTile.h"
 
 CautiousTile::CautiousTile() {
+	c_populated = false;
 	setTypeFlavour("Might be best to move away from here.");
 	c_classificationString = "cautious";
 	c_availablePlotPosBool = true;
 }
 
 CautiousTile::CautiousTile(std::string description_in) {
+	c_populated = false;
 	c_descriptionString = description_in;
-	setTypeFlavour("Might be best to move away from here.");
+	setTypeFlavour("Seems you are nearing death, best to move away from here.");
 	c_classificationString = "cautious";
 	c_availablePlotPosBool = true;
 
@@ -17,8 +19,9 @@ CautiousTile::CautiousTile(std::string description_in) {
 CautiousTile::CautiousTile(bool hideoutTile_in) {
 
 	if (hideoutTile_in) {
+		c_populated = true;
 		c_descriptionString = "The compromised hideout from before.";
-		setTypeFlavour("Might be best to move away from here.");
+		setTypeFlavour("Seems you are nearing death, best to move away from here.");
 		c_classificationString = "cautious";
 		c_availablePlotPosBool = false;
 
@@ -34,14 +37,19 @@ CautiousTile::~CautiousTile() {
 
 }
 
-bool CautiousTile::populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) {
-	if (c_interactable == nullptr) {
-		c_interactable = new Interactable();
-		c_interactable->ptr_behaviour = new FuzzyBehaviour(storyHonesty_in, play_in, hostility_in);
-		c_interactable->ptr_behaviour->c_nextPlotPoint = nextPlotPoint_in;
-		c_interactable->c_sapienceBool = true;
-	}
+bool CautiousTile::populateInteractables(int2d nextPlotPoint_in, int2d location_in, int storyHonesty_in, int play_in, int hostility_in, ResourceManager* resource_in, NaturalLogicManager* python_in) {
+	
+	c_interactable = new Interactable();
+	c_interactable->ptr_behaviour = new FuzzyBehaviour(storyHonesty_in, play_in, hostility_in);
+	c_interactable->ptr_behaviour->c_nextPlotPoint = nextPlotPoint_in;
+	c_interactable->ptr_behaviour->c_currentLocation = location_in;
+	c_interactable->c_sapienceBool = true;
+	c_interactable->c_nameString = resource_in->getRandomPseudonymOne(false).s_nameString + " " + resource_in->getRandomPseudonymTwo(false).s_nameString;
 
+	c_interactable->ptr_behaviour->linkResourceManager(resource_in);
+	c_interactable->ptr_behaviour->linkNaturalLogicManager(python_in);
+	
+	c_populated = true;
 
 	return true;
 }
@@ -64,4 +72,14 @@ bool CautiousTile::getInteractablePresence(std::string text_in) {
 	}
 	
 	return false;
+}
+
+std::string CautiousTile::interactByName(std::string entry_in) {
+	std::string m_temp = c_interactable->c_nameString;
+	std::transform(m_temp.begin(), m_temp.end(), m_temp.begin(), ::tolower);
+
+	if (entry_in.find(m_temp) != std::string::npos) {
+		return c_interactable->ptr_behaviour->interactionProcess(entry_in.substr(1, c_interactable->c_nameString.size()));
+	}
+	return "There was no reply";
 }

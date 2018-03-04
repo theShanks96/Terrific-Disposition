@@ -15,6 +15,6 @@ def nltkEntryProcess(entry_in):
     print('Entered pos: ')
     print(result_pos)
 
-nltkEntryProcess('Chocolate milk is delicious')
+nltkEntryProcess('ics')
 nltkEntryProcess('Spicy peppers give food a nice kick')
 nltkEntryProcess('That ugly man is an excellent woodworker')

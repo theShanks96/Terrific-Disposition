@@ -1,0 +1,50 @@
+{
+  "FirstStageBoards":[
+    {
+      "entry": "",
+      "board": ""
+    }
+  ],
+  "PrimaryAllyBoards":[
+    {
+      "entry": "primary_ally_000",
+      "board": "Thanks to the help of some [positive_person]s you've been accepted as a probationary member of [primary_ally].
+      Rumor has it that [tertiary_villain] has been made aware of your existence.
+      For now, it may be best to take them down."
+    }
+  ],
+  "SecondStageBoards":[
+
+  ],
+  "TertiarVillainBoards":[
+    {
+      "entry": "tertiary_villain_000",
+      "board": "You have made good use of [tertiary_macguffin], and now [secondary_villain] must be dispatched.
+      [primary_ally] has decided that removing [tertiary_villain] as a threat was in your self interest.
+      [secondary_villain] will pose a slightly less selfish target for your talents."
+    }
+  ],
+  "ThirdStageBoards":[
+
+  ],
+  "SecondaryVillainBoards": [
+    {
+      "entry": "secondary_villain_000",
+      "board": "In the end it seemed that [secondary_macguffin] was a suitable solution to [secondary_villain].
+      [primary_ally] has decided you are to be trusted, and have moved you up to their highest-profile project.
+      [primary_villain] will be taken care of, and then the daily struggle to live will continue."
+    }
+  ],
+  "FourthStageBoards":[
+
+  ],
+  "PrimaryVillainBoards": [
+    {
+      "entry": "primary_villain_000",
+      "board": "A [negative_person] compromised you using [negative_object], you have moments to contemplate.
+      Using [primary_macguffin] was a complete success, and [primary_villain] has been crippled for the time being.
+      Compromised people hardly live long, and your end has come at your apex."
+    }
+  ]
+
+}

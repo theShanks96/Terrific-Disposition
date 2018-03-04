@@ -1,12 +1,14 @@
 #include "DeadlyTile.h"
 
 DeadlyTile::DeadlyTile() {
+	c_populated = false;
 	setTypeFlavour("You are dead.");
 	c_classificationString = "deadly";
 	c_availablePlotPosBool = false;
 }
 
 DeadlyTile::DeadlyTile(std::string description_in) {
+	c_populated = false;
 	c_descriptionString = description_in;
 	setTypeFlavour("You are dead.");
 	c_classificationString = "deadly";
@@ -17,7 +19,8 @@ DeadlyTile::~DeadlyTile() {
 
 }
 
-bool DeadlyTile::populateInteractables(int2d nextPlotPoint_in, int storyHonesty_in, int play_in, int hostility_in) {
+bool DeadlyTile::populateInteractables(int2d nextPlotPoint_in, int2d location_in, int storyHonesty_in, int play_in, int hostility_in, ResourceManager* resource_in, NaturalLogicManager* python_in) {
+	c_populated = true;
 	return true;
 }
 
@@ -31,4 +34,7 @@ std::string DeadlyTile::getTileInformation() {
 
 bool DeadlyTile::getInteractablePresence(std::string text_in) {
 	return false;
+}
+std::string DeadlyTile::interactByName(std::string entry_in){
+	return	"You are dead.";
 }

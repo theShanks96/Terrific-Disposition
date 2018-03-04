@@ -130,6 +130,14 @@ World::World(int mapSize_in, Player* player_in) {
 	
 	ptr_player->c_positionInt2d = c_playerStartPosition;
 	v_plotPositions.reserve(c_plotMaxInt);
+
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("Commands: Look, Equip, Inspect, Interact <person>");
+	v_pendingOutputStrings.push_back("Commands: Move <North/East/South/West> ");
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("To interact with a person/thing, refer to them by their name.");
+	v_pendingOutputStrings.push_back("Don't recognise a word? Inspect <word> might help define it for you.");
+	v_pendingOutputStrings.push_back("");
 	
 	v_worldTiles.at(c_playerStartPosition.s_firstInt).at(c_playerStartPosition.s_secondInt) = new CautiousTile(true);
 	v_pendingOutputStrings.push_back(ptr_player->c_nameString + ", you've left the hideout and your journey begins");
@@ -150,6 +158,131 @@ World::World(int mapSize_in, Player* player_in) {
 	c_currentClassificationString = c_lastClassificationString;
 }
 
+World::World(int mapSize_in, Player* player_in, int2d startPos_in) {
+
+
+	//	This is used when loading a saved game
+
+	c_mapSizeInt = mapSize_in;
+	c_plotMaxInt = (int)(c_mapSizeInt * 0.75f);
+	ptr_player = player_in;
+	c_commandProfile = commandProfile(0, 0, 0, 0, 0, 0);
+	
+	//	Creating the map, although empty for the moment
+	std::vector<Tile*> m_temp;
+	m_temp.reserve(c_mapSizeInt);
+	for (int i = 0; i < c_mapSizeInt; i++)
+		m_temp.push_back(nullptr);
+
+	v_worldTiles.reserve(c_mapSizeInt);
+	for (int i = 0; i < c_mapSizeInt; i++)
+		v_worldTiles.push_back(m_temp);
+
+	//	Generating the danger zones for the map
+	if (c_mapSizeInt == 16) {
+		std::vector<int2d> v_positions;
+		v_positions.reserve(4);
+		v_positions.push_back(int2d(7, 3));
+		v_positions.push_back(int2d(7, 11));
+		v_positions.push_back(int2d(3, 7));
+		v_positions.push_back(int2d(11, 7));
+
+		for (int2d l_position : v_positions) {
+			v_worldTiles.at(l_position.s_firstInt).at(l_position.s_secondInt) = new DeadlyTile();
+
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					//	Ensure that the DeadlyTile is skipped over
+					if (v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) == nullptr)
+						v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) = new CautiousTile();
+				}
+			}
+		}
+
+	}
+	else if (c_mapSizeInt == 32) {
+
+		std::vector<int2d> v_positions;
+		v_positions.reserve(4);
+		v_positions.push_back(int2d(15, 7));
+		v_positions.push_back(int2d(15, 23));
+		v_positions.push_back(int2d(7, 15));
+		v_positions.push_back(int2d(23, 15));
+
+		for (int2d l_position : v_positions) {
+
+			for (int i = -1; i < 2; i++) {
+				for (int j = -1; j < 2; j++) {
+					v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) = new DeadlyTile();
+				}
+			}
+
+			for (int i = -3; i < 4; i++) {
+				for (int j = -3; j < 4; j++) {
+					//	Ensure that the DeadlyTiles are skipped over
+					if (v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) == nullptr)
+						v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) = new CautiousTile();
+				}
+			}
+		}
+
+	}
+	else if (c_mapSizeInt == 64) {
+
+		std::vector<int2d> v_positions;
+		v_positions.reserve(4);
+		v_positions.push_back(int2d(31, 15));
+		v_positions.push_back(int2d(31, 47));
+		v_positions.push_back(int2d(15, 31));
+		v_positions.push_back(int2d(47, 31));
+
+		for (int2d l_position : v_positions) {
+
+			for (int i = -4; i < 5; i++) {
+				for (int j = -4; j < 5; j++) {
+					v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) = new DeadlyTile();
+				}
+			}
+
+			for (int i = -8; i < 9; i++) {
+				for (int j = -8; j < 9; j++) {
+					//	Ensure that the DeadlyTiles are skipped over
+					if (v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) == nullptr)
+						v_worldTiles.at(l_position.s_firstInt + i).at(l_position.s_secondInt + j) = new CautiousTile();
+				}
+			}
+		}
+
+	}
+
+	//	Setting the player's start location	
+	c_playerStartPosition = startPos_in;
+	v_plotPositions.reserve(c_plotMaxInt);
+
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("Commands: Look, Equip, Inspect, Interact <person>");
+	v_pendingOutputStrings.push_back("Commands: Move <North/East/South/West> ");
+	v_pendingOutputStrings.push_back("");
+	v_pendingOutputStrings.push_back("To interact with a person/thing, refer to them by their name.");
+	v_pendingOutputStrings.push_back("Don't recognise a word? Inspect <word> might help define it for you.");
+	v_pendingOutputStrings.push_back("");
+
+	v_worldTiles.at(c_playerStartPosition.s_firstInt).at(c_playerStartPosition.s_secondInt) = new CautiousTile(true);
+	//v_pendingOutputStrings.push_back(ptr_player->c_nameString + ", you've left the hideout and your journey begins");
+	
+	v_pendingOutputStrings.push_back("Loading Successful: Welcome back " + ptr_player->c_nameString);
+
+	// Initialise the remainder of the map with acceptable tiles
+	for (int i = 0; i < c_mapSizeInt; i++) {
+		for (int j = 0; j < c_mapSizeInt; j++) {
+			if (v_worldTiles.at(i).at(j) == nullptr)
+				v_worldTiles.at(i).at(j) = new AcceptableTile();
+		}
+	}
+	c_lastClassificationString = currentTileClassification();
+	c_currentClassificationString = c_lastClassificationString;
+}
+
 World::~World() {
 	for (int i = 0; i < v_worldTiles.size(); i++) {
 		v_worldTiles.at(i).erase(v_worldTiles.at(i).begin(), v_worldTiles.at(i).end());
@@ -158,8 +291,12 @@ World::~World() {
 	delete this;
 }
 
-void World::linkPythonManager(PythonManager* python_in) {
-	ptr_pythonManager = python_in;
+
+void World::linkResourceManager(ResourceManager* resource_in) {
+	ptr_resourceManager = resource_in;
+}
+void World::linkNaturalLogicManager(NaturalLogicManager* python_in) {
+	ptr_naturalLogicManager = python_in;
 }
 
 void World::handleCommand(std::string& command_in) {
@@ -243,31 +380,123 @@ void World::handleCommand(std::string& command_in) {
 			v_pendingOutputStrings.push_back("You cannot move in that direction.");
 	}
 	else if (m_command.compare(0, 16, "pickup attempt: ") == 0) {
-		
+		v_pendingOutputStrings.push_back("There is nothing to pickup.");
 	}
 	else if (m_command.compare(0, 15, "equip attempt: ") == 0) {
-		
+		v_pendingOutputStrings.push_back("There is nothing to equip.");
 	}
 	else if (m_command.compare(0, 17, "inspect attempt: ") == 0) {
+		std::string m_temp = m_command.substr(17, m_command.size());
+		bool m_itemFound = false;
+		//	First check the inventory items
+		for (int i = 0; i < ptr_player->v_inventoryItems.size(); i++) {
+			if (!m_itemFound && m_temp.find(ptr_player->v_inventoryItems.at(i).s_titleString) != std::string::npos) {
+				v_pendingOutputStrings.push_back("[" + ptr_player->v_inventoryItems.at(i).s_qualityString + "] " + ptr_player->v_inventoryItems.at(i).s_bodyString);
+				m_itemFound = true;
+			}
+		}
 
+		//	Then check for a definition
+		if (!m_itemFound) {
+			v_pendingOutputStrings.push_back(ptr_naturalLogicManager->nltkDictionaryDefinition(m_temp));
+		}
 	}
-	else if (m_command.compare(0, 17, "interact attempt: ") == 0) {
-		//	Attempt to interact with an interactable
+	else if (m_command.compare(0, 18, "interact attempt: ") == 0) {
 		bool m_interactableFound = false;
-		if(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_classificationString == "acceptable"
-			&& v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getInteractablePresence(m_command.substr(17, m_command.size()))) {
+		//	Mechanism to quit the game
+		if (m_command.find("quit game") != std::string::npos) {
+			v_pendingOutputStrings.push_back("");
+			v_pendingOutputStrings.push_back("End of game");
+			v_pendingOutputStrings.push_back("To play again: Restart Game");
+			ptr_player->c_healthFloat = 0.0f;
+		}
 
+		//	Saving mechanism
+		else if (m_command.find("save game") != std::string::npos) {
+			bool m_saveConfirmed = false;
+			if (m_command.find("overwrite") != std::string::npos) {
+				m_saveConfirmed = true;
+			}
+			else {
+				if (ptr_resourceManager->checkSavefilePaths(ptr_player->c_nameString)) {
+					v_pendingOutputStrings.push_back("A previous save with the same name was found.");
+					v_pendingOutputStrings.push_back("To overwrite this save: interact save game overwrite");
+					v_pendingOutputStrings.push_back("At this time the game has not been saved.");
+				}
+				else {
+					m_saveConfirmed = true;
+				}
+			}
+
+			if (m_saveConfirmed) {
+				v_pendingOutputStrings.push_back("Game is being saved ...");
+				saveProfile m_save = saveProfile();
+				m_save.s_playerName = ptr_player->c_nameString;
+				m_save.s_playerHealth = ptr_player->c_healthFloat;
+
+				m_save.s_playerCurrentLocation = ptr_player->c_positionInt2d;
+				m_save.s_playerStartLocation = c_playerStartPosition;
+
+				m_save.s_interactionsInt = ptr_player->c_interactionsInt;
+				m_save.s_hostilityInt = ptr_player->c_hostilityInt;
+				m_save.s_recentPleasantryInt = ptr_player->c_recentPleasantryInt;
+				m_save.s_totalInteractionWordsInt = ptr_player->c_totalInteractionWordsInt;
+
+				m_save.s_playStyle = ptr_player->c_playStyle;
+				m_save.v_playerInventory.clear();
+				m_save.v_playerInventory.reserve(ptr_player->v_inventoryItems.size());
+				for (int i = 0; i < ptr_player->v_inventoryItems.size(); i++) {
+					m_save.v_playerInventory.push_back(ptr_player->v_inventoryItems.at(i));
+				}
+				m_save.s_playerHeadAttire = ptr_player->c_attireHeadString;
+				m_save.s_playerTorsoAttire = ptr_player->c_attireTorsoString;
+				m_save.s_playerEquipment = ptr_player->c_equipmentString;
+
+				m_save.s_mapSize = c_mapSizeInt;
+				m_save.s_worldTheme = ptr_player->c_theme;
+				m_save.v_plotPoints.clear();
+				m_save.v_plotPoints.reserve(v_plotPositions.size());
+				for (int i = 0; i < v_plotPositions.size(); i++) {
+					m_save.v_plotPoints.push_back(v_plotPositions.at(i));
+				}
+
+				m_save.s_totalHonestReliableInt = c_totalHonestReliableInt;
+				m_save.s_totalHonestUnreliableInt = c_totalHonestUnreliableInt;
+				m_save.s_totalDishonestReliableInt = c_totalDishonestReliableInt;
+
+				ptr_resourceManager->writeSavefile(m_save);
+
+				v_pendingOutputStrings.push_back("Save procedure complete.");
+			}
+		}
+
+		//	Attempt to interact with an interactable
+		else if(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_classificationString == "acceptable"
+			&& v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getInteractablePresence(m_command.substr(17, m_command.size()))) {
+			
+			std::string m_tempString = v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->interactByName(m_command.substr(17, m_command.size()));			
+			v_pendingOutputStrings.push_back(m_tempString);
+			float m_temp = m_tempString.size() / 100.0f;
+			for (int i = 0; i < ceil(m_temp); i++) {
+				v_pendingOutputStrings.push_back("");
+			}
 		}
 		else if (v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_classificationString == "cautious"
 			&& v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getInteractablePresence(m_command.substr(17, m_command.size()))) {
 
+			std::string m_tempString = v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->interactByName(m_command.substr(17, m_command.size()));
+			v_pendingOutputStrings.push_back(m_tempString);
+			float m_temp = m_tempString.size() / 100.0f;
+			for (int i = 0; i < ceil(m_temp); i++) {
+				v_pendingOutputStrings.push_back("");
+			}
 		}
 		else {
 			v_pendingOutputStrings.push_back(m_command.substr(17, m_command.size()) + " doesn't seem to be within reach.");
 		}
 
 		//	This will send the entered interact command to the natural language processor
-		c_commandProfile = ptr_pythonManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
+		c_commandProfile = ptr_naturalLogicManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
 		
 		//	The player's hostility is cumulative through the entire game
 		ptr_player->c_hostilityInt += c_commandProfile.s_hostilityInt;
@@ -305,22 +534,7 @@ void World::addPlotPoint() {
 		bool m_success = false;
 
 		//	Due to randomisation, it has to be done repeatedly until it functions properly
-		while (!m_success) {
-			
-			//	randomising between -1 or 1, but 0 is not acceptable, this is done just for the signed component	
-			//while (m_plotPosition.s_secondInt == 0) {
-			//	//srand(time(NULL));
-			//	//m_plotPosition.s_secondString = rand() % 2 - 1;
-			//
-			//
-			//	std::random_device m_randomDevice;
-			//	std::mt19937 m_mt(m_randomDevice());
-			//	std::uniform_int_distribution<int> m_dist(-1, 1);
-			//	m_plotPosition.s_secondInt = m_dist(m_mt);
-			//}
-
-			
-			
+		while (!m_success) {			
 
 			//	This creates the plot position, and checks to see if it is within bounds
 			do {
@@ -398,6 +612,7 @@ void World::addPlotPoint() {
 
 		//	Add the successful plot position to the appropriate vector
 		v_plotPositions.push_back(m_plotPosition);
+		std::cout << "Next plot point: " + std::to_string(m_plotPosition.s_firstInt) + "," + std::to_string(m_plotPosition.s_secondInt) << std::endl;
 	}
 }
 
@@ -414,30 +629,69 @@ bool World::isSameTileProgression() {
 
 
 void World::processTile() {
-	v_pendingOutputStrings.push_back(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getDescription()
-		+ " " + v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getTypeFlavour());
-
-	c_lastClassificationString = c_currentClassificationString;
-	c_currentClassificationString = currentTileClassification();
-
-	v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->populateInteractables(v_plotPositions.back(), (int)((c_totalHonestReliableInt + c_totalHonestUnreliableInt) / c_totalDishonestReliableInt) , ptr_player->c_playStyle, (int)(ptr_player->c_hostilityInt / ptr_player->c_totalInteractionWordsInt));
-
 
 	//	This is to check if this tile is a plot tile
-	if ( ptr_player->c_positionInt2d.s_firstInt == v_plotPositions.back().s_firstInt
-		&& ptr_player->c_positionInt2d.s_secondInt == v_plotPositions.back().s_secondInt 
-		&& v_plotPositions.size() < c_plotMaxInt ) {
+	if (ptr_player->c_positionInt2d.s_firstInt == v_plotPositions.back().s_firstInt
+		&& ptr_player->c_positionInt2d.s_secondInt == v_plotPositions.back().s_secondInt
+		&& v_plotPositions.size() < c_plotMaxInt) {
 
+		v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->setDescription(ptr_naturalLogicManager->plotBoardProcessing(v_plotPositions.size() - 1, c_plotMaxInt));
+		
 		//	This will generate the next plot point
 		addPlotPoint();
 
 	}
+	//	If it is not a plot point, check if it already has a description, if not assign one
+	else if (v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getDescription().size() == 0) {
+		v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->setDescription(ptr_naturalLogicManager->tileBoardProcessing(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_classificationString));
+	}
+	v_pendingOutputStrings.push_back(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getDescription());
+	
+	float m_temp = v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getDescription().size() / 90.0f;
+
+	//	Some of the assigned boards are multi-lined, to accomodate them additional empties have to be added
+	for (int i = 0; i < roundf(m_temp); i++) {
+		v_pendingOutputStrings.push_back("");
+	}
+	v_pendingOutputStrings.push_back(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getTypeFlavour());
+
+	c_lastClassificationString = c_currentClassificationString;
+	c_currentClassificationString = currentTileClassification();
+
+	int m_honestyIndex;
+	if (c_totalDishonestReliableInt == 0)
+		m_honestyIndex = 1;
+	else
+		m_honestyIndex = (int)((c_totalHonestReliableInt + c_totalHonestUnreliableInt) / c_totalDishonestReliableInt);
+		
+	int m_hostilityIndex;
+	if (ptr_player->c_totalInteractionWordsInt == 0)
+		m_hostilityIndex = 1;
+	else
+		m_hostilityIndex = (int)(ptr_player->c_hostilityInt / ptr_player->c_totalInteractionWordsInt);
+
+	if(!v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_populated)
+		v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->populateInteractables(v_plotPositions.back(), ptr_player->c_positionInt2d, m_honestyIndex, ptr_player->c_playStyle, m_hostilityIndex, ptr_resourceManager, ptr_naturalLogicManager);
+
+	if (c_currentClassificationString == "deadly") {
+		v_pendingOutputStrings.push_back("");
+		v_pendingOutputStrings.push_back("End of game");
+		v_pendingOutputStrings.push_back("To play again: Restart Game");
+		ptr_player->c_healthFloat = 0.0f;
+	}
+
+	
 	//	This will determine if the player has met the end of the game's plot
 	else if ( ptr_player->c_positionInt2d.s_firstInt == v_plotPositions.back().s_firstInt
 		&& ptr_player->c_positionInt2d.s_secondInt == v_plotPositions.back().s_secondInt
 		&& v_plotPositions.size() >= c_plotMaxInt ) {
 
+		v_pendingOutputStrings.push_back("");
 		v_pendingOutputStrings.push_back("End of game");
+		v_pendingOutputStrings.push_back("To play again: Restart Game");
+		ptr_player->c_healthFloat = 0.0f;
+
+
 	}
 
 }

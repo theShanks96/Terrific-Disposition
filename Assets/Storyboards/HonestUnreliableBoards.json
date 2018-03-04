@@ -1,0 +1,20 @@
+{
+  "HonestUnreliableBoards":  [
+    {
+      "low": "I don't know where you're goin, but I've heard that [negative_person]s have been confiscating [positive_object]s.",
+      "medium": "A [negative_adjective] [positive_object] is better than no [positive_object], that's what my mother always said.
+      Whereas my father always said that in that circumstance he'd rather have a [positive_adjective] [negative_object].",
+      "high": "I've heard the [positive_person]s are having some sort of celebration.
+      Meanwhile it seems that the [negative_person] are getting restless with the weather and the times.
+      It might be best to look out for any [negative_person] lurking around."
+    },
+    {
+      "low": "I don't know where you're goin, but I've heard that [negative_person]s have been confiscating [positive_object]s.",
+      "medium": "A [negative_adjective] [positive_object] is better than no [positive_object], that's what my mother always said.
+      Whereas my father always said that in that circumstance he'd rather have a [positive_adjective] [negative_object].",
+      "high": "I've heard the [positive_person]s are having some sort of celebration.
+      Meanwhile it seems that the [negative_person] are getting restless with the weather and the times.
+      It might be best to look out for any [negative_person] lurking around."
+    }
+  ]
+}

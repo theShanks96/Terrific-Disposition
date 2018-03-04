@@ -470,7 +470,7 @@
     <ClInclude Include="Interactable.h">
       <Filter>Header Files\GameElements</Filter>
     </ClInclude>
-    <ClInclude Include="PythonManager.h">
+    <ClInclude Include="NaturalLogicManager.h">
       <Filter>Header Files\Management</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,12 +1,12 @@
 #include "FuzzyBehaviour.h"
 
-FuzzyBehaviour::FuzzyBehaviour(int& hR_in, int& play_in, int& aggro_in) {
+FuzzyBehaviour::FuzzyBehaviour(int& hR_in, int& play_in, int& hostility_in) {
 
 	v_playerStrings.reserve(16);
 	
 	fl::scalar m_storyHonesty = hR_in;
 	fl::scalar m_playStyle = play_in;
-	fl::scalar m_aggression = aggro_in;
+	fl::scalar m_aggression = hostility_in;
 	
 
 	//	This will help determine the context of the game so far
@@ -275,13 +275,20 @@ FuzzyBehaviour::~FuzzyBehaviour() {
 std::string FuzzyBehaviour::interactionProcess(std::string userText_in) {
 	addInteractionLog(userText_in);
 
+	int m_classification;
+	if (c_classification == "acceptable") {
+		m_classification = 2;
+	}
+	else if (c_classification == "cautious") {
+		m_classification = 8;
+	}
 	ptr_entityBehaviourIV->setValue(ptr_behaviour);
 	ptr_playerPleasantryIV->setValue(2);
 	ptr_tileClassificationIV->setValue(2);
 
 	ptr_interactionEngine->process();
-
-	return "empty";
+	
+	return ptr_naturalLogicManager->fuzzyBehaviourBoardProcessing(ptr_behaviour, ptr_behaviourMagnitudeOV->getValue(), c_nextPlotPoint, c_currentLocation); 
 }
 
 std::string FuzzyBehaviour::interactionProcessTesting(int pleasantry_in, std::string classification_in) {
@@ -310,8 +317,6 @@ void FuzzyBehaviour::addInteractionLog(std::string& userText_in) {
 	v_playerStrings.push_back(userText_in);
 
 }
-
-
 
 float FuzzyBehaviour::getBehaviourTesting() {
 	return ptr_behaviour;

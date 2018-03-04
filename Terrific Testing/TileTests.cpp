@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 
 #include "../Terrific Disposition/ResourceManager.h"
-#include "../Terrific Disposition/PythonManager.h"
+#include "../Terrific Disposition/NaturalLogicManager.h"
 
 #include "../Terrific Disposition/AcceptableTile.h"
 #include "../Terrific Disposition/CautiousTile.h"

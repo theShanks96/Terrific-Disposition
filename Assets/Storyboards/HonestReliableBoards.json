@@ -1,0 +1,14 @@
+{
+  "HonestReliableBoards":  [
+    {
+      "low": "Hey good buddy, you need to go [direction]!",
+      "medium": "Hallo there, it seems your on your way [tiles] paces [direction].",
+      "high": "Life is dreary but that's all the reason to be nice! Go [x-direction] [x-tiles], [y-direction] [y-tiles]"
+    },
+    {
+      "low": "Hey good buddy, you need to go [direction]!",
+      "medium": "Hallo there, it seems your on your way [tiles] paces [direction].",
+      "high": "Life is dreary but that's all the reason to be nice! Go [x-direction] [x-tiles], [y-direction] [y-tiles]"
+    }
+  ]
+}

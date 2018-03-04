@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 
 #include "../Terrific Disposition/ResourceManager.h"
-#include "../Terrific Disposition/PythonManager.h"
+#include "../Terrific Disposition/NaturalLogicManager.h"
 
 #include "../Terrific Disposition/Player.h"
 #include "../Terrific Disposition/Interactable.h"
@@ -17,7 +17,6 @@ public:
 
 	TEST_METHOD(PlayerConstructor) {
 		ResourceManager* ptr_resourceManager = new ResourceManager("../../../Assets/AssetConfigurationTesting.json");
-		PythonManager* ptr_pythonManager = new PythonManager(ptr_resourceManager);
 
 		std::string m_playerName = ptr_resourceManager->getRandomPseudonymOne(true).s_nameString + " " + ptr_resourceManager->getRandomPseudonymTwo(true).s_nameString;
 		Player* ptr_player = new Player(m_playerName);

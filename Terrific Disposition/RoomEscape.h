@@ -11,7 +11,7 @@
 
 #include <json/json.h>
 
-#include "PythonManager.h"
+#include "NaturalLogicManager.h"
 #include "DataStructs.h"
 #include "Player.h"
 
@@ -22,8 +22,8 @@ public:
 	RoomEscape();
 	~RoomEscape();
 
-	PythonManager* ptr_pythonManager;
-	void linkPythonManager(PythonManager* python_in);
+	NaturalLogicManager* ptr_naturalLogicManager;
+	void linkNaturalLogicManager(NaturalLogicManager* python_in);
 	Player* ptr_player;
 	void linkPlayer(Player* player_in);
 

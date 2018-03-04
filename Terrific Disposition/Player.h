@@ -14,6 +14,7 @@ public:
 	~Player();
 
 	std::string c_nameString;
+	std::string c_theme;
 	std::vector<inventoryItem> v_inventoryItems;
 
 	int c_interactionsInt;

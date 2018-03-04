@@ -1,7 +1,7 @@
 #include "Tile.h"
 
 Tile::Tile() {
-
+	c_populated = false;
 }
 Tile::Tile(std::string description_in) {
 
@@ -15,7 +15,7 @@ std::string Tile::getDescription() {
 	return c_descriptionString;
 }
 void Tile::setDescription(std::string description_in) {
-	c_descriptionString = description_in + c_typeFlavourString;
+	c_descriptionString = description_in;
 }
 
 std::string Tile::getTypeFlavour() {

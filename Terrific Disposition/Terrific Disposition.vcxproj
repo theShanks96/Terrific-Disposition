@@ -287,7 +287,7 @@
     <ClInclude Include="CautiousTile.h" />
     <ClInclude Include="DeadlyTile.h" />
     <ClInclude Include="FuzzyBehaviour.h" />
-    <ClInclude Include="PythonManager.h" />
+    <ClInclude Include="NaturalLogicManager.h" />
     <ClInclude Include="RoomEscape.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="GameLogic.h" />

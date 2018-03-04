@@ -68,8 +68,8 @@ void RoomEscape::linkPlayer(Player* player_in) {
 	ptr_player = player_in;
 }
 
-void RoomEscape::linkPythonManager(PythonManager* python_in) {
-	ptr_pythonManager = python_in;
+void RoomEscape::linkNaturalLogicManager(NaturalLogicManager* python_in) {
+	ptr_naturalLogicManager = python_in;
 }
 
 
@@ -329,7 +329,7 @@ void RoomEscape::handleCommand(std::string& command_in) {
 
 
 		//	This will send the entered interact command to the natural language processor
-		c_commandProfile = ptr_pythonManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
+		c_commandProfile = ptr_naturalLogicManager->nltkEntryProcessing(m_command.substr(17, m_command.size()));
 
 		//	The player's hostility is cumulative through the entire game
 		ptr_player->c_hostilityInt += c_commandProfile.s_hostilityInt;

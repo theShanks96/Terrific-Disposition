@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 
 #include "../Terrific Disposition/ResourceManager.h"
-#include "../Terrific Disposition/PythonManager.h"
+#include "../Terrific Disposition/NaturalLogicManager.h"
 
 #include "../Terrific Disposition/Player.h"
 #include "../Terrific Disposition/RoomEscape.h"
@@ -17,7 +17,7 @@ public:
 
 	TEST_METHOD(RoomEscapeConstructor) {
 		ResourceManager* ptr_resourceManager = new ResourceManager("../../../Assets/AssetConfigurationTesting.json");
-		PythonManager* ptr_pythonManager = new PythonManager(ptr_resourceManager);
+		NaturalLogicManager* ptr_naturalLogicManager = new NaturalLogicManager(ptr_resourceManager);
 
 		std::string m_playerName = ptr_resourceManager->getRandomPseudonymOne(true).s_nameString + " " + ptr_resourceManager->getRandomPseudonymTwo(true).s_nameString;
 		Player* ptr_player = new Player(m_playerName);
@@ -32,10 +32,10 @@ public:
 		//	Although the basic constructor has been tested, it is best to test the full contructor
 		ptr_roomEscape->readFromConfiguration(ptr_resourceManager->getThemePath("RoomEscapeConfiguration"));
 		ptr_roomEscape->linkPlayer(ptr_player);
-		ptr_roomEscape->linkPythonManager(ptr_pythonManager);
+		ptr_roomEscape->linkNaturalLogicManager(ptr_naturalLogicManager);
 		
 		Assert::AreNotEqual(0, (int)ptr_roomEscape->ptr_player->c_nameString.size(), L"Player is not linked");
-		Assert::AreEqual(16, ptr_roomEscape->ptr_pythonManager->c_vectorCapacityInt, L"PythonManager is not linked");
+		Assert::AreEqual(16, ptr_roomEscape->ptr_naturalLogicManager->c_vectorCapacityInt, L"NaturalLogicManager is not linked");
 	}
 
 	};

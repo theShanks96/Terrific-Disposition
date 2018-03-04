@@ -70,6 +70,10 @@ SFML_Window::SFML_Window() {
 	v_journalDisplays.push_back(sf::Text(">Journal", c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_journalDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
+
+
+	ptr_gameLogic = new GameLogic();
+
 }
 SFML_Window::~SFML_Window() {
 
@@ -88,7 +92,10 @@ int SFML_Window::Update() {
 			
 			while (ptr_gameLogic->v_pendingOutputStrings.size() > 0) {
 				if (ptr_gameLogic->v_pendingOutputStrings.front().compare(0, 22, "You remember going by ") == 0) {
-					addJournalText("Name: " + ptr_gameLogic->v_pendingOutputStrings.front().substr(22, ptr_gameLogic->v_pendingOutputStrings.front().size()));
+
+					v_outputDisplays.clear();
+
+					addJournalText("Name: " + ptr_gameLogic->ptr_player->c_nameString);
 					addJournalText("Head: " + ptr_gameLogic->ptr_player->c_attireHeadString);
 					addJournalText("Torso: " + ptr_gameLogic->ptr_player->c_attireTorsoString);
 					addJournalText("Equipment: " + ptr_gameLogic->ptr_player->c_equipmentString);
@@ -96,6 +103,14 @@ int SFML_Window::Update() {
 				}
 				if (ptr_gameLogic->v_pendingOutputStrings.front().find("you've left the hideout and your journey begins") != std::string::npos) {
 					addJournalText("Position: " + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_firstInt) + "," + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_secondInt));
+				}
+				if (ptr_gameLogic->v_pendingOutputStrings.front().find("Loading Successful: Welcome back ") != std::string::npos) {
+					addJournalText("Name: " + ptr_gameLogic->ptr_player->c_nameString);
+					addJournalText("Head: " + ptr_gameLogic->ptr_player->c_attireHeadString);
+					addJournalText("Torso: " + ptr_gameLogic->ptr_player->c_attireTorsoString);
+					addJournalText("Equipment: " + ptr_gameLogic->ptr_player->c_equipmentString);
+					addJournalText("Position: " + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_firstInt) + "," + std::to_string(ptr_gameLogic->ptr_player->c_positionInt2d.s_secondInt));
+
 				}
 				addOutputText(ptr_gameLogic->v_pendingOutputStrings.front());
 				ptr_gameLogic->v_pendingOutputStrings.erase(ptr_gameLogic->v_pendingOutputStrings.begin());
@@ -186,6 +201,21 @@ int SFML_Window::Update() {
 						v_outputDisplays.clear();
 						addOutputText(std::string("Screen Successfully Cleared"));
 						v_commandDisplays.clear();
+					}
+					else if ( ptr_gameLogic->ptr_player != NULL &&
+						(v_outputDisplays.back().getString().find("Restart Game") != std::string::npos
+						|| v_outputDisplays.back().getString().find("restart game") != std::string::npos)) {
+						if (ptr_gameLogic->ptr_player->c_healthFloat == 0.0f) {
+							v_outputDisplays.clear();
+							v_commandDisplays.clear();
+							ptr_gameLogic->restartGameLogic();
+							removeJournalText(std::string("Name: "));
+							removeJournalText(std::string("Head: "));
+							removeJournalText(std::string("Torso: "));
+							removeJournalText(std::string("Equipment: "));
+							removeJournalText(std::string("Position: "));
+						}
+
 					}
 
 					v_commandDisplays.push_back(sf::Text(">", c_activeFont, (int)(c_windowUnitInt * 3)));
@@ -342,6 +372,14 @@ bool SFML_Window::updateJournalText(std::string& entry_in, std::string& alterati
 		}
 	}
 	return false;
+}
+
+void SFML_Window::removeJournalText(std::string& entry_in) {
+	for (int i = 0; i < v_journalDisplays.size(); i++) {
+		if (v_journalDisplays.at(i).getString().find(entry_in) != std::string::npos) {
+			v_journalDisplays.erase(v_journalDisplays.begin() + i);
+		}
+	}
 }
 
 void SFML_Window::addNoteText(std::string& string_in) {

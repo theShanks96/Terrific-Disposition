@@ -1,0 +1,16 @@
+
+{
+	"SavefilesConfiguration" : 
+	[
+		
+		{
+			"filepath" : "../Assets/Savefiles/TestName.json",
+			"name" : "TestName"
+		},
+		
+		{
+			"filepath" : "../Assets/Savefiles/Groc Sangui.json",
+			"name" : "Groc Sangui"
+		}
+	]
+}

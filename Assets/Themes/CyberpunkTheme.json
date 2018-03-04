@@ -1,11 +1,144 @@
 {
-  "Adjectives": [
-
+  "NegativeAdjectives": [
+    {
+      "entry": "filed",
+      "definition": "having information collected and filed"
+    },
+    {
+      "entry": "suited",
+      "definition": "uniformed or stereotyped"
+    },
+    {
+      "entry": "meadow",
+      "definition": "out in the open or vulnerable"
+    }
   ],
-  "Verbs": [
-
+  "PositiveAdjectives": [
+    {
+      "entry": "hidden",
+      "definition": "out of sight or other forms of detection"
+    },
+    {
+      "entry": "apogee",
+      "definition": "peak or the greatest of its type"
+    },
+    {
+      "entry": "ragged",
+      "definition": "visibly stressed or worn from hard work"
+    }
   ],
-  "Nouns":[
-
+  "NegativeVerbs": [
+    {
+      "entry": "heatwave",
+      "definition": "to significantly increase hostility, often by authority figures"
+    },
+    {
+      "entry": "roust",
+      "definition": "to be actively harranged by authority figures"
+    },
+    {
+      "entry": "sing",
+      "definition": "to inform on others to their competitors or enemies"
+    }
+  ],
+  "PositiveVerbs": [
+    {
+      "entry": "ghost",
+      "definition": "to hide from detection or surveillance"
+    },
+    {
+      "entry": "pulling teeth",
+      "definition": "to forcibly extract information from a person or system"
+    },
+    {
+      "entry": "netrun",
+      "definition": "to connect to a computer system for products, services, or information"
+    }
+  ],
+  "NegativeObjectNouns":[
+    {
+      "entry": "clipper-chip",
+      "definition": "an implanted tracking chip"
+    },
+    {
+      "entry": "fletcher",
+      "definition": "a firearm whose ammunition resembles many small arrows or needles"
+    },
+    {
+      "entry": "ics.",
+      "definition": "intrusion countermeasure systems - hacking resistant software or electronics"
+    }
+  ],
+  "NegativePersonNouns":[
+    {
+      "entry": "badge",
+      "definition": "an authority figure"
+    },
+    {
+      "entry": "turncloak",
+      "definition": "a traitor or backstabber"
+    },
+    {
+      "entry": "snitch",
+      "definition": "an informer to the enemy or competition"
+    }
+  ],
+  "PositiveObjectNouns":[
+    {
+      "entry": "delta",
+      "definition": "a vehicle used primarily for smuggling"
+    },
+    {
+      "entry": "mime",
+      "definition": "mixed intrusion methodical executable - software that often succeeds at hacking low-order systems"
+    },
+    {
+      "entry": "ir-reflector",
+      "definition": "material or electronic that interferes with infrared security systems"
+    }
+  ],
+  "PositivePersonNouns":[
+    {
+      "entry": "butterfly",
+      "definition": "a forger specialising in identity hashes"
+    },
+    {
+      "entry": "chombatta",
+      "definition": "a reliable friend or family member"
+    },
+    {
+      "entry": "painted punk",
+      "definition": "a member of an illegal organisation of community protectors, often riddled with tattoos"
+    }
+  ],
+  "PlotKeywords":[
+    {
+      "key": "primary_villain",
+      "name": "The Federation for Citizen Value"
+    },
+    {
+      "key": "secondary_villain",
+      "name": "Federation Agency for the Welfare of Public Opinion"
+    },
+    {
+      "key": "tertiary_villain",
+      "name": "Agent 451"
+    },
+    {
+      "key": "primary_ally",
+      "name": "The Plain Janes"
+    },
+    {
+      "key": "primary_macguffin",
+      "name": "Federation Public Disorder Toolkit"
+    },
+    {
+      "key": "secondary_macguffin",
+      "name": "Broad-Spectrum Obfuscation Program"
+    },
+    {
+      "key": "tertiary_macguffin",
+      "name": "Falsified Treasonous Opinion Column"
+    }
   ]
 }

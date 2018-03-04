@@ -7,7 +7,7 @@
 #include <string>
 
 #include "ResourceManager.h"
-#include "PythonManager.h"
+#include "NaturalLogicManager.h"
 #include "World.h"
 #include "RoomEscape.h"
 
@@ -46,12 +46,15 @@ public:
 	GameLogic();
 	~GameLogic();
 
+	void restartGameLogic();
+	void loadProfile(std::string name_in);
+
 	std::string c_chosenThemeString;
 
 
 	Player* ptr_player;
 	ResourceManager* ptr_resourceManager;
-	PythonManager* ptr_pythonManager;
+	NaturalLogicManager* ptr_naturalLogicManager;
 	//SFML_Window* ptr_gameWindow;
 	
 	int c_currentGameState;
