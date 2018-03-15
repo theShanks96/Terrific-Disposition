@@ -10,27 +10,18 @@
 
 //! In-game entities that the player may interact with for benefit
 class Interactable {
-private:
-	
-	std::string c_storedInformation;
-	std::string c_sharedInformation;
+public:
+	bool c_sapienceBool;
+	Behaviour* ptr_behaviour;	
 
-	std::vector<std::string> v_semanticFieldStrings;
+private:	
+	std::string c_nameString;
+	std::string c_descriptionString;
 
 public:
 	Interactable();
 	~Interactable();
-
-	bool c_sapienceBool;
-	Behaviour* ptr_behaviour;
-	
-	std::string c_nameString;
-	std::string c_descriptionString;
-
-	std::string getInformation();
-	void setInformation(std::string information_in[]);
-
-
+		
 	std::string getName();
 	void setName(std::string name_in);
 	std::string getDescription();

@@ -103,7 +103,7 @@
     {
       "name": "passiveinvasion_question_one",
       "question": "Why would you require additional puncture protection from plants?",
-      "answer": "aggressive;attack;fight;alien;not;natural;infect;kill"
+      "answer": "aggressive;attack;fight;alien;unnatural;infect;kill"
     },
     {
       "name": "passiveinvasion_question_two",

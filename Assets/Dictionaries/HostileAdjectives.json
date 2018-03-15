@@ -1,26 +1,40 @@
 {  "HostileAdjectives": [
 
+      { "entry": "aggressive" },
       { "entry": "annoying" },
+
+      { "entry": "bad"  },
 
       { "entry": "cacophonous"  },
       { "entry": "coarse" },
+      { "entry": "covered"  },
       { "entry": "crude"  },
       { "entry": "cynical"  },
 
+      { "entry": "dangerous" },
+      { "entry": "deadly" },
       { "entry": "decrepit" },
       { "entry": "disgusting" },
       { "entry": "distorted"  },
 
+      { "entry": "evil"  },
+
+      { "entry": "forceful"  },
+
       { "entry": "irritated"  },
 
       { "entry": "maladroit"  },
+      { "entry": "mean" },
       { "entry": "mediocre" },
 
       { "entry": "noisy"  },
+      { "entry": "nuclear"  },
 
       { "entry": "offensive"  },
       { "entry": "ostracise"  },
       { "entry": "ostracize"  },
+
+      { "entry": "poisonous"  },
 
       { "entry": "rancid" },
       { "entry": "repugnant"  },
@@ -28,6 +42,12 @@
 
       { "entry": "shrill" },
       { "entry": "smelly" },
-      { "entry": "smug" }
+      { "entry": "smug" },
+      { "entry": "sneaky" },
+
+      { "entry": "unholy" },
+      { "entry": "unnatural" },
+
+      { "entry": "villainous" }
   ]
 }

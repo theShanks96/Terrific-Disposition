@@ -18,6 +18,6 @@ void Behaviour::linkResourceManager(ResourceManager* resource_in) {
 	ptr_resourceManager = resource_in;
 }
 
-void Behaviour::linkNaturalLogicManager(NaturalLogicManager* python_in) {
-	ptr_naturalLogicManager = python_in;
+void Behaviour::linkNaturalLogicManager(NaturalLogicManager* natural_in) {
+	ptr_naturalLogicManager = natural_in;
 }

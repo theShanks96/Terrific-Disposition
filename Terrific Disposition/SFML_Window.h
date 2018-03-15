@@ -24,8 +24,6 @@ private:
 
 	sf::Font c_activeFont;
 
-
-	sf::Text c_txt;
 	std::vector<sf::Text> v_commandDisplays;
 	std::vector<sf::Text> v_outputDisplays;
 	std::vector<sf::Text> v_noteDisplays;
@@ -47,6 +45,9 @@ private:
 	sf::Color arr_backgroundColours[4];
 	sf::Color arr_foregroundColours[4];
 
+	int c_foregroundIndexInt;
+	int c_backgroundIndexInt;
+
 	int c_windowWidthInt;
 	int c_windowHeightInt;
 	int c_windowUnitInt;
@@ -54,9 +55,6 @@ private:
 	int c_textCascadingInt;
 
 	int c_errorCodeInt;
-
-	int c_foregroundIndexInt;
-	int c_backgroundIndexInt;
 
 public:
 	SFML_Window();

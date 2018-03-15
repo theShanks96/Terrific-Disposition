@@ -44,7 +44,7 @@ bool CautiousTile::populateInteractables(int2d nextPlotPoint_in, int2d location_
 	c_interactable->ptr_behaviour->c_nextPlotPoint = nextPlotPoint_in;
 	c_interactable->ptr_behaviour->c_currentLocation = location_in;
 	c_interactable->c_sapienceBool = true;
-	c_interactable->c_nameString = resource_in->getRandomPseudonymOne(false).s_nameString + " " + resource_in->getRandomPseudonymTwo(false).s_nameString;
+	c_interactable->setName(resource_in->getRandomPseudonymOne(false).s_nameString + " " + resource_in->getRandomPseudonymTwo(false).s_nameString);
 
 	c_interactable->ptr_behaviour->linkResourceManager(resource_in);
 	c_interactable->ptr_behaviour->linkNaturalLogicManager(python_in);
@@ -75,11 +75,11 @@ bool CautiousTile::getInteractablePresence(std::string text_in) {
 }
 
 std::string CautiousTile::interactByName(std::string entry_in) {
-	std::string m_temp = c_interactable->c_nameString;
+	std::string m_temp = c_interactable->getName();
 	std::transform(m_temp.begin(), m_temp.end(), m_temp.begin(), ::tolower);
 
 	if (entry_in.find(m_temp) != std::string::npos) {
-		return c_interactable->ptr_behaviour->interactionProcess(entry_in.substr(1, c_interactable->c_nameString.size()));
+		return c_interactable->ptr_behaviour->interactionProcess(entry_in.substr(1, c_interactable->getName().size()));
 	}
 	return "There was no reply";
 }

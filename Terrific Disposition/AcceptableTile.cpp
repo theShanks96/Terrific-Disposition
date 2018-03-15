@@ -49,7 +49,7 @@ bool AcceptableTile::populateInteractables(int2d nextPlotPoint_in, int2d locatio
 			}	
 		} while (m_pseudonameConflict);
 		v_selectedPsuedonyms.push_back(m_temporaryNameString);
-		v_interactables.at(i)->c_nameString = m_temporaryNameString;
+		v_interactables.at(i)->setName(m_temporaryNameString);
 
 		//	An acceptable tile holds one simplebehaviour and two fuzzy behaviours
 		if (i == 0) {
@@ -101,11 +101,11 @@ bool AcceptableTile::getInteractablePresence(std::string text_in) {
 std::string AcceptableTile::interactByName(std::string entry_in) {
 	std::string m_temp = "";
 	for (int i = 0; i < c_maximumInteractables; i++) {
-		m_temp = v_interactables.at(i)->c_nameString;
+		m_temp = v_interactables.at(i)->getName();
 		std::transform(m_temp.begin(), m_temp.end(), m_temp.begin(), ::tolower);
 
 		if (entry_in.find(m_temp) != std::string::npos) {
-			return v_interactables.at(i)->ptr_behaviour->interactionProcess(entry_in.substr(1, v_interactables.at(i)->c_nameString.size()));
+			return v_interactables.at(i)->ptr_behaviour->interactionProcess(entry_in.substr(1, v_interactables.at(i)->getName().size()));
 		}
 	}
 	return "There was no reply";

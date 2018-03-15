@@ -8,16 +8,6 @@ Interactable::~Interactable() {
 }
 
 
-std::string Interactable::getInformation() {
-
-	return "something";
-
-}
-void Interactable::setInformation(std::string information_in[]) {
-
-}
-
-
 std::string Interactable::getName() {
 	return c_nameString;
 }

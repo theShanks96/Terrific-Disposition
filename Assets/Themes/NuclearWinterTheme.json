@@ -114,31 +114,31 @@
   "PlotKeywords":[
     {
       "key": "primary_villain",
-      "name": "The Federation for Citizen Value",
+      "name": "The Axis of Radioactive Transformation",
     },
     {
       "key": "secondary_villain",
-      "name": "Federation Agency for the Welfare of Public Opinion"
+      "name": "The Church of Our Blessed Nuclear Waste"
     },
     {
       "key": "tertiary_villain",
-      "name": "Agent 451"
+      "name": "Nuclear Parishoner"
     },
     {
       "key": "primary_ally",
-      "name": "Plain Janes"
+      "name": "Lead Bellies"
     },
     {
       "key": "primary_macguffin",
-      "name": "Federation Public Order Toolkit"
+      "name": "Wide-Area Containment Field"
     },
     {
       "key": "secondary_macguffin",
-      "name": "Broad-Spectrum Obfuscation Program"
+      "name": "Waste-Scrubbing Bacteria"
     },
     {
       "key": "tertiary_macguffin",
-      "name": "Falsified Treasonous Opinion Column"
+      "name": "Radiation and Human Anatomy Ver 2"
     }
   ]
 

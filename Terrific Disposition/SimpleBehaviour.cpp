@@ -16,6 +16,6 @@ std::string SimpleBehaviour::interactionProcess(std::string userText_in) {
 }
 
 void SimpleBehaviour::addInteractionLog(std::string& userText_in) {
-
+	
 }
 

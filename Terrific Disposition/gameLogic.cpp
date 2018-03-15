@@ -2,7 +2,7 @@
 
 GameLogic::GameLogic() {
 
-	c_currentGameState = const_mainMenuInt;
+	c_currentGameStateInt = const_mainMenuInt;
 
 	ptr_resourceManager = new ResourceManager("../Assets/AssetConfiguration.json");
 	ptr_naturalLogicManager = new NaturalLogicManager(ptr_resourceManager);
@@ -21,18 +21,7 @@ GameLogic::GameLogic() {
 	v_pendingOutputStrings.push_back("");
 	v_pendingOutputStrings.push_back("World Size 16x16 32x32 64x64: start game <16/32/64>");
 	v_pendingOutputStrings.push_back("");
-
-
-	//	initialising the timer data
-	c_timeFromFailureFloat = 0.0f;
-	c_timeToActionFloat = 0.0f;
-
-	//	initialising the success/failure data
-	c_successCountFloat = 0.0f;
-	c_failureCountFloat = 0.0f;
-	updateSuccessRatio();
-
-
+	
 }
 
 GameLogic::~GameLogic() {
@@ -41,7 +30,7 @@ GameLogic::~GameLogic() {
 }
 
 void GameLogic::restartGameLogic() {
-	c_currentGameState = const_mainMenuInt;
+	c_currentGameStateInt = const_mainMenuInt;
 	
 	ptr_resourceManager->clearThematicVectors();
 
@@ -59,16 +48,7 @@ void GameLogic::restartGameLogic() {
 	v_pendingOutputStrings.push_back("");
 	v_pendingOutputStrings.push_back("World Size 16x16 32x32 64x64: start game <16/32/64>");
 	v_pendingOutputStrings.push_back("");
-
-
-	//	initialising the timer data
-	c_timeFromFailureFloat = 0.0f;
-	c_timeToActionFloat = 0.0f;
-
-	//	initialising the success/failure data
-	c_successCountFloat = 0.0f;
-	c_failureCountFloat = 0.0f;
-	updateSuccessRatio();
+	
 }
 
 void GameLogic::loadProfile(std::string name_in) {	
@@ -77,7 +57,7 @@ void GameLogic::loadProfile(std::string name_in) {
 	c_chosenThemeString = m_save.s_worldTheme;
 	ptr_resourceManager->loadThematicDictionaries(c_chosenThemeString);
 	ptr_player = new Player(m_save.s_playerName);
-	ptr_player->c_theme = c_chosenThemeString;
+	ptr_player->c_themeString = c_chosenThemeString;
 	ptr_player->c_healthFloat = m_save.s_playerHealth;
 
 	ptr_player->c_positionInt2d = m_save.s_playerCurrentLocation;
@@ -100,7 +80,7 @@ void GameLogic::loadProfile(std::string name_in) {
 
 	ptr_gameWorld = new World(m_save.s_mapSize, ptr_player, m_save.s_playerStartLocation);
 
-	c_currentGameState = const_proceduralContentInt;
+	c_currentGameStateInt = const_proceduralContentInt;
 
 	ptr_gameWorld->linkResourceManager(ptr_resourceManager);
 	ptr_gameWorld->linkNaturalLogicManager(ptr_naturalLogicManager);
@@ -126,7 +106,7 @@ void GameLogic::loadProfile(std::string name_in) {
 int GameLogic::Update() {
 	int updateErrorCode = 0;
 
-	switch (c_currentGameState) {
+	switch (c_currentGameStateInt) {
 	case const_mainMenuInt:
 		// Set up information to display and let the user know how the game will function
 
@@ -153,7 +133,7 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 	std::string m_command = command_in;
 	std::transform(m_command.begin(), m_command.end(), m_command.begin(), ::tolower);
 
-	if (c_currentGameState == const_mainMenuInt) {
+	if (c_currentGameStateInt == const_mainMenuInt) {
 		if (m_command.compare(0, 11, "start game ") == 0) {
 			c_failedCommandCountInt = 0;
 			return "Starting Game: " + command_in.substr(11, 13) + "x" + command_in.substr(11, 13);
@@ -172,7 +152,7 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 			}
 		}
 	}
-	else if (c_currentGameState == const_escapeCalibrationInt) {
+	else if (c_currentGameStateInt == const_escapeCalibrationInt) {
 		if (m_command.compare(0, 5, "look ") == 0) {
 			c_failedCommandCountInt = 0;
 			return "Look Attempt: " + command_in.substr(5, command_in.size());
@@ -203,7 +183,7 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 		}
 	}
 
-	else if (c_currentGameState == const_proceduralContentInt) {
+	else if (c_currentGameStateInt == const_proceduralContentInt) {
 		if (m_command.compare(0, 5, "look ") == 0) {
 			c_failedCommandCountInt = 0;
 			return "Look Attempt: " + command_in.substr(5, command_in.size());
@@ -274,54 +254,8 @@ std::string GameLogic::commandPreprocess(std::string& command_in) {
 	}
 }
 
-float GameLogic::getTimeFromFailue() {
-	return c_timeFromFailureFloat;
-}
-void GameLogic::setTimeFromFailure(float& timeFromFailure_in) {
-	c_timeFromFailureFloat = timeFromFailure_in;
-}
-
-float GameLogic::getTimeToAction() {
-	return c_timeToActionFloat;
-}
-void GameLogic::setTimeToAction(float& timeToAction_in) {
-	c_timeToActionFloat = timeToAction_in;
-}
-
-float GameLogic::getSuccessRatio() {
-	updateSuccessRatio();
-	return c_successRatioFloat;
-}
-void GameLogic::setSuccessCount(float& successCount_in) {
-	c_successCountFloat = successCount_in;
-}
-void GameLogic::setFailureCount(float& failureCount_in) {
-	c_failureCountFloat = failureCount_in;
-}
-
-std::vector<std::string> GameLogic::getNotesVector() {
-	return v_notesVector;
-}
-std::vector<std::string> GameLogic::getJournalVector() {
-	return v_journalVector;
-}
-
-std::vector<std::string> GameLogic::getSemanticField() {
-	return v_semanticFieldStrings;
-}
-void GameLogic::setSemanticField(std::vector<std::string>& semanticField_in) {
-	v_semanticFieldStrings = semanticField_in;
-}
-
-void GameLogic::updateSuccessRatio() {
-	if (c_failureCountFloat != 0)
-		c_successRatioFloat = c_successCountFloat / c_failureCountFloat;
-	else
-		c_successCountFloat = 0;
-}
-
 void GameLogic::startGameWorld(int mapSize_in) {
-	c_currentGameState = const_proceduralContentInt;
+	c_currentGameStateInt = const_proceduralContentInt;
 
 	//	Starting a 64x64 game
 	if (mapSize_in > 48 && mapSize_in < 80) {
@@ -341,7 +275,7 @@ void GameLogic::startGameWorld(int mapSize_in) {
 	ptr_gameWorld->linkResourceManager(ptr_resourceManager);
 	ptr_gameWorld->linkNaturalLogicManager(ptr_naturalLogicManager);
 	
-	ptr_player->c_theme = c_chosenThemeString;
+	ptr_player->c_themeString = c_chosenThemeString;
 
 	while (ptr_gameWorld->v_pendingOutputStrings.size() > 0) {
 		v_pendingOutputStrings.push_back(ptr_gameWorld->v_pendingOutputStrings.front());
@@ -351,7 +285,7 @@ void GameLogic::startGameWorld(int mapSize_in) {
 
 }
 void GameLogic::startRoomEscape(int mapSize_in) {
-	c_currentGameState = const_escapeCalibrationInt;
+	c_currentGameStateInt = const_escapeCalibrationInt;
 
 	//c_activeMusic.stop();
 	
@@ -375,7 +309,7 @@ void GameLogic::startRoomEscape(int mapSize_in) {
 
 void GameLogic::handleCommand(std::string command_in) {
 
-	if (c_currentGameState == const_escapeCalibrationInt) {
+	if (c_currentGameStateInt == const_escapeCalibrationInt) {
 		//handleRoomEscape(command_in);
 		ptr_roomEscape->handleCommand(command_in);
 
@@ -398,7 +332,7 @@ void GameLogic::handleCommand(std::string command_in) {
 			ptr_roomEscape = nullptr;
 		}
 	}
-	else if (c_currentGameState == const_proceduralContentInt) {
+	else if (c_currentGameStateInt == const_proceduralContentInt) {
 		//handleGameWorld(command_in);
 		ptr_gameWorld->handleCommand(command_in);
 

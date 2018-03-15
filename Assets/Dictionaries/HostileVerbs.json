@@ -1,22 +1,47 @@
 {  "HostileVerbs": [
 
       { "entry": "annoy"  },
+      { "entry": "attack"  },
+
+      { "entry": "blend"  },
 
       { "entry": "chafe"  },
+      { "entry": "cut" },
 
+      { "entry": "destroy"  },
+      { "entry": "disable"  },
       { "entry": "disgust"  },
       { "entry": "distort"  },
 
+      { "entry": "fight"  },
+      { "entry": "force" },
+
       { "entry": "harangue" },
+      { "entry": "hide"  },
 
       { "entry": "irritate" },
+      { "entry": "invade"  },
 
       { "entry": "leech"  },
+
+      { "entry": "poison"  },
+      { "entry": "poisoning"  },
+
+      { "entry": "rape"  },
+      { "entry": "rebell"  },
+      { "entry": "remove"  },
+      { "entry": "rend"  },
 
       { "entry": "slaughter"  },
       { "entry": "shriek" },
       { "entry": "shun" },
-      
+      { "entry": "sneak" },
+
+      { "entry": "take" },
+      { "entry": "tear" },
+
+      { "entry": "uprise" },
+
       { "entry": "yell" }
   ]
 }

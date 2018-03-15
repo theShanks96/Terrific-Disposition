@@ -24,11 +24,7 @@ class NaturalLogicManager {
 public:
 	ResourceManager * ptr_resourceManager;
 
-	pybind11::object c_mainModule;
 	pybind11::object c_globals;
-	pybind11::object c_spacyModule;
-	pybind11::object c_spacyProcessor;
-	pybind11::object c_utilisedSpacyProcessor;
 
 	std::vector<std::string> v_entryStrings;
 	std::vector<std::string> v_resultStrings;
@@ -36,9 +32,9 @@ public:
 	std::vector<std::string> v_processingWordStrings;
 	std::vector<std::string> v_processingPOSStrings;
 
-	pybind11::scoped_interpreter* ptr_guard;
-	pybind11::module c_nltk;
-	pybind11::module c_pyDictionary;
+	pybind11::scoped_interpreter* ptr_scopedInterpreter;
+	pybind11::module c_nltkModule;
+	pybind11::module c_pydictionaryModule;
 
 	int c_vectorCapacityInt;
 	//! NaturalLogicManager's contructor
@@ -54,10 +50,10 @@ public:
 		v_resultStrings.reserve(c_vectorCapacityInt);
 
 		//pybind11::scoped_interpreter guard{}; // start the interpreter and keep it alive
-		ptr_guard = new pybind11::scoped_interpreter;
+		ptr_scopedInterpreter = new pybind11::scoped_interpreter;
 
-		c_nltk = pybind11::module::import("nltk");
-		c_pyDictionary = pybind11::module::import("PyDictionary");
+		c_nltkModule = pybind11::module::import("nltk");
+		c_pydictionaryModule = pybind11::module::import("PyDictionary");
 		
 	}
 
@@ -73,7 +69,7 @@ public:
 		try {
 			pybind11::dict m_localEnv;
 
-			pybind11::object m_dictionary = c_pyDictionary.attr("PyDictionary")();
+			pybind11::object m_dictionary = c_pydictionaryModule.attr("PyDictionary")();
 			pybind11::object m_meaning = m_dictionary.attr("meaning")(entry_in);
 			m_localEnv["meaning_in"] = m_meaning;
 
@@ -127,8 +123,8 @@ public:
 	void nltkGenericProcessing(std::string entry_in) {
 		pybind11::dict m_localEnv;
 
-		pybind11::object tokens = c_nltk.attr("word_tokenize")(entry_in);
-		pybind11::object tagged = c_nltk.attr("pos_tag")(tokens);
+		pybind11::object tokens = c_nltkModule.attr("word_tokenize")(entry_in);
+		pybind11::object tagged = c_nltkModule.attr("pos_tag")(tokens);
 
 		m_localEnv["entry_in"] = tagged;
 		pybind11::exec(
@@ -533,11 +529,11 @@ public:
 		
 		int m_boardSizeInt = 0;
 		if (tile_in == "acceptable")
-			m_boardSizeInt = ptr_resourceManager->v_acceptableBoards.size();
+			m_boardSizeInt = ptr_resourceManager->v_acceptableTileBoards.size();
 		else if (tile_in == "cautious")
-			m_boardSizeInt = ptr_resourceManager->v_cautiousBoards.size();
+			m_boardSizeInt = ptr_resourceManager->v_cautiousTileBoards.size();
 		else if (tile_in == "deadly")
-			m_boardSizeInt = ptr_resourceManager->v_deadlyBoards.size();
+			m_boardSizeInt = ptr_resourceManager->v_deadlyTileBoards.size();
 
 		std::random_device m_randomDevice;
 		std::mt19937 m_mt(m_randomDevice());
@@ -545,11 +541,11 @@ public:
 
 		std::string m_temporaryBoardString = "  ";
 		if (tile_in == "acceptable")
-			m_temporaryBoardString = ptr_resourceManager->v_acceptableBoards.at(m_boardDist(m_mt)).s_string;
+			m_temporaryBoardString = ptr_resourceManager->v_acceptableTileBoards.at(m_boardDist(m_mt)).s_string;
 		else if (tile_in == "cautious")
-			m_temporaryBoardString = ptr_resourceManager->v_cautiousBoards.at(m_boardDist(m_mt)).s_string;
+			m_temporaryBoardString = ptr_resourceManager->v_cautiousTileBoards.at(m_boardDist(m_mt)).s_string;
 		else if (tile_in == "deadly")
-			m_temporaryBoardString = ptr_resourceManager->v_deadlyBoards.at(m_boardDist(m_mt)).s_string;
+			m_temporaryBoardString = ptr_resourceManager->v_deadlyTileBoards.at(m_boardDist(m_mt)).s_string;
 		
 		v_processingWordStrings.clear();
 		v_processingWordStrings = explode(m_temporaryBoardString, ' ');
@@ -617,8 +613,8 @@ public:
 	std::string simpleBehaviourBoardProcessing() {
 		std::random_device m_randomDevice;
 		std::mt19937 m_mt(m_randomDevice());
-		std::uniform_int_distribution<int> m_boardDist(0, ptr_resourceManager->v_simpleBoards.size() - 1);
-		std::string m_temporaryBoardString = ptr_resourceManager->v_simpleBoards.at(m_boardDist(m_mt)).s_string;
+		std::uniform_int_distribution<int> m_boardDist(0, ptr_resourceManager->v_simpleBehaviourBoards.size() - 1);
+		std::string m_temporaryBoardString = ptr_resourceManager->v_simpleBehaviourBoards.at(m_boardDist(m_mt)).s_string;
 
 		v_processingWordStrings.clear();
 		v_processingWordStrings = explode(m_temporaryBoardString, ' ');

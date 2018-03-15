@@ -6,6 +6,7 @@
       { "entry": "cataclysm"  },
       { "entry": "chafe"  },
 
+      { "entry": "death"  },
       { "entry": "disgust"  },
       { "entry": "distate"  },
 
@@ -14,6 +15,9 @@
 
       { "entry": "harangue" },
 
+      { "entry": "infection" },
+      { "entry": "invasion"  },
+
       { "entry": "kill" },
 
       { "entry": "leech"  },
@@ -21,8 +25,16 @@
       { "entry": "murder" },
 
       { "entry": "parasite" },
-      
+      { "entry": "poison" },
+
+      { "entry": "radiation" },
+
       { "entry": "slaughter"  },
-      { "entry": "shriek" }
+      { "entry": "shriek" },
+
+      { "entry": "toxin" },
+
+      { "entry": "war" },
+      { "entry": "waste" }
   ]
 }

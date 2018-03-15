@@ -38,10 +38,10 @@ public:
 	std::vector<namedDoubleString> v_honestReliableBoards;			//<!	Holds the templates for the honestReliable Behaviours
 	std::vector<namedDoubleString> v_dishonestReliableBoards;				//<!	Holds the templates for the dishonestReliable Behaviours
 
-	std::vector<namedString> v_acceptableBoards;					//!<	Holds the templates for the acceptable tiles
-	std::vector<namedString> v_cautiousBoards;						//!<	Holds the templates for the cautious tiles
-	std::vector<namedString> v_deadlyBoards;						//!<	Holds the templates for the deadly tiles
-	std::vector<namedString> v_simpleBoards;						//!<	Holds the templates for the simple behaviours
+	std::vector<namedString> v_acceptableTileBoards;					//!<	Holds the templates for the acceptable tiles
+	std::vector<namedString> v_cautiousTileBoards;						//!<	Holds the templates for the cautious tiles
+	std::vector<namedString> v_deadlyTileBoards;						//!<	Holds the templates for the deadly tiles
+	std::vector<namedString> v_simpleBehaviourBoards;						//!<	Holds the templates for the simple behaviours
 
 	//	thematic words used to fill in the templates
 	std::vector<namedString> v_thematicNegativeAdjectives;			//!<	Holds negative thematic adjectives
@@ -282,7 +282,7 @@ public:
 		else {
 
 			const Json::Value m_acceptable = root["AcceptableBoards"];
-			v_acceptableBoards.reserve(m_acceptable.size());
+			v_acceptableTileBoards.reserve(m_acceptable.size());
 
 			for (int i = 0; i < m_acceptable.size(); i++) {
 				addAcceptableBoard(m_acceptable[i]["entry"].asString(), m_acceptable[i]["board"].asString());
@@ -296,7 +296,7 @@ public:
 		else {
 
 			const Json::Value m_cautious = root["CautiousBoards"];
-			v_cautiousBoards.reserve(m_cautious.size());
+			v_cautiousTileBoards.reserve(m_cautious.size());
 
 			for (int i = 0; i < m_cautious.size(); i++) {
 				addCautiousBoard(m_cautious[i]["entry"].asString(), m_cautious[i]["board"].asString());
@@ -310,7 +310,7 @@ public:
 		else {
 
 			const Json::Value m_deadly = root["DeadlyBoards"];
-			v_deadlyBoards.reserve(m_deadly.size());
+			v_deadlyTileBoards.reserve(m_deadly.size());
 
 			for (int i = 0; i < m_deadly.size(); i++) {
 				addDeadlyBoard(m_deadly[i]["entry"].asString(), m_deadly[i]["board"].asString());
@@ -324,10 +324,10 @@ public:
 		else {
 
 			const Json::Value m_simple = root["SimpleBoards"];
-			v_simpleBoards.reserve(m_simple.size());
+			v_simpleBehaviourBoards.reserve(m_simple.size());
 
 			for (int i = 0; i < m_simple.size(); i++) {
-				v_simpleBoards.push_back(namedString(m_simple[i]["entry"].asString(), m_simple[i]["board"].asString()));
+				v_simpleBehaviourBoards.push_back(namedString(m_simple[i]["entry"].asString(), m_simple[i]["board"].asString()));
 			}
 
 		}	jsonData.close();
@@ -745,16 +745,6 @@ public:
 		v_pseudonymOne.push_back(namedString(pseudonym_in, "none"));
 		return true;
 	}
-	//! Get a psuedonym first half from the relevant vector
-	//! @param pseudonym_in The first half of the pseudonym
-	//! @return The requested pseudonym portion
-	namedString getPseudonymOne(std::string pseudonym_in) {
-		for (namedString l_pseudonymOne : v_pseudonymOne) {
-			if (l_pseudonymOne.s_nameString == pseudonym_in)
-				return l_pseudonymOne;
-		}
-		return namedString("false", "false");
-	}
 	//! Get a random first half portion of the pseudonym from the relevant vector
 	//! @param player_in Boolean, if true then the returned name is tagged as the player pseudonym
 	//! @return The requested pseudonym portion
@@ -791,16 +781,6 @@ public:
 		v_pseudonymTwo.push_back(namedString(pseudonym_in, "none"));
 		return true;
 	}
-	//! Get a psuedonym second half from the relevant vector
-	//! @param pseudonym_in The fsecond half of the pseudonym
-	//! @return The requested pseudonym portion
-	namedString getPseudonymTwo(std::string pseudonym_in) {
-		for (namedString l_pseudonymTwo : v_pseudonymTwo) {
-			if (l_pseudonymTwo.s_nameString == pseudonym_in)
-				return l_pseudonymTwo;
-		}
-		return namedString("false", "false");
-	}
 	//! Get a random second half portion of the pseudonym from the relevant vector
 	//! @param player_in Boolean, if true then the returned name is tagged as the player pseudonym
 	//! @return The requested pseudonym portion
@@ -832,99 +812,63 @@ public:
 	//! @param board_in The actual board text
 	//! @return Boolean on whether or not the addition suceeded
 	bool addAcceptableBoard(std::string entry_in, std::string board_in) {
-		for (namedString l_acceptableBoard : v_acceptableBoards) {
+		for (namedString l_acceptableBoard : v_acceptableTileBoards) {
 			if (l_acceptableBoard.s_nameString == entry_in)
 				return true;
 		}
-		v_acceptableBoards.push_back(namedString(entry_in, board_in));
+		v_acceptableTileBoards.push_back(namedString(entry_in, board_in));
 		return true;
-	}
-	//! Get an acceptable board by name
-	//! @param entry_in The board name
-	//! @return The actual board text
-	std::string getAcceptableBoard(std::string entry_in) {
-		for (namedString l_acceptableBoard : v_acceptableBoards) {
-			if (l_acceptableBoard.s_nameString == entry_in)
-				return l_acceptableBoard.s_string;
-		}
-
-		// if it was not found, return first entry
-		return v_acceptableBoards.at(0).s_string;
 	}
 	//! Get a random acceptable board
 	//! @return The random board text
 	std::string getRandomAcceptableBoard() {
 		std::random_device m_randomDevice;
 		std::mt19937 m_mt(m_randomDevice());
-		std::uniform_int_distribution<int> m_boardDist(0, v_acceptableBoards.size());
+		std::uniform_int_distribution<int> m_boardDist(0, v_acceptableTileBoards.size());
 		//	return the board template text
-		return v_acceptableBoards.at(m_boardDist(m_mt)).s_string;
+		return v_acceptableTileBoards.at(m_boardDist(m_mt)).s_string;
 	}
 	//! Add a new cautious board to the relevant vector
 	//! @param entry_in The board name
 	//! @param board_in The actual board text
 	//! @return Boolean on whether or not the addition suceeded
 	bool addCautiousBoard(std::string entry_in, std::string board_in) {
-		for (namedString l_cautiousBoard : v_cautiousBoards) {
+		for (namedString l_cautiousBoard : v_cautiousTileBoards) {
 			if (l_cautiousBoard.s_nameString == entry_in)
 				return true;
 		}
-		v_cautiousBoards.push_back(namedString(entry_in, board_in));
+		v_cautiousTileBoards.push_back(namedString(entry_in, board_in));
 		return true;
-	}
-	//! Get a cautious board by name
-	//! @param entry_in The board name
-	//! @return The actual board text
-	std::string getCautiousBoard(std::string entry_in) {
-		for (namedString l_cautiousBoard : v_cautiousBoards) {
-			if (l_cautiousBoard.s_nameString == entry_in)
-				return l_cautiousBoard.s_string;
-		}
-
-		// if it was not found, return first entry
-		return v_cautiousBoards.at(0).s_string;
 	}
 	//! Get a random cautious board
 	//! @return The random board text
 	std::string getRandomCautiousBoard() {
 		std::random_device m_randomDevice;
 		std::mt19937 m_mt(m_randomDevice());
-		std::uniform_int_distribution<int> m_boardDist(0, v_cautiousBoards.size());
+		std::uniform_int_distribution<int> m_boardDist(0, v_cautiousTileBoards.size());
 		//	return the board template text
-		return v_cautiousBoards.at(m_boardDist(m_mt)).s_string;
+		return v_cautiousTileBoards.at(m_boardDist(m_mt)).s_string;
 	}
 	//! Add a new deadly board to the relevant vector
 	//! @param entry_in The board name
 	//! @param board_in The actual board text
 	//! @return Boolean on whether or not the addition suceeded
 	bool addDeadlyBoard(std::string entry_in, std::string board_in) {
-		for (namedString l_deadlyBoard : v_deadlyBoards) {
+		for (namedString l_deadlyBoard : v_deadlyTileBoards) {
 			if (l_deadlyBoard.s_nameString == entry_in)
 				return true;
 		}
-		v_deadlyBoards.push_back(namedString(entry_in, board_in));
+		v_deadlyTileBoards.push_back(namedString(entry_in, board_in));
 		return true;
-	}
-	//! Get a deadly board by name
-	//! @param entry_in The board name
-	//! @return The actual board text
-	std::string getDeadlyBoard(std::string entry_in) {
-		for (namedString l_deadlyBoard : v_deadlyBoards) {
-			if (l_deadlyBoard.s_nameString == entry_in)
-				return l_deadlyBoard.s_string;
-		}
-
-		// if it was not found, return first entry
-		return v_deadlyBoards.at(0).s_string;
 	}
 	//! Get a random deadly board
 	//! @return The random board text
 	std::string getRandomDeadlyBoard() {
 		std::random_device m_randomDevice;
 		std::mt19937 m_mt(m_randomDevice());
-		std::uniform_int_distribution<int> m_boardDist(0, v_deadlyBoards.size());
+		std::uniform_int_distribution<int> m_boardDist(0, v_deadlyTileBoards.size());
 		//	return the board template text
-		return v_deadlyBoards.at(m_boardDist(m_mt)).s_string;
+		return v_deadlyTileBoards.at(m_boardDist(m_mt)).s_string;
 	}
 
 	//! Get an first stage board

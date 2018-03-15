@@ -295,8 +295,8 @@ World::~World() {
 void World::linkResourceManager(ResourceManager* resource_in) {
 	ptr_resourceManager = resource_in;
 }
-void World::linkNaturalLogicManager(NaturalLogicManager* python_in) {
-	ptr_naturalLogicManager = python_in;
+void World::linkNaturalLogicManager(NaturalLogicManager* natural_in) {
+	ptr_naturalLogicManager = natural_in;
 }
 
 void World::handleCommand(std::string& command_in) {
@@ -453,7 +453,7 @@ void World::handleCommand(std::string& command_in) {
 				m_save.s_playerEquipment = ptr_player->c_equipmentString;
 
 				m_save.s_mapSize = c_mapSizeInt;
-				m_save.s_worldTheme = ptr_player->c_theme;
+				m_save.s_worldTheme = ptr_player->c_themeString;
 				m_save.v_plotPoints.clear();
 				m_save.v_plotPoints.reserve(v_plotPositions.size());
 				for (int i = 0; i < v_plotPositions.size(); i++) {
@@ -660,15 +660,15 @@ void World::processTile() {
 
 	int m_honestyIndex;
 	if (c_totalDishonestReliableInt == 0)
-		m_honestyIndex = 1;
+		m_honestyIndex = 100;
 	else
-		m_honestyIndex = (int)((c_totalHonestReliableInt + c_totalHonestUnreliableInt) / c_totalDishonestReliableInt);
+		m_honestyIndex = (int)(((c_totalHonestReliableInt + c_totalHonestUnreliableInt) / c_totalDishonestReliableInt) * 100);
 		
 	int m_hostilityIndex;
 	if (ptr_player->c_totalInteractionWordsInt == 0)
-		m_hostilityIndex = 1;
+		m_hostilityIndex = 100;
 	else
-		m_hostilityIndex = (int)(ptr_player->c_hostilityInt / ptr_player->c_totalInteractionWordsInt);
+		m_hostilityIndex = (int)((ptr_player->c_hostilityInt / ptr_player->c_totalInteractionWordsInt) * 100);
 
 	if(!v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->c_populated)
 		v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->populateInteractables(v_plotPositions.back(), ptr_player->c_positionInt2d, m_honestyIndex, ptr_player->c_playStyle, m_hostilityIndex, ptr_resourceManager, ptr_naturalLogicManager);

@@ -1,8 +1,9 @@
 {
   "FirstStageBoards":[
     {
-      "entry": "",
-      "board": ""
+      "entry": "first_stage_000",
+      "board": "A [positive_person] tells you a rumor aboout [primary_ally] and how they may be helpful.
+      You wonder why those [negative_person]s are lurking about, but they seem harmless enough."
     }
   ],
   "PrimaryAllyBoards":[
@@ -14,7 +15,11 @@
     }
   ],
   "SecondStageBoards":[
-
+    {
+      "entry": "second_stage_000",
+      "board": "Atleast [primary_ally] has the sense to put you on a probationary period.
+      That [negative_person] can't be up to anything good."
+    }
   ],
   "TertiarVillainBoards":[
     {
@@ -25,7 +30,11 @@
     }
   ],
   "ThirdStageBoards":[
-
+    {
+      "entry": "third_stage_000",
+      "board": "It seems possible that the victory over [tertiary_villain] bodes well for your well-being.
+      Although, with greater foes comegreater threats."
+    }
   ],
   "SecondaryVillainBoards": [
     {
@@ -36,7 +45,11 @@
     }
   ],
   "FourthStageBoards":[
-
+    {
+      "entry": "fourth_stage_000",
+      "board": "[primary_villain] is certainly the greatest foe you are to face.
+      You ponder on what the greatest threat may be, but quickly think about something else."
+    }
   ],
   "PrimaryVillainBoards": [
     {

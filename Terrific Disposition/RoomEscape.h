@@ -18,28 +18,47 @@
 //! The basis for the roome escape or calibration sequence of the text adventure
 class RoomEscape {
 public:
-
-	RoomEscape();
-	~RoomEscape();
-
 	NaturalLogicManager* ptr_naturalLogicManager;
-	void linkNaturalLogicManager(NaturalLogicManager* python_in);
 	Player* ptr_player;
-	void linkPlayer(Player* player_in);
-
 	commandProfile c_commandProfile;
-
 	std::vector<std::string> v_pendingOutputStrings;
+	
 	int c_incorrectAnswers;
 	int c_correctAnswers;
 
+private:
+	std::vector<std::string> v_answerExpectedKeys;
+	int c_answeredQuestions;
+	int c_presentedQuestions;
+	std::string c_chosenThemeString;
+
+	std::vector<inventoryItem> v_cyberpunkItems;
+	std::vector<inventoryItem> v_nuclearWinterItems;
+	std::vector<inventoryItem> v_passiveInvasionItems;
+
+	std::vector<namedDoubleString> v_escapeQuestions;
+	std::vector<namedString> v_escapePlot;
+
+public:
+	RoomEscape();
+	~RoomEscape();
+
 	void readFromConfiguration(std::string configPath_in);
+	void linkNaturalLogicManager(NaturalLogicManager* natural_in);
+	void linkPlayer(Player* player_in);
 
 	void handleCommand(std::string& command_in);
+	
+	bool handleAnswerKeys(std::string& keys_in);
+	bool checkKeywordPresence(std::string& string_in);
+	bool checkSolved();
 
+	std::string getChosenTheme();
+	
 	bool addPlotPoint(std::string name_in, std::string text_in);
 	std::string getPlotPoint(std::string textTitle_in);
 
+private:
 	bool addEscapeQuestion(std::string name_in, std::string question_in, std::string answer_in);
 	namedString getEscapeQuestion(std::string name_in);
 
@@ -51,27 +70,5 @@ public:
 
 	bool addPassiveInvasionItem(std::string name_in, std::string title_in, std::string quality_in, std::string body_in);
 	inventoryItem getPassiveInvasionItem(std::string name_in);
-
-	bool handleAnswerKeys(std::string& keys_in);
-	bool checkKeywordPresence(std::string& string_in);
-	bool checkSolved();
-
-	std::string getChosenTheme();
-
-private:
-	std::vector<std::string> v_answerExpectedKeys;
-	int c_answeredQuestions;
-	int c_presentedQuestions;
-	std::string c_chosenThemeString;
-
-
-	std::vector<inventoryItem> v_cyberpunkItems;
-	std::vector<inventoryItem> v_nuclearWinterItems;
-	std::vector<inventoryItem> v_passiveInvasionItems;
-
-	std::vector<namedDoubleString> v_escapeQuestions;
-	std::vector<namedString> v_escapePlot;
-
-
-
+	
 };

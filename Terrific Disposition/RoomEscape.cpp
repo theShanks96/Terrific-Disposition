@@ -68,8 +68,8 @@ void RoomEscape::linkPlayer(Player* player_in) {
 	ptr_player = player_in;
 }
 
-void RoomEscape::linkNaturalLogicManager(NaturalLogicManager* python_in) {
-	ptr_naturalLogicManager = python_in;
+void RoomEscape::linkNaturalLogicManager(NaturalLogicManager* natural_in) {
+	ptr_naturalLogicManager = natural_in;
 }
 
 

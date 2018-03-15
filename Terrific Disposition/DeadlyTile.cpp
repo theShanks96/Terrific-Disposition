@@ -1,14 +1,14 @@
 #include "DeadlyTile.h"
 
 DeadlyTile::DeadlyTile() {
-	c_populated = false;
+	c_populated = true;
 	setTypeFlavour("You are dead.");
 	c_classificationString = "deadly";
 	c_availablePlotPosBool = false;
 }
 
 DeadlyTile::DeadlyTile(std::string description_in) {
-	c_populated = false;
+	c_populated = true;
 	c_descriptionString = description_in;
 	setTypeFlavour("You are dead.");
 	c_classificationString = "deadly";

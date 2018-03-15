@@ -7,6 +7,9 @@
 
 //! An implementation of Behaviour utilising a fuzzy inference engine.
 class FuzzyBehaviour : public Behaviour {
+public:
+	std::string c_classification;
+
 private:	
 	//! ptr_behaviour Determined by a specific fuzzy engine
 	fl::scalar ptr_behaviour;
@@ -23,11 +26,8 @@ private:
 	fl::OutputVariable* ptr_behaviourMagnitudeOV;
 	//! ptr_interactionMamdani A mamdani ruleblock for the ptr_interactionEngine
 	fl::RuleBlock* ptr_interactionMamdaniRB;
-		
-	void addInteractionLog(std::string& userText_in) override;
-
+	
 public:
-
 	//! Contructor for the fuzzy behaviour behaviour
 	//! @param hR_in Count of honest-reliable entities so far
 	//! @param dR_in Count of dishonest-reliable entities so far
@@ -41,9 +41,11 @@ public:
 	//! @param user_in The string given by the user when interacting
 	//! @return The resulting string to be shown to the user
 	std::string interactionProcess(std::string userText_in) override;
-	std::string c_classification;
 
 	std::string interactionProcessTesting(int pleasantry_in, std::string classification_in);
 	float getBehaviourTesting();
 	float getMagnitudeTesting();
+	
+private:
+	void addInteractionLog(std::string& userText_in) override;
 };

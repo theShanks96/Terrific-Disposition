@@ -114,31 +114,31 @@
   "PlotKeywords":[
     {
       "key": "primary_villain",
-      "name": "The Federation for Citizen Value",
+      "name": "The Mother Crash-site Swamp",
     },
     {
       "key": "secondary_villain",
-      "name": "Federation Agency for the Welfare of Public Opinion"
+      "name": "The Fungal Forest"
     },
     {
       "key": "tertiary_villain",
-      "name": "Agent 451"
+      "name": "Infected Preacher Brutus"
     },
     {
       "key": "primary_ally",
-      "name": "Plain Janes"
+      "name": "Firefighters"
     },
     {
       "key": "primary_macguffin",
-      "name": "Federation Public Order Toolkit"
+      "name": "Napalm and Agent Orange"
     },
     {
       "key": "secondary_macguffin",
-      "name": "Broad-Spectrum Obfuscation Program"
+      "name": "Broad-Spectrum Antibiotics & Antimycotics"
     },
     {
       "key": "tertiary_macguffin",
-      "name": "Falsified Treasonous Opinion Column"
+      "name": "Mycotic-Psychosis-Biotic Booster"
     }
   ]
 

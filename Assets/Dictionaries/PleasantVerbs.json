@@ -11,6 +11,7 @@
       { "entry": "excite" },
 
       { "entry": "fascinate"  },
+      { "entry": "free"  },
 
       { "entry": "grimacing"  },
       { "entry": "grotesque"  },
@@ -31,7 +32,7 @@
       { "entry": "thanks" },
 
       { "entry": "understand" },
-      
+
       { "entry": "warm" }
   ]
 }
