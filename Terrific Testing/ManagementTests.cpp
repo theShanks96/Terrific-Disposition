@@ -55,7 +55,8 @@ public:
 		NaturalLogicManager* ptr_naturalLogicManager = new NaturalLogicManager(ptr_resourceManager);
 
 		Assert::AreEqual(16, ptr_naturalLogicManager->c_vectorCapacityInt, L"NaturalLogicManager not correctly initialised");
-		
+		ptr_naturalLogicManager->~NaturalLogicManager();
+		delete ptr_naturalLogicManager;
 	}
 
 	TEST_METHOD(NLTKEntryProcessing) {
@@ -73,6 +74,9 @@ public:
 		Assert::AreEqual(1, m_nltkTestResult.s_adjectivesInt, L"Incorrect adjective count");
 		Assert::AreEqual(4, m_nltkTestResult.s_nounsInt, L"Incorrect noun count");
 		Assert::AreEqual(1, m_nltkTestResult.s_verbsInt, L"Incorrect verb count");
+
+		ptr_naturalLogicManager->~NaturalLogicManager();
+		delete ptr_naturalLogicManager;
 	}
 
 	};

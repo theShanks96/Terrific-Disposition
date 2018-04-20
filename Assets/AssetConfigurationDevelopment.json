@@ -1,0 +1,24 @@
+{
+  "ConfigurationPaths": [
+    {
+      "name": "AudioPaths",
+      "filepath": "../Assets/Audio/AudioConfigurationDevelopment.json"
+    },
+    {
+      "name": "DictionariesConfiguration",
+      "filepath": "../Assets/Dictionaries/DictionariesConfigurationDevelopment.json"
+    },
+    {
+      "name": "ThemesConfiguration",
+      "filepath": "../Assets/Themes/ThemesConfigurationDevelopment.json"
+    },
+    {
+      "name": "StoryboardsConfiguration",
+      "filepath": "../Assets/Storyboards/StoryboardsConfigurationDevelopment.json"
+    },
+    {
+      "name": "SavefilesConfiguration",
+      "filepath": "../Assets/Savefiles/SavefilesConfigurationDevelopment.json"
+    }
+  ]
+}

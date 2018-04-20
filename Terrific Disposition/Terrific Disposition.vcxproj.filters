@@ -473,10 +473,26 @@
     <ClInclude Include="NaturalLogicManager.h">
       <Filter>Header Files\Management</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\Library\openal32.lib">
       <Filter>Resource Files</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Terrific Disposition.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Assets\coding.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Assets\coding.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

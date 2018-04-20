@@ -291,6 +291,7 @@
     <ClInclude Include="DeadlyTile.h" />
     <ClInclude Include="FuzzyBehaviour.h" />
     <ClInclude Include="NaturalLogicManager.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RoomEscape.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="GameLogic.h" />
@@ -304,6 +305,13 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\Library\openal32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Terrific Disposition.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Assets\coding.ico" />
+    <Image Include="..\Assets\coding.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

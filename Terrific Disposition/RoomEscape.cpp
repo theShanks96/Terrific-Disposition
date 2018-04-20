@@ -106,7 +106,8 @@ void RoomEscape::handleCommand(std::string& command_in) {
 			v_pendingOutputStrings.push_back("[" + getPassiveInvasionItem("attire_torso").s_qualityString + "] " + getPassiveInvasionItem("attire_torso").s_titleString + ": " + getPassiveInvasionItem("attire_torso").s_bodyString);
 
 		}
-		else if (m_command.find("odd") != std::string::npos) {
+		else if (m_command.find("odd") != std::string::npos ||
+			m_command.find("items") != std::string::npos) {
 			v_pendingOutputStrings.push_back("Three odd items: ");
 			v_pendingOutputStrings.push_back("[" + getCyberpunkItem("equipment").s_qualityString + "] " + getCyberpunkItem("equipment").s_titleString + ": " + getCyberpunkItem("equipment").s_bodyString);
 			v_pendingOutputStrings.push_back("[" + getNuclearWinterItem("equipment").s_qualityString + "] " + getNuclearWinterItem("equipment").s_titleString + ": " + getNuclearWinterItem("equipment").s_bodyString);
@@ -182,6 +183,9 @@ void RoomEscape::handleCommand(std::string& command_in) {
 				}
 			}
 
+		}
+		else {
+			v_pendingOutputStrings.push_back("Pickup attempt failed.");
 		}
 
 	}
@@ -325,6 +329,9 @@ void RoomEscape::handleCommand(std::string& command_in) {
 			else {
 				v_pendingOutputStrings.push_back("Seems that was incorrect.");
 			}
+		}
+		else {
+			v_pendingOutputStrings.push_back("Interact attempt failed.");
 		}
 
 

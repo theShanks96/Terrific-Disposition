@@ -36,6 +36,9 @@ public:
 		
 		Assert::AreNotEqual(0, (int)ptr_roomEscape->ptr_player->c_nameString.size(), L"Player is not linked");
 		Assert::AreEqual(16, ptr_roomEscape->ptr_naturalLogicManager->c_vectorCapacityInt, L"NaturalLogicManager is not linked");
+	
+		ptr_naturalLogicManager->~NaturalLogicManager();
+		delete ptr_naturalLogicManager;
 	}
 
 	};

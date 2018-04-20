@@ -311,6 +311,9 @@ void World::handleCommand(std::string& command_in) {
 		if (m_command.find("around") != std::string::npos) {
 			v_pendingOutputStrings.push_back(v_worldTiles.at(ptr_player->c_positionInt2d.s_firstInt).at(ptr_player->c_positionInt2d.s_secondInt)->getTileInformation());
 		}
+		else {
+			v_pendingOutputStrings.push_back("Look attempt failed.");
+		}
 		
 	}
 	else if (m_command.compare(0, 14, "move attempt: ") == 0) {

@@ -21,6 +21,9 @@
 
 #include "DataStructs.h"
 
+//	Might already be defined in GameLogic.h remember to check
+#define DEPLOYMENT
+
 //!	Manages the majority of the resources by way of json config files
 class ResourceManager {
 public:
@@ -1041,11 +1044,18 @@ public:
 	void writeSavefile(saveProfile profile_in) {
 		
 		std::string m_filepath = "";
-
+#ifdef DEPLOYMENT
+		if (checkSavefilePaths(profile_in.s_playerName))
+			m_filepath = getSavefilePath(profile_in.s_playerName);
+		else
+			m_filepath = "../../../Assets/Savefiles/" + profile_in.s_playerName + ".json";
+#else
 		if (checkSavefilePaths(profile_in.s_playerName))
 			m_filepath = getSavefilePath(profile_in.s_playerName);
 		else
 			m_filepath = "../Assets/Savefiles/" + profile_in.s_playerName + ".json";
+
+#endif // DEPLOYMENT
 
 		Json::Value m_currentSave;
 		m_currentSave[profile_in.s_playerName]["name"] = profile_in.s_playerName;

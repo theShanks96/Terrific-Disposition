@@ -29,6 +29,7 @@ private:
 	std::vector<sf::Text> v_noteDisplays;
 	std::vector<sf::Text> v_journalDisplays;
 
+	sf::Text c_tempText;
 
 	sf::RectangleShape arr_displayFraming[4];
 

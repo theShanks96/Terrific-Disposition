@@ -13,6 +13,9 @@
 
 #include "Player.h"
 
+//	Might already be defined in ResourceManager.h, remember to check
+//#define DEPLOYMENT
+
 
 //! This essentially holds the game loop, and is designed to manage the flow of gameplay
 class GameLogic {

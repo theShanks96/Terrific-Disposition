@@ -58,7 +58,6 @@ public:
 	}
 
 	~NaturalLogicManager() {
-		pybind11::finalize_interpreter();
 	}
 
 	//! This will identify the definition of the given entry, if any exists
@@ -106,7 +105,7 @@ public:
 				return "error, not defined.";
 			}
 
-			pybind11::print(m_localEnv["final"]);
+			std::cout << m_localEnv["final"].cast<std::string>() << std::endl;
 
 			return m_localEnv["final"].cast<std::string>();
 
@@ -145,8 +144,8 @@ public:
 			"final_words = ';'.join(words)\n"
 			, pybind11::globals(), m_localEnv);
 
-		pybind11::print(m_localEnv["final_pos"]);
-		pybind11::print(m_localEnv["final_words"]);
+		std::cout << m_localEnv["final_pos"].cast<std::string>() << std::endl;
+		std::cout << m_localEnv["final_words"].cast<std::string>() << std::endl;
 
 		entryPushBack(m_localEnv["final_words"].cast<std::string>());
 		resultPushBack(m_localEnv["final_pos"].cast<std::string>());

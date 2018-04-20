@@ -54,9 +54,14 @@ SFML_Window::SFML_Window() {
 	arr_displayFraming[const_commandIndexInt].setFillColor(arr_backgroundColours[c_backgroundIndexInt]);
 	arr_displayFraming[const_commandIndexInt].setOutlineColor(arr_foregroundColours[c_foregroundIndexInt]);
 	arr_displayFraming[const_commandIndexInt].setOutlineThickness(c_windowUnitInt);
-
+	
+#ifdef DEPLOYMENT
+	if (!c_activeFont.loadFromFile("../../../Assets/Fonts/Dosis-SemiBold.ttf"))
+		c_errorCodeInt = 100;
+#else
 	if (!c_activeFont.loadFromFile("../Assets/Fonts/Dosis-SemiBold.ttf"))
 		c_errorCodeInt = 100;
+#endif
 
 	v_outputDisplays.push_back(sf::Text(">Output", c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_outputDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
@@ -70,7 +75,12 @@ SFML_Window::SFML_Window() {
 	v_journalDisplays.push_back(sf::Text(">Journal", c_activeFont, (int)(c_windowUnitInt * 3)));
 	v_journalDisplays.back().setFillColor(arr_foregroundColours[c_foregroundIndexInt]);
 
-
+	ptr_gameRenderWindow->clear(arr_backgroundColours[c_backgroundIndexInt]);
+	c_tempText = sf::Text("Loading, please wait...", c_activeFont, (int)(c_windowUnitInt * 3));
+	c_tempText.setOrigin(c_tempText.getLocalBounds().width / 2, c_tempText.getLocalBounds().height / 2);
+	c_tempText.setPosition(c_windowWidthInt / 2, c_windowHeightInt / 2);
+	ptr_gameRenderWindow->draw(c_tempText);
+	ptr_gameRenderWindow->display();
 
 	ptr_gameLogic = new GameLogic();
 

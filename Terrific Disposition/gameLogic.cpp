@@ -1,10 +1,16 @@
 #include "GameLogic.h"
 
+
 GameLogic::GameLogic() {
 
 	c_currentGameStateInt = const_mainMenuInt;
+#ifdef DEPLOYMENT
+	ptr_resourceManager = new ResourceManager("../../../Assets/AssetConfigurationDeployment.json");
+#else
+	ptr_resourceManager = new ResourceManager("../Assets/AssetConfigurationDevelopment.json");
+#endif // DEPLOYMENT
 
-	ptr_resourceManager = new ResourceManager("../Assets/AssetConfiguration.json");
+	
 	ptr_naturalLogicManager = new NaturalLogicManager(ptr_resourceManager);
 
 	c_activeMusic.openFromFile(ptr_resourceManager->getAudioPath("menu_background"));
