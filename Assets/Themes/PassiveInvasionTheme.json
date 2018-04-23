@@ -1,114 +1,114 @@
 {
   "NegativeAdjectives": [
     {
-      "entry": "",
-      "definition":
+      "entry": "green",
+      "definition": "Someone who might have certain plant sympathies"
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "fun",
+      "definition": "Someone who has certain fungal characteristics."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "bushy",
+      "definition": "Rodent-like coexistance with nature."
     }
   ],
   "PositiveAdjectives": [
     {
-      "entry": "",
-      "definition":
+      "entry": "dry",
+      "definition": "Someone who is calm and collected."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "snip",
+      "definition": "A cool dood/thing, derived from killing fungal infectors."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "artif",
+      "definition": "Artificial or man-made, less susceptible to fungal infections."
     }
   ],
   "NegativeVerbs": [
     {
-      "entry": "",
-      "definition":
+      "entry": "potting",
+      "definition": "Having and nurturing a potted plant."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "camping",
+      "definition": "An excursion to a deadly nature site."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "sprouting",
+      "definition": "Developing empathy towards invasive plant species."
     }
   ],
   "PositiveVerbs": [
     {
-      "entry": "",
-      "definition":
+      "entry": "carpetflame",
+      "definition": "The act of mass extinguishing deadly or invasive species."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "salting",
+      "definition": "The act of using salt to protect secured areas from plant species."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "myco-bender",
+      "definition": "Going on a bender with antimycotic-laced drinks."
     }
   ],
   "NegativeObjectNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "sporenade",
+      "definition": "A grenade that dispenses a fog of fungal spores."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "novoaluxins",
+      "definition": "A substance that hevily promotes plant growth."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "bhm",
+      "definition": "botanic hormone matrix, promotes plant growth and sympathies."
     }
   ],
   "NegativePersonNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "parafungi-delta",
+      "definition": "A fungus that causes various changes in mammalian behaviour."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "fungincubator",
+      "definition": "An infected person that attempts to infect others."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "xenos-flytrap",
+      "definition": "An alien organism, similar to a venus flytrap, mainly targets people."
     }
   ],
   "PositiveObjectNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "canned-fire",
+      "definition": "An easy to use, self-defence weapon against plant material."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "saltchete",
+      "definition": "A sword with a blade made of salt, useful against plants."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "antimycotic",
+      "definition": "A substance effective against fungal infections or colonies."
     }
   ],
   "PositivePersonNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "firefighter",
+      "definition": "Someone who uses various flammable substances to kill invasive species."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "botanophobe",
+      "definition": "Someone who is deathly afraid of plants, even harmless earth species."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "saltmin",
+      "definition": "A person who uses large quantities of salt to keep nature at bay."
     }
   ],
   "PlotKeywords":[
@@ -126,7 +126,7 @@
     },
     {
       "key": "primary_ally",
-      "name": "Firefighters"
+      "name": "Supernova Firefighters"
     },
     {
       "key": "primary_macguffin",

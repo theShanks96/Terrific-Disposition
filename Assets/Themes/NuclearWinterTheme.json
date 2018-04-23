@@ -1,114 +1,114 @@
 {
   "NegativeAdjectives": [
     {
-      "entry": "",
-      "definition":
+      "entry": "radic",
+      "definition": "Something that is or reminiscent of radioactive materials."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "cold",
+      "definition": "Something that is characteristic of the perma-winter outside."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "clicky",
+      "definition": "Vulgarity against anyone sympathetic to increasing radiation exposure."
     }
   ],
   "PositiveAdjectives": [
     {
-      "entry": "",
-      "definition":
+      "entry": "covered",
+      "definition": "Well protected against radiation, cold, or generally well protected."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "secure",
+      "definition": "Safe or otherwise protected against hostile entities."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "flowery",
+      "definition": "Hopeful, positive, or generally natural."
     }
   ],
   "NegativeVerbs": [
     {
-      "entry": "",
-      "definition":
+      "entry": "cockroach",
+      "definition": "To adapt to nuclear apocalypse rather than trying to solve the problem."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "scavenge",
+      "definition": "To look for and hoarde radioactive substances or materials."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "bake",
+      "definition": "To purposefully expose something/someone to radiation."
     }
   ],
   "PositiveVerbs": [
     {
-      "entry": "",
-      "definition":
+      "entry": "shelter",
+      "definition": "The act of protecting against radiation or cold climates."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "spray",
+      "definition": "The act of dispersing anti-radiation substances."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "research",
+      "definition": "The act of investigating and learning new things."
     }
   ],
   "NegativeObjectNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "aquactive",
+      "definition": "Nuclear powerplant water by-product, heavily radioactive."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "cursed-fondant",
+      "definition": "Slang for ingots of radioactive metals."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "man-snow",
+      "definition": "White ash, irritant and toxic to animal life."
     }
   ],
   "NegativePersonNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "atomite",
+      "definition": "Worshipper of nuclear or atomic materials, fans of radiation."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "radio-lysenkoists",
+      "definition": "Scientists that believe the next step of evolution requries radiation."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "swimmer",
+      "definition": "Person who submerges themselves in nuclear by-products."
     }
   ],
   "PositiveObjectNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "blue-prussian",
+      "definition": "An injectable that helps combat radiation poisoning."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "filter-mask",
+      "definition": "Personal protection equipment against radioactive gasses."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "counter-radite",
+      "definition": "Viscous substance that helps counteract radioactivity."
     }
   ],
   "PositivePersonNouns":[
     {
-      "entry": "",
-      "definition":
+      "entry": "quarantiner",
+      "definition": "Clad in quarantine suits, ready to help those with radiation poisoning."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "recycler",
+      "definition": "Person who recycles or properly dispose of dangerous substances."
     },
     {
-      "entry": "",
-      "definition":
+      "entry": "sprayer",
+      "definition": "Someone who sprays radiation countermeasure substances."
     }
   ],
   "PlotKeywords":[
